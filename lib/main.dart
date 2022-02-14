@@ -1,11 +1,23 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:lottie/lottie.dart';
+import 'package:puzzle_game/app/routes/app_pages.dart';
+import 'package:puzzle_game/utils/my_storage.dart';
 import 'package:puzzle_game/widgets/spannable_grid.dart';
 import 'package:puzzle_game/widgets/spannable_grid_cell_data.dart';
 import 'package:puzzle_game/widgets/spannable_grid_options.dart';
 
-void main() {
+main() async {
+  /*SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    statusBarColor: Colors.transparent,
+  ));
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge,overlays: []);*/
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  await GetStorage.init();
   runApp(const MyApp());
 }
 
@@ -15,12 +27,17 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Puzzle',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const PuzzlePage(),
+      getPages: AppPages.routes,
+      initialRoute: !MyStorage.readIsUserLoggedIn()
+          ? Routes.REGISTER
+          : Routes.CHOOSE_CHARACTER,
+      // home: AppPages.INITIAL,
     );
   }
 }
@@ -39,13 +56,10 @@ class _PuzzlePageState extends State<PuzzlePage> {
 
   @override
   void initState() {
-
     _data = List.generate(_complexity * (_complexity + 1), (index) => index);
 
     super.initState();
   }
-
-  bool _singleCell = false;
 
   List<SpannableGridCellData> _getCells() {
     final result = <SpannableGridCellData>[];
@@ -59,11 +73,12 @@ class _PuzzlePageState extends State<PuzzlePage> {
         body: Container(
           color: Colors.lime,
           child: Center(
-            child: Text("Tile 1x2",
-              // style: Theme.of(context).textTheme.title,
-            )
-             //   child: Lottie.asset("assets/18465-dog-walking.json"),
-          ),
+              child: Text(
+            "Tile 1x2",
+            // style: Theme.of(context).textTheme.title,
+          )
+              //   child: Lottie.asset("assets/18465-dog-walking.json"),
+              ),
         ),
       ),
     ));
@@ -77,11 +92,12 @@ class _PuzzlePageState extends State<PuzzlePage> {
         body: Container(
           color: Colors.lime,
           child: Center(
-            child: Text("Tile zo",
-              // style: Theme.of(context).textTheme.title,
-            )
-                //Lottie.asset("assets/87510-character-with-mixed-emotions.json"),
-          ),
+              child: Text(
+            "Tile zo",
+            // style: Theme.of(context).textTheme.title,
+          )
+              //Lottie.asset("assets/87510-character-with-mixed-emotions.json"),
+              ),
         ),
       ),
     ));
@@ -95,11 +111,12 @@ class _PuzzlePageState extends State<PuzzlePage> {
         body: Container(
           color: Colors.lime,
           child: Center(
-            child: Text("Tile 1x2",
-              // style: Theme.of(context).textTheme.title,
-            )
+              child: Text(
+            "Tile 1x2",
+            // style: Theme.of(context).textTheme.title,
+          )
               //  Lottie.asset("assets/75980-licking-dog.json"),
-          ),
+              ),
         ),
       ),
     ));
@@ -120,8 +137,7 @@ class _PuzzlePageState extends State<PuzzlePage> {
           ),
         ),
       ));*/
-    result.add(
-        SpannableGridCellData(
+    result.add(SpannableGridCellData(
       column: 2,
       row: 3,
       columnSpan: 2,
@@ -132,11 +148,12 @@ class _PuzzlePageState extends State<PuzzlePage> {
           child: Container(
             color: Colors.lime,
             child: Center(
-              child: Text("Tile 2x1",
-                // style: Theme.of(context).textTheme.title,
-              )
-                  //Lottie.asset("assets/34605-lonely-wolf.json"),
-            ),
+                child: Text(
+              "Tile 2x1",
+              // style: Theme.of(context).textTheme.title,
+            )
+                //Lottie.asset("assets/34605-lonely-wolf.json"),
+                ),
           ),
         ),
       ),
@@ -168,10 +185,11 @@ class _PuzzlePageState extends State<PuzzlePage> {
         body: Container(
           color: Colors.lime,
           child: Center(
-            child: Text("Tile 1x2",
+            child: Text(
+              "Tile 1x2",
               // style: Theme.of(context).textTheme.title,
             ),
-                //Lottie.asset("assets/75980-licking-dog.json"),
+            //Lottie.asset("assets/75980-licking-dog.json"),
           ),
         ),
       ),
@@ -186,10 +204,11 @@ class _PuzzlePageState extends State<PuzzlePage> {
         body: Container(
           color: Colors.lime,
           child: Center(
-            child: Text("Tile 1x1",
+            child: Text(
+              "Tile 1x1",
               // style: Theme.of(context).textTheme.title,
             ),
-              //  Lottie.asset("assets/61023-character-walk.json"),
+            //  Lottie.asset("assets/61023-character-walk.json"),
           ),
         ),
       ),
@@ -204,10 +223,11 @@ class _PuzzlePageState extends State<PuzzlePage> {
         body: Container(
           color: Colors.lime,
           child: Center(
-            child: Text("Tile 1x1",
+            child: Text(
+              "Tile 1x1",
               // style: Theme.of(context).textTheme.title,
             ),
-              //  Lottie.asset("assets/75980-licking-dog.json"),
+            //  Lottie.asset("assets/75980-licking-dog.json"),
           ),
         ),
       ),
@@ -222,10 +242,11 @@ class _PuzzlePageState extends State<PuzzlePage> {
         body: Container(
           color: Colors.lime,
           child: Center(
-            child: Text("Tile 1x2",
+            child: Text(
+              "Tile 1x2",
               // style: Theme.of(context).textTheme.title,
             ),
-              //  Lottie.asset("assets/75980-licking-dog.json"),
+            //  Lottie.asset("assets/75980-licking-dog.json"),
           ),
         ),
       ),
@@ -240,10 +261,11 @@ class _PuzzlePageState extends State<PuzzlePage> {
         body: Container(
           color: Colors.lime,
           child: Center(
-            child: Text("Tile 1x1",
+            child: Text(
+              "Tile 1x1",
               // style: Theme.of(context).textTheme.title,
             ),
-              //  Lottie.asset("assets/75980-licking-dog.json"),
+            //  Lottie.asset("assets/75980-licking-dog.json"),
           ),
         ),
       ),
@@ -258,11 +280,12 @@ class _PuzzlePageState extends State<PuzzlePage> {
         body: Container(
           color: Colors.lime,
           child: Center(
-            child: Text("Tile 1x1",
-              // style: Theme.of(context).textTheme.title,
-            )
-             //   Lottie.asset("assets/18465-dog-walking.json"),
-          ),
+              child: Text(
+            "Tile 1x1",
+            // style: Theme.of(context).textTheme.title,
+          )
+              //   Lottie.asset("assets/18465-dog-walking.json"),
+              ),
         ),
       ),
     ));
@@ -301,9 +324,6 @@ class _PuzzlePageState extends State<PuzzlePage> {
                         cell.column.toString() +
                         ": Rows" +
                         cell.row.toString());
-
-
-
                   },
 
                   /*onCellChanged: (cell) {
@@ -330,263 +350,5 @@ class _PuzzlePageState extends State<PuzzlePage> {
     setState(() {
       _data.shuffle();
     });
-  }
-
-  Widget _buildTile(int value) {
-    if (value == 0) {
-      return Container();
-    }
-    return GestureDetector(
-      onTap: () => _trySwap(value),
-      child: Container(
-        decoration: BoxDecoration(
-          color: Colors.blueAccent,
-          borderRadius: BorderRadius.circular(8.0),
-        ),
-        width: 64.0,
-        child: Center(
-          child: Text(
-            '$value',
-            style: TextStyle(
-              fontSize: 40,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  _list() {
-    cells = <SpannableGridCellData>[];
-    cells.add(SpannableGridCellData(
-      column: 1,
-      row: 1,
-      columnSpan: 1,
-      rowSpan: 2,
-      id: "0",
-      child: GestureDetector(
-        onTap: () => _trySwap(0),
-        child: Container(
-          color: Colors.lime,
-          child: Center(
-            child: /*Text("Tile 1x2",
-              // style: Theme.of(context).textTheme.title,
-            )*/
-                Lottie.asset("assets/18465-dog-walking.json"),
-          ),
-        ),
-      ),
-    ));
-    cells.add(SpannableGridCellData(
-      column: 2,
-      row: 1,
-      columnSpan: 2,
-      rowSpan: 2,
-      id: "1",
-      child: GestureDetector(
-        onTap: () => _trySwap(1),
-        child: Container(
-          color: Colors.lime,
-          child: Center(
-            child: /*Text("Tile 2x2",
-              // style: Theme.of(context).textTheme.title,
-            )*/
-                Lottie.asset("assets/87510-character-with-mixed-emotions.json"),
-          ),
-        ),
-      ),
-    ));
-    cells.add(SpannableGridCellData(
-      column: 4,
-      row: 1,
-      columnSpan: 1,
-      rowSpan: 2,
-      id: "2",
-      child: Container(
-        color: Colors.lime,
-        child: Center(
-          child: /*Text("Tile 1x2",
-            // style: Theme.of(context).textTheme.title,
-          )*/
-              Lottie.asset("assets/75980-licking-dog.json"),
-        ),
-      ),
-    ));
-    /*cells.add(SpannableGridCellData(
-      column: 1,
-      row: 3,
-      columnSpan: 1,
-      rowSpan: 1,
-      id: "3",
-      child: Container(
-        color: Colors.transparent,
-        child: Center(
-          child: Text(
-            "blank",
-            // style: Theme.of(context).textTheme.title,
-          ),
-        ),
-      ),
-    ));*/
-    cells.add(SpannableGridCellData(
-      column: 2,
-      row: 3,
-      columnSpan: 2,
-      rowSpan: 1,
-      id: "4",
-      child: Container(
-        color: Colors.lime,
-        child: Center(
-          child: /*Text("Tile 2x1",
-            // style: Theme.of(context).textTheme.title,
-          )*/
-              Lottie.asset("assets/34605-lonely-wolf.json"),
-        ),
-      ),
-    ));
-    /*cells.add(SpannableGridCellData(
-      column: 4,
-      row: 3,
-      columnSpan: 1,
-      rowSpan: 1,
-      id: "5",
-      child: Container(
-        color: Colors.transparent,
-        child: Center(
-          child: Text(
-            "blank",
-            // style: Theme.of(context).textTheme.title,
-          ),
-          // Lottie.asset("assets/75980-licking-dog.json"),
-        ),
-      ),
-    ));*/
-    cells.add(SpannableGridCellData(
-      column: 1,
-      row: 4,
-      columnSpan: 1,
-      rowSpan: 2,
-      id: "6",
-      child: Container(
-        color: Colors.lime,
-        child: Center(
-          child: /*Text("Tile 1x2",
-            // style: Theme.of(context).textTheme.title,
-          ),*/
-              Lottie.asset("assets/75980-licking-dog.json"),
-        ),
-      ),
-    ));
-    cells.add(SpannableGridCellData(
-      column: 2,
-      row: 4,
-      columnSpan: 1,
-      rowSpan: 1,
-      id: "7",
-      child: Container(
-        color: Colors.lime,
-        child: Center(
-          child: /*Text("Tile 1x1",
-            // style: Theme.of(context).textTheme.title,
-          ),*/
-              Lottie.asset("assets/61023-character-walk.json"),
-        ),
-      ),
-    ));
-    cells.add(SpannableGridCellData(
-      column: 3,
-      row: 4,
-      columnSpan: 1,
-      rowSpan: 1,
-      id: "8",
-      child: Container(
-        color: Colors.lime,
-        child: Center(
-          child: /*Text("Tile 1x1",
-            // style: Theme.of(context).textTheme.title,
-          ),*/
-              Lottie.asset("assets/75980-licking-dog.json"),
-        ),
-      ),
-    ));
-    cells.add(SpannableGridCellData(
-      column: 4,
-      row: 4,
-      columnSpan: 1,
-      rowSpan: 2,
-      id: "9",
-      child: Container(
-        color: Colors.lime,
-        child: Center(
-          child: /*Text("Tile 1x2",
-            // style: Theme.of(context).textTheme.title,
-          ),*/
-              Lottie.asset("assets/75980-licking-dog.json"),
-        ),
-      ),
-    ));
-    cells.add(SpannableGridCellData(
-      column: 2,
-      row: 5,
-      columnSpan: 1,
-      rowSpan: 1,
-      id: "10",
-      child: Container(
-        color: Colors.lime,
-        child: Center(
-          child: /*Text("Tile 1x1",
-            // style: Theme.of(context).textTheme.title,
-          ),*/
-              Lottie.asset("assets/75980-licking-dog.json"),
-        ),
-      ),
-    ));
-    cells.add(SpannableGridCellData(
-      column: 3,
-      row: 5,
-      columnSpan: 1,
-      rowSpan: 1,
-      id: "11",
-      child: Container(
-        color: Colors.lime,
-        child: Center(
-          child: /*Text("Tile 1x1",
-            // style: Theme.of(context).textTheme.title,
-          ),*/
-              Lottie.asset("assets/18465-dog-walking.json"),
-        ),
-      ),
-    ));
-  }
-
-  // try to swap the tile with the empty tile
-  _trySwap(int value) {
-    final int emptyIndex = cells.indexOf(3);
-
-    // get empty row and column
-    final int emptyRow = emptyIndex ~/ _complexity;
-    final int emptyCol = emptyIndex % _complexity;
-
-    // get value index
-    final int valueIndex = _data.indexOf(3);
-
-    // get tile row and column
-    final int tileRow = valueIndex ~/ _complexity;
-    final int tileCol = valueIndex % _complexity;
-
-    // check if the tile is in the same row or column
-    if (emptyRow == tileRow || emptyCol == tileCol) {
-      // get all tiles between the empty tile and the tile
-
-      // rebuild the widget
-      setState(() {
-        // swap the tiles
-        final int temp = _data[emptyIndex];
-        _data[emptyIndex] = _data[valueIndex];
-        _data[valueIndex] = temp;
-      });
-    }
   }
 }

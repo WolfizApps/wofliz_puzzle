@@ -34,7 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         body: Container(
           margin: EdgeInsets.all(12),
-          child:  StaggeredGridView.countBuilder(
+          /*child:  StaggeredGridView.countBuilder(
               crossAxisCount: 3,
               crossAxisSpacing: 10,
               mainAxisSpacing: 12,
@@ -49,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Text("hello")
                 );
               },
-             ),
+             ),*/
         ),
       ),
     );

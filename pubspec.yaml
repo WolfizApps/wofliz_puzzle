@@ -6,15 +6,20 @@ environment:
   sdk: '>=2.15.0-208.0.dev <3.0.0'
 
 dependencies: 
-  cupertino_icons: ^1.0.2
-  flutter_staggered_grid_view: ^0.3.3
-  transparent_image: ^1.0.0
+  cupertino_icons: ^1.0.4
+  flutter_staggered_grid_view: ^0.6.1
+  transparent_image: ^2.0.0
   get: 4.6.1
+  get_storage: ^2.0.3
   animated_widgets: ^1.1.0
   flutter_slidable: ^1.2.0
   slide_to_act: ^2.0.1
+  fluttertoast: ^8.0.8
  # spannable_grid: ^0.3.0
   lottie: ^1.2.1
+  firebase_core: ^1.12.0
+  firebase_auth: ^3.3.6
+  cloud_firestore: ^3.1.7
   flutter: 
     sdk: flutter
 
@@ -27,7 +32,20 @@ dev_dependencies:
 flutter: 
   uses-material-design: true
 
+  fonts:
+    - family: Babybo
+      fonts:
+        - asset: assets/fonts/Babybo.ttf
+    - family: Leira
+      fonts:
+          - asset: assets/fonts/Leira.ttf
+    - family: leiralite
+      fonts:
+        - asset: assets/fonts/leira-lite.ttf
+
 
   assets:
     - assets/
+    - assets/images/
+    - assets/fonts/
 
