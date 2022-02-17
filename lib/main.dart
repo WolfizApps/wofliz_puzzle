@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
       ),
       getPages: AppPages.routes,
       initialRoute: !MyStorage.readIsUserLoggedIn()
-          ? Routes.MAIN_GAME
+          ? Routes.SPLASH
           : Routes.CHOOSE_CHARACTER,
       // home: AppPages.INITIAL,
     );
