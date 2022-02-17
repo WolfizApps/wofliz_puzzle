@@ -173,9 +173,9 @@ class ChooseCharacterView extends GetView<ChooseCharacterController> {
                                       padding:
                                           const EdgeInsets.only(left: 38.0),
                                       child: TextFormField(
-                                        keyboardType:
-                                            TextInputType.text,
-                                        controller: controller.userNameController,
+                                        keyboardType: TextInputType.text,
+                                        controller:
+                                            controller.userNameController,
                                         style: TextStyle(
                                             color: Colors.black,
                                             fontSize: 22,

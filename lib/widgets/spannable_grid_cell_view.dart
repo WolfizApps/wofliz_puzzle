@@ -45,7 +45,8 @@ class SpannableGridCellView extends StatelessWidget {
     if (isEditing) {
       if (style.contentOpacity < 1.0) {
         result = Opacity(
-          opacity: style.contentOpacity,
+          // opacity: style.contentOpacity,
+          opacity: 1, // TODO: Add opacity here on select
           child: result,
         );
       }
@@ -57,7 +58,8 @@ class SpannableGridCellView extends StatelessWidget {
               decoration: style.selectedCellDecoration ??
                   BoxDecoration(
                     border: Border.all(
-                      color: Theme.of(context).primaryColor,
+                      // color: Theme.of(context).primaryColor,
+                      color: Colors.transparent, // TODO: Selected Border Color
                       width: 4.0,
                     ),
                   ),

@@ -17,7 +17,7 @@ class ForgotPasswordView extends GetView<ForgotPasswordController> {
           width: Get.width,
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage("assets/images/register_main_bg.png"),
+              image: AssetImage("assets/images/forgot_password_bg.png"),
               fit: BoxFit.cover,
             ),
           ),

@@ -14,5 +14,47 @@ class MyUtils {
     );
   }
 
+  static String getFormattedNumber(int number) {
+    if (number >= 11 && number <= 13) {
+      return number.toString() + 'th';
+    }
 
+    switch (number % 10) {
+      case 1:
+        return number.toString() + 'st';
+      case 2:
+        return number.toString() + 'nd';
+      case 3:
+        return number.toString() + 'rd';
+      default:
+        return number.toString() + 'th';
+    }
+  }
+
+  static myCardShadow() {
+    return BoxShadow(
+      color: Colors.black.withOpacity(0.80), //color of shadow
+      spreadRadius: 3, //spread radius
+      blurRadius: 7, // blur radius
+      offset: Offset(0, 10), // changes position of shadow
+    );
+  }
+
+  static carBoxDecoration(
+      {required String cardImage, bool isShowCardImage = true}) {
+    return isShowCardImage
+        ? BoxDecoration(
+            color: Colors.transparent,
+            image: DecorationImage(
+                image: AssetImage(
+                  cardImage,
+                ),
+                fit: BoxFit.fill),
+            boxShadow: [myCardShadow()],
+          )
+        : BoxDecoration(
+            color: Colors.transparent,
+            boxShadow: [myCardShadow()],
+          );
+  }
 }

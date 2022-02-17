@@ -39,6 +39,12 @@ import 'spannable_grid_options.dart';
 /// - [SpannableGridSize]
 ///
 class SpannableGrid extends StatefulWidget {
+  static SpannableGridCellData? chk;
+  static int? right;
+  static int? top;
+  static int? row;
+  static int? column;
+
   SpannableGrid({
     Key? key,
     required this.cells,
@@ -196,9 +202,12 @@ class _SpannableGridState extends State<SpannableGrid> {
     if (_isEditing || widget.showGrid) {
       _addEmptyCellsAndChildren();
     }
+
+
     _addContentCells();
     _calculateAvailableCells();
     _addContentChildren();
+
   }
 
   void _addEmptyCellsAndChildren() {
@@ -216,17 +225,76 @@ class _SpannableGridState extends State<SpannableGrid> {
             isEditing: _isEditing,
             onAccept: (data) {
               setState(() {
-                if (_cellSize != null) {
-                  int dragColumnOffset =
-                      _dragLocalPosition!.dx ~/ _cellSize!.width;
-                  int dragRowOffset =
-                      _dragLocalPosition!.dy ~/ _cellSize!.height;
-                  data.column = column - dragColumnOffset;
-                  data.row = row - dragRowOffset;
-                  _updateCellsAndChildren();
-                }
+                _cells[id]?.rowSpan=data.rowSpan;
+                _cells[id]?.columnSpan=data.columnSpan;
+                // _cells[id]?.column=data.column;
+                // _cells[id]?.row=data.row;
+
               });
-            },
+              int? mc,mr,msc,msr,maxColumn,maxRow;
+              var k;
+              setState(() {
+                print("jider gya hai");
+
+
+                int? mc=data.column ;
+                int? msc=_cells[id]?.columnSpan;
+                int? mr=_cells[id]?.row;
+                int? msr=_cells[id]?.rowSpan;
+
+                final minColumn = mc;
+                //maxColumn = mc! + data.columnSpan - 1;
+                maxColumn=_cells[id]?.column;
+                final minRow = mr;
+                //maxRow = mr! + data.rowSpan - 1;
+                maxRow=_cells[id]?.row;
+                //mr + msr -1
+                //final minColumn = cell.column;
+
+                int? Column = mc - msc!;
+
+                // final minRow = cell.row;
+                //   int? maxRow = mr! - msr!;
+                // int tc = (mc! + msc - 1) -1;
+                //int tr = (mr! + msr - 1) -1;
+                print(SpannableGrid.chk?.column.toString());
+                print("jider se utha hai"+SpannableGrid.column.toString() + "Row" +SpannableGrid.row.toString() );
+
+                k=_cells[id];
+                //SpannableGrid.chk = data;
+              });
+
+
+              if (
+              (
+                  (  maxRow == SpannableGrid.row && maxColumn == SpannableGrid.column! + 1)
+                      ||
+                      (maxRow == SpannableGrid.row && maxColumn == SpannableGrid.column! - 1)
+
+                      ||
+                      (maxRow == SpannableGrid.row! + 1 && maxColumn == SpannableGrid.column)
+                      ||
+                      (maxRow == SpannableGrid.row!-1 && maxColumn == SpannableGrid.column)
+                      || (data.rowSpan>1 || data.columnSpan>1)
+              )
+
+              ){
+                setState(() {
+                  if (_cellSize != null) {
+
+                    int dragColumnOffset =
+                        _dragLocalPosition!.dx ~/ _cellSize!.width;
+                    int dragRowOffset =
+                        _dragLocalPosition!.dy ~/ _cellSize!.height;
+                    data.column = column - dragColumnOffset;
+                    data.row = row - dragRowOffset;
+
+
+                    _updateCellsAndChildren();
+
+                  }
+                });
+              }},
             onWillAccept: (data) {
               if (_dragLocalPosition != null && _cellSize != null) {
                 int dragColumnOffset =
@@ -250,8 +318,108 @@ class _SpannableGridState extends State<SpannableGrid> {
                     }
                   }
                 }
-                return true;
+                final minColumn = (data.column) - 1;
+                final maxColumn = (data.column + data.columnSpan - 1) - 1;
+                final minRow = (data.row) - 1;
+                final maxRow = (data.row + data.rowSpan - 1) - 1;
+                //print(_dragLocalPosition);
+
+                // print((data .row +1).toString()+"x"+data.column.toString());
+                try {
+                  //if(_availableCells[row][column])
+                  print("row" + minRow.toString());
+                  print("column" + maxColumn.toString());
+
+                  ///for right
+                  //if(maxColumn==3 ){
+                  // if(maxColumn<3 && maxRow<4) {
+                  //
+                  // }
+                  // else if(maxColumn==3 && maxRow!=4 && maxRow!=0){
+                  //   ///left
+                  //   if(_availableCells[maxRow][maxColumn-1])
+                  //   {}
+                  //   ///bottom
+                  //   if (_availableCells[maxRow + 1][maxColumn]) {}
+                  //
+                  //   ///for top
+                  //   if (_availableCells[maxRow - 1][maxColumn]) {}
+                  //
+                  // }
+                  // else if(maxColumn==0 && maxRow!=4 && maxRow!=0 ){
+                  //   ///right
+                  //   if (_availableCells[maxRow][maxColumn + 1]) {}
+                  //   ///bottom
+                  //   if (_availableCells[maxRow + 1][maxColumn]) {}
+                  //
+                  //   ///for top
+                  //   if (_availableCells[maxRow - 1][maxColumn]) {}
+                  //
+                  // }
+                  // else if( maxRow==0)
+                  //   {
+                  //     ///right
+                  //     if (_availableCells[maxRow][maxColumn + 1]) {}
+                  //     ///bottom
+                  //     if (_availableCells[maxRow + 1][maxColumn]) {}
+                  //
+                  //   }
+                  // else if(maxRow==4)
+                  //   {
+                  //
+                  //   }
+                  // final minColumn = (data.column) - 1;
+                  final maxColumnp = (data.column + data.columnSpan - 1) ;
+                  //final minRowp = (data.row) - 1;
+                  final maxRowp = (data.row + data.rowSpan - 1) ;
+                  SpannableGrid.row = maxRowp;
+                  SpannableGrid.column = maxColumnp;
+                  return true;
+                  // if (maxColumn != 3) if (_availableCells[maxRow]
+                  //     [maxColumn + 1]) {
+                  //   print("right");
+                  //   print(_availableCells);
+                  //
+                  //   return true;
+                  // }
+                  // if (maxColumn != 0)
+                  //
+                  // ///for left
+                  // if (_availableCells[maxRow][maxColumn - 1]) {
+                  //   print("left");
+                  //   return true;
+                  // }
+                  // if (maxRow != 4)
+                  //
+                  // ///for bottom
+                  // if (_availableCells[maxRow + 1][maxColumn]) {
+                  //   print("bottom");
+                  //   return true;
+                  // }
+                  //
+                  // ///for top
+                  // ///
+                  // if (maxRow != 0) if (_availableCells[maxRow - 1][maxColumn]) {
+                  //   print("top");
+                  //   return true;
+                  // }
+                  // print(_availableCells[maxRow][maxColumn]);
+                  //
+                  // // return true;
+
+                } catch (e) {
+                  print(e);
+                  return false;
+                } // print(chk
+                // );
+                /// return _canMoveNearby(data);
+
+                //return true;
               }
+
+              //else{
+              // return false;
+              //}
               return false;
             },
           ),
@@ -261,6 +429,8 @@ class _SpannableGridState extends State<SpannableGrid> {
   }
 
   void _addContentCells() {
+
+    // print("add con: "+widget.cells[4].column.toString());
     for (SpannableGridCellData cell in widget.cells) {
       _cells[cell.id] = cell;
     }
@@ -277,7 +447,12 @@ class _SpannableGridState extends State<SpannableGrid> {
         canMove: widget.editingStrategy.moveOnlyToNearby
             ? _canMoveNearby(cell)
             : true,
-        onDragStarted: (localPosition) => _dragLocalPosition = localPosition,
+        onDragStarted: (localPosition) {
+          print(localPosition.dx.toString()+":"+localPosition.dy.toString());
+          print(cell.column);
+
+          _dragLocalPosition = localPosition;
+        },
         onEnterEditing: () => _onEnterEditing(cell),
         onExitEditing: _onExitEditing,
         size: _cellSize == null
@@ -329,7 +504,9 @@ class _SpannableGridState extends State<SpannableGrid> {
           break;
         }
       }
-      if (sideResult) return true;
+      if (sideResult) {
+        return true;
+      }
     }
     // Bottom
     if (cell.row + cell.rowSpan - 1 < widget.rows) {
@@ -340,7 +517,9 @@ class _SpannableGridState extends State<SpannableGrid> {
           break;
         }
       }
-      if (sideResult) return true;
+      if (sideResult) {
+        return true;
+      }
     }
     // Left
     if (cell.column > 1) {
@@ -351,7 +530,9 @@ class _SpannableGridState extends State<SpannableGrid> {
           break;
         }
       }
-      if (sideResult) return true;
+      if (sideResult) {
+        return true;
+      }
     }
     // Right
     if (cell.column + cell.columnSpan - 1 < widget.columns) {
@@ -362,7 +543,9 @@ class _SpannableGridState extends State<SpannableGrid> {
           break;
         }
       }
-      if (sideResult) return true;
+      if (sideResult) {
+        return true;
+      }
     }
     return false;
   }
