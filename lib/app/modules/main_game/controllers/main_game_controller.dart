@@ -9,9 +9,14 @@ import 'package:soundpool/soundpool.dart';
 
 class MainGameController extends GetxController {
   List<int> data = List.generate(20, (index) => index).obs;
-  List<SpannableGridCellData>? initalCellsData = [];
+  List<SpannableGridCellData>? initialCellsData = [];
 
-  static const String value = "assets/lotties/wolf_character1.json";
+  // List<SpannableGridCellData> initialCellsData = <SpannableGridCellData>[].obs;
+
+  final playerName = "Zoraiz".obs;
+  final steps = 0.obs;
+  final isRefreshData = false.obs;
+
   final GlobalKey _globalKey1 = GlobalKey();
   final GlobalKey _globalKey2 = GlobalKey();
   final GlobalKey _globalKey3 = GlobalKey();
@@ -28,8 +33,9 @@ class MainGameController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    intiMovingSound();
-    initalCellsData = getCells();
+
+    initData();
+    initialCellsData = getCells();
   }
 
   @override
@@ -39,6 +45,30 @@ class MainGameController extends GetxController {
 
   @override
   void onClose() {}
+
+  // _shuffle method
+  void shuffle() {
+    Get.toNamed(Routes.LEADER_BOARD);
+    // data = List.generate(20, (index) => index);
+  }
+
+  Soundpool pool = Soundpool.fromOptions(/*options: StreamType.notification*/);
+  int? soundId;
+
+  initData() async {
+    if (Get.arguments != null) {
+      playerName.value = Get.arguments['playerName'];
+    }
+    soundId = await rootBundle
+        .load("assets/music/slide_sound.mp3")
+        .then((ByteData soundData) {
+      return pool.load(soundData);
+    });
+  }
+
+  varIncrementStep() {
+    steps.value++;
+  }
 
   List<SpannableGridCellData> getCells() {
     final result = <SpannableGridCellData>[];
@@ -54,7 +84,7 @@ class MainGameController extends GetxController {
               cardImage: "assets/images/two_by_one_card1.png",
               isShowCardImage: true),
           child: Lottie.asset(
-            value,
+            "assets/lotties/wolf_character1.json",
             key: _globalKey1,
             fit: BoxFit.fill,
             repeat: true,
@@ -188,22 +218,5 @@ class MainGameController extends GetxController {
       ),
     );
     return result;
-  }
-
-  // _shuffle method
-  void shuffle() {
-    Get.toNamed(Routes.LEADER_BOARD);
-    // data = List.generate(20, (index) => index);
-  }
-
-  Soundpool pool = Soundpool.fromOptions(/*options: StreamType.notification*/);
-  int? soundId;
-
-  intiMovingSound() async {
-    soundId = await rootBundle
-        .load("assets/music/slide_sound.mp3")
-        .then((ByteData soundData) {
-      return pool.load(soundData);
-    });
   }
 }

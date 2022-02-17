@@ -26,7 +26,7 @@ class MainGameView2 extends GetView<MainGameController> {
                   ),
                   showGrid: true,
                   rows: 5,
-                  cells: controller.initalCellsData!,
+                  cells: controller.initialCellsData!,
                   /* emptyCellView: Container(
                     height: 50,
                     width: 50,

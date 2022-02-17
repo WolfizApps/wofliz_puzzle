@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class MyUtils {
@@ -56,5 +57,16 @@ class MyUtils {
             color: Colors.transparent,
             boxShadow: [myCardShadow()],
           );
+  }
+
+  static makeScreenResponsive(BuildContext context){
+    ScreenUtil.init(
+        BoxConstraints(
+            maxWidth: MediaQuery.of(context).size.width,
+            maxHeight: MediaQuery.of(context).size.height),
+        designSize: Size(457, 812),
+        context: context,
+        minTextAdapt: true,
+        orientation: Orientation.portrait);
   }
 }
