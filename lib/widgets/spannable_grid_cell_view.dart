@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:puzzle_game/widgets/spannable_grid.dart';
 
 import 'spannable_grid_cell_data.dart';
 import 'spannable_grid_options.dart';
@@ -75,10 +77,12 @@ class SpannableGridCellView extends StatelessWidget {
         }
         result = Draggable<SpannableGridCellData>(
           child: result,
+
           maxSimultaneousDrags: 1,
           feedback: SizedBox(
             width: size.width,
             height: size.height,
+
             child: result,
           ),
           childWhenDragging: const SizedBox.shrink(),

@@ -31,36 +31,36 @@ class RegisterController extends GetxController {
   }
 
   register() async {
-    // if (emailController.text == "") {
-    //   MyUtils.showToast("Please enter email");
-    // } else if (passwordController.text == "") {
-    //   MyUtils.showToast("Please enter password");
-    // } else if (passwordController.text != confirmPasswordController.text) {
-    //   MyUtils.showToast("Both passwords are not matched");
-    // } else {
-    //   try {
-    //     print(emailController.text);
-    //     var credenitals = await FirebaseAuth.instance
-    //         .createUserWithEmailAndPassword(
-    //             email: emailController.text, password: passwordController.text);
-    //
-    //     if (credenitals.user!.uid != null) {
-    //       // MyUtils.showToast("User registered successfully.");
-    //       MyStorage.writeIsUserLoggedIn(true);
-    //       MyStorage.writeUserEmail(emailController.text);
-    //       MyStorage.writeUserPassword(passwordController.text);
-    //       Get.offNamed(Routes.CHOOSE_CHARACTER);
-    //     } else {
-    //       MyUtils.showToast("User not registered.");
-    //     }
-    //   } catch (exp) {
-    //     MyUtils.showToast(exp.toString());
-    //   }
-    // }
-    Get.to(LeaderBoardView());
+    if (emailController.text == "") {
+      MyUtils.showToast("Please enter email");
+    } else if (passwordController.text == "") {
+      MyUtils.showToast("Please enter password");
+    } else if (passwordController.text != confirmPasswordController.text) {
+      MyUtils.showToast("Both passwords are not matched");
+    } else {
+      try {
+        print(emailController.text);
+        var credenitals = await FirebaseAuth.instance
+            .createUserWithEmailAndPassword(
+                email: emailController.text, password: passwordController.text);
+
+        if (credenitals.user!.uid != null) {
+          // MyUtils.showToast("User registered successfully.");
+          MyStorage.writeIsUserLoggedIn(true);
+          MyStorage.writeUserEmail(emailController.text);
+          MyStorage.writeUserPassword(passwordController.text);
+          Get.offNamed(Routes.CHOOSE_CHARACTER);
+        } else {
+          MyUtils.showToast("User not registered.");
+        }
+      } catch (exp) {
+        MyUtils.showToast(exp.toString());
+      }
+    }
+   //Get.toNamed(Routes.LEADER_BOARD);
   }
 
   playAsaGuest() {
-    Get.offAndToNamed(Routes.CHOOSE_CHARACTER);
+    Get.toNamed(Routes.CHOOSE_CHARACTER);
   }
 }

@@ -11,7 +11,7 @@ class LeaderBoardView extends GetView<LeaderBoardController> {
 
   @override
   Widget build(BuildContext context) {
-    LeaderBoardController controller=Get.put(LeaderBoardController());
+   // LeaderBoardController controller=Get.put(LeaderBoardController());
 
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
         overlays: [SystemUiOverlay.bottom]);
@@ -107,6 +107,7 @@ class LeaderBoardView extends GetView<LeaderBoardController> {
   }
 
   willpop() {
+    Get.back();
     controller.list.clear();
   }
 }

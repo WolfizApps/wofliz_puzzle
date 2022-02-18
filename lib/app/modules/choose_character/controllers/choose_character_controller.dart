@@ -37,7 +37,7 @@ class ChooseCharacterController extends GetxController {
       MyUtils.showToast("Please enter Player Name");
     } else {
       // MyUtils.showToast("Your game is about to start");
-      Get.offNamed(Routes.MAIN_GAME);
+      Get.toNamed(Routes.MAIN_GAME);
     }
 
     print("Play as a guest is clicked");

@@ -38,6 +38,8 @@ import 'spannable_grid_options.dart';
 /// - [SpannableGridStyle]
 /// - [SpannableGridSize]
 ///
+///
+ String? direction;
 class SpannableGrid extends StatefulWidget {
   static SpannableGridCellData? chk;
   static int? right;
@@ -505,6 +507,7 @@ class _SpannableGridState extends State<SpannableGrid> {
         }
       }
       if (sideResult) {
+        direction="verticle";
         return true;
       }
     }
@@ -518,6 +521,7 @@ class _SpannableGridState extends State<SpannableGrid> {
         }
       }
       if (sideResult) {
+        direction="verticle";
         return true;
       }
     }
@@ -531,6 +535,7 @@ class _SpannableGridState extends State<SpannableGrid> {
         }
       }
       if (sideResult) {
+        direction="horizontal";
         return true;
       }
     }
@@ -544,6 +549,7 @@ class _SpannableGridState extends State<SpannableGrid> {
         }
       }
       if (sideResult) {
+        direction="horizontal";
         return true;
       }
     }

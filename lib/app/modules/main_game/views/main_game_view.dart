@@ -8,6 +8,7 @@ import 'package:puzzle_game/widgets/test_widgets.dart';
 import '../controllers/main_game_controller.dart';
 
 class MainGameView extends GetView<MainGameController> {
+  //MainGameController controller=Get.put(MainGameController());
   @override
   Widget build(BuildContext context) {
     ScreenUtil.init(

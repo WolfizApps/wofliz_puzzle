@@ -8,10 +8,9 @@ import '../controllers/register_controller.dart';
 class RegisterView extends GetView<RegisterController> {
   @override
   Widget build(BuildContext context) {
-    RegisterController controller= Get.put(RegisterController());
+
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
         overlays: [SystemUiOverlay.bottom]);
-    //Set the fit size (fill in the screen size of the device in the design) If the design is based on the size of the 360*690(dp)
     ScreenUtil.init(
         BoxConstraints(
             maxWidth: MediaQuery.of(context).size.width,
@@ -154,7 +153,7 @@ class RegisterView extends GetView<RegisterController> {
                                   keyboardType: TextInputType.text,
                                   obscureText: true,
                                   controller:
-                                      controller.confirmPasswordController,
+                                  controller.confirmPasswordController,
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 22,
@@ -212,18 +211,13 @@ class RegisterView extends GetView<RegisterController> {
                               child: InkWell(
                                 onTap: controller.register,
                                 child: Container(
-                                 // width: 238.w,
-                                  //height: .h,
-                                   //padding: EdgeInsets.only(left: 70.w, right: 70.w),
                                   margin: EdgeInsets.only(left: 170.w, right: 170.w),
                                   child: Image.asset(
                                     "assets/images/register_btn.png",
                                     fit: BoxFit.fill,
                                     width: 238,
-                                   height: 76.h,
+                                    height: 76.h,
 
-                                    /* height: 76.h,
-                                    width: 238.w,*/
                                   ),
                                 ),
                               ),

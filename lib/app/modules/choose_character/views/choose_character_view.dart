@@ -9,7 +9,7 @@ import '../controllers/choose_character_controller.dart';
 class ChooseCharacterView extends GetView<ChooseCharacterController> {
   @override
   Widget build(BuildContext context) {
-    ChooseCharacterController controller=Get.put(ChooseCharacterController());
+   // ChooseCharacterController controller=Get.put(ChooseCharacterController());
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
         overlays: [SystemUiOverlay.bottom]);
     ScreenUtil.init(
@@ -198,7 +198,8 @@ class ChooseCharacterView extends GetView<ChooseCharacterController> {
                                     fontFamily: "Babybo"),
                                 decoration: InputDecoration(
                                     border: InputBorder.none,
-                                    hintText: "Email",
+                                    hintText:
+                                        "name",
                                     hintStyle: TextStyle(
                                         color: Color(0XFF272B3C),
                                         fontSize: 22,
