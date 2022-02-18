@@ -4,14 +4,40 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:puzzle_game/app/routes/app_pages.dart';
 import 'package:puzzle_game/utils/my_storage.dart';
-
+import 'dart:io' show Platform;
+import 'package:flutter/foundation.dart' show kIsWeb;
+import 'package:firebase_core/firebase_core.dart';
 main() async {
   /*SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     statusBarColor: Colors.transparent,
   ));
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge,overlays: []);*/
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+
+  if(kIsWeb || Platform.isAndroid || Platform.isIOS) {
+    await Firebase.initializeApp();
+     }
+  else{
+    await Firebase.initializeApp(
+        options: const FirebaseOptions(
+            apiKey: "AIzaSyAu2LViM3xSRMbW05T-i71fas0BS5439Uk",
+            appId: "1:293222509278:android:40fddbc6b49084cf91704f",
+            messagingSenderId: '293222509278',
+            projectId: "puzzle-game-1dc21"
+        )
+    );
+
+  }
+  // await Firebase.initializeApp(
+  //     name: 'puzzle_game',
+  //     options: const FirebaseOptions(
+  //       apiKey: "AIzaSyBWZYXXC87DHcP6jBfX-op2Q2-vWG4Mdfc",
+  //       appId: "1:293222509278:web:f6587a04ce2c3e8891704f",
+  //       messagingSenderId: "293222509278",
+  //       projectId:"puzzle-game-1dc21",
+  //     )
+  // );
+
   await GetStorage.init();
   runApp(const MyApp());
 }

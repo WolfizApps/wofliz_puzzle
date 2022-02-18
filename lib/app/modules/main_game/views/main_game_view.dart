@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:puzzle_game/widgets/spannable_grid.dart';
 import 'package:puzzle_game/widgets/spannable_grid_options.dart';
@@ -9,6 +10,14 @@ import '../controllers/main_game_controller.dart';
 class MainGameView extends GetView<MainGameController> {
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(
+        BoxConstraints(
+            maxWidth: MediaQuery.of(context).size.width,
+            maxHeight: MediaQuery.of(context).size.height),
+        designSize: Size(457, 812),
+        context: context,
+        minTextAdapt: true,
+        orientation: Orientation.portrait);
     // var w1 = Recipe(/*[],*/ 1, 1.0);
     return Scaffold(
       body: Center(
@@ -22,8 +31,8 @@ class MainGameView extends GetView<MainGameController> {
                   ),
                   fit: BoxFit.cover)),
           child: Padding(
-            padding: const EdgeInsets.only(
-                top: 80.0, bottom: 110, left: 16, right: 16),
+            padding:  EdgeInsets.only(
+                top: 80.0.h, bottom: 110.h, left: 16.w, right: 16.w),
             child: Container(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -54,12 +63,12 @@ class MainGameView extends GetView<MainGameController> {
                       },
                     ),
                   ),
-                  ElevatedButton(
+                /*  ElevatedButton(
                     onPressed: () async {
                       await controller.pool.play(controller.soundId!);
                     },
                     child: Text('Shuffle'),
-                  ),
+                  ),*/
 
                   /*Container(
                     height: 150,

@@ -16,6 +16,8 @@ dependencies:
   slide_to_act: ^2.0.1
   fluttertoast: ^8.0.8
   flutter_screenutil:
+  firebase_core_desktop: ^0.1.1-dev.1
+  firebase_auth_desktop: ^0.1.1-dev.0
   # spannable_grid: ^0.3.0
   lottie: ^1.2.1
   firebase_core: ^1.12.0
@@ -54,5 +56,6 @@ flutter:
     - assets/lotties/
     - assets/lotties/images/
     - assets/fonts/
+    - assets/gif/
     - assets/music/
 

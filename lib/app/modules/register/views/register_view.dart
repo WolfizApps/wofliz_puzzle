@@ -8,6 +8,7 @@ import '../controllers/register_controller.dart';
 class RegisterView extends GetView<RegisterController> {
   @override
   Widget build(BuildContext context) {
+    RegisterController controller= Get.put(RegisterController());
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
         overlays: [SystemUiOverlay.bottom]);
     //Set the fit size (fill in the screen size of the device in the design) If the design is based on the size of the 360*690(dp)
