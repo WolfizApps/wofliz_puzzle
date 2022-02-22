@@ -21,6 +21,7 @@ dependencies:
   # spannable_grid: ^0.3.0
   lottie: ^1.2.1
   firebase_core: ^1.12.0
+
   firebase_auth: ^3.3.6
   cloud_firestore: ^3.1.7
   flutter_staggered_animations: ^1.0.0

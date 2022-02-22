@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import 'package:puzzle_game/app/routes/app_pages.dart';
 import 'package:puzzle_game/utils/my_utils.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:puzzle_game/widgets/spannable_grid_cell_data.dart';
 import 'package:soundpool/soundpool.dart';
 
@@ -103,14 +104,23 @@ class MainGameController extends GetxController {
         columnSpan: 2,
         rowSpan: 1,
         id: "4",
-        child: Container(
-          decoration: MyUtils.carBoxDecoration(
-              cardImage: "assets/images/one_by_two_card1.png"),
+        child: Focus(
+          autofocus: true,
+          onKey:(FocusNode node, RawKeyEvent event) {
+            return (event.logicalKey == LogicalKeyboardKey.arrowLeft)
+                ? KeyEventResult.handled
+                : KeyEventResult.ignored;
+          },
+          child: Container(
+            decoration: MyUtils.carBoxDecoration(
+                cardImage: "assets/images/one_by_two_card1.png"),
+          ),
         ),
       ),
     );
     result.add(
       SpannableGridCellData(
+
         column: 1,
         row: 4,
         columnSpan: 1,
