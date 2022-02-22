@@ -7,6 +7,7 @@ class MyStorage {
   static final String userName = 'user_name';
   static final String totalCount = 'total_count';
   static final String isUserLoggedIn = 'is_user_logged_in';
+  static final String isInstructionShow='true';
 
   ////userEmail
   static writeUserEmail(String value) {
@@ -69,6 +70,10 @@ class MyStorage {
     storage.write(isUserLoggedIn, value);
   }
 
+  static writeIsInstructionShow(bool value)
+  {
+    storage.write(isInstructionShow, value);
+  }
   static writeIsUserLoggedInIfNull(bool value) {
     storage.writeIfNull(isUserLoggedIn, value);
   }
@@ -76,5 +81,10 @@ class MyStorage {
   static bool readIsUserLoggedIn() {
     writeIsUserLoggedInIfNull(false);
     return storage.read(isUserLoggedIn);
+  }
+  static bool readIsInstructionShow(){
+    //writeIsInstructionShow(false);
+    return storage.read(isInstructionShow);
+
   }
 }

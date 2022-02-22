@@ -83,7 +83,7 @@ class SpannableGridCellView extends StatelessWidget {
         }
         result = Draggable<SpannableGridCellData>(
           child: result,
-       //   axis: decideaxis,
+           axis: decideaxis,
           maxSimultaneousDrags: 1,
           feedback: GestureDetector(
             onHorizontalDragUpdate: (details){
@@ -109,6 +109,7 @@ class SpannableGridCellView extends StatelessWidget {
           onDragCompleted: () {
         //    result=SlideAnimation(child: result);
             decideaxis=null;
+            direction="";
             print(data.id.toString());
             if (editingStrategy.immediate) {
               onExitEditing();

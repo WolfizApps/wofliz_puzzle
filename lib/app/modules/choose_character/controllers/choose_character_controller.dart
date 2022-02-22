@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:puzzle_game/app/routes/app_pages.dart';
 import 'package:puzzle_game/utils/my_utils.dart';
 
+import '../../main_game/views/cut_scene.dart';
+
 enum SelectedCharacter { no, first, second }
 
 class ChooseCharacterController extends GetxController {
@@ -37,7 +39,8 @@ class ChooseCharacterController extends GetxController {
       MyUtils.showToast("Please enter Player Name");
     } else {
       // MyUtils.showToast("Your game is about to start");
-      Get.toNamed(Routes.MAIN_GAME);
+     // Get.toNamed(Routes.MAIN_GAME);
+      Get.to(VideoApp());
     }
 
     print("Play as a guest is clicked");

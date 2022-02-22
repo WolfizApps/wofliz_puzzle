@@ -5,6 +5,8 @@ import 'package:puzzle_game/app/routes/app_pages.dart';
 import 'package:puzzle_game/utils/my_storage.dart';
 import 'package:puzzle_game/utils/my_utils.dart';
 
+import '../../main_game/views/cut_scene.dart';
+
 class LoginController extends GetxController {
   //TODO: Implement LoginController
 
@@ -57,7 +59,8 @@ class LoginController extends GetxController {
 
   playAsaGuest() {
     print("Play as a guest is clicked");
-    Get.offNamed(Routes.CHOOSE_CHARACTER);
+  //  Get.offNamed(Routes.CHOOSE_CHARACTER);
+    Get.to(VideoApp());
   }
 
   goToForgotPassword() {

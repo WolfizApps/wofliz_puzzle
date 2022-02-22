@@ -55,12 +55,17 @@ class MainGameView extends GetView<MainGameController> {
                       cells:
                           /*controller.initalCellsData!*/ controller.getCells(),
                       onCellChanged: (cell) {
-                        print("Id: " +
-                            cell!.id.toString() +
-                            "Column: " +
-                            cell.column.toString() +
-                            ": Rows" +
-                            cell.row.toString());
+                            if(cell?.id=="1") {
+                              if (cell?.column == 2 && cell?.row == 4) {
+                                print("win");
+                              }
+                            }
+                        // print("Id: " +
+                        //     cell!.id.toString() +
+                        //     "Column: " +
+                        //     cell.column.toString() +
+                        //     ": Rows" +
+                        //     cell.row.toString());
                       },
                     ),
                   ),

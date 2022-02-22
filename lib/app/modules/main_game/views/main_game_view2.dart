@@ -32,6 +32,7 @@ class MainGameView2 extends GetView<MainGameController> {
                     width: 50,
                   ),*/
                   onCellChanged: (cell) {
+
                     print("Id: " +
                         cell!.id.toString() +
                         "Column: " +

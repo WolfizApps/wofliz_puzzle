@@ -21,6 +21,7 @@ dependencies:
   # spannable_grid: ^0.3.0
   lottie: ^1.2.1
   firebase_core: ^1.12.0
+  video_player: ^2.2.18
 
   firebase_auth: ^3.3.6
   cloud_firestore: ^3.1.7
@@ -59,4 +60,5 @@ flutter:
     - assets/fonts/
     - assets/gif/
     - assets/music/
+    - assets/videos/
 

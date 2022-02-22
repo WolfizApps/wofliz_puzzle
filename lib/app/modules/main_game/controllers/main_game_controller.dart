@@ -104,12 +104,15 @@ class MainGameController extends GetxController {
         columnSpan: 2,
         rowSpan: 1,
         id: "4",
-        child: Focus(
+        child: RawKeyboardListener(
           autofocus: true,
-          onKey:(FocusNode node, RawKeyEvent event) {
-            return (event.logicalKey == LogicalKeyboardKey.arrowLeft)
-                ? KeyEventResult.handled
-                : KeyEventResult.ignored;
+          focusNode: FocusNode(),
+          onKey: (value){
+            if(value.physicalKey.debugName=="Arrow Right")
+              {
+
+              }
+
           },
           child: Container(
             decoration: MyUtils.carBoxDecoration(
