@@ -204,74 +204,87 @@ class MainGameView extends GetView<MainGameController> {
                       ),
                     ),
                     Expanded(
-                      child: Game(),
-                    ),
-                    Visibility(
-                      visible: true,
-                      child: Row(
+                      child: Stack(
                         children: [
-                          Container(
-                            padding: EdgeInsets.only(top: 15, bottom: 15),
-                            height: 140.h,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Image.asset(
-                                  "assets/images/full_screen_icon.png",
-                                  height: 53.w,
-                                  width: 53.w,
-                                ),
-                                Spacer(),
-                                Padding(
-                                  padding: EdgeInsets.only(top: 10.h),
-                                  child: Image.asset(
-                                    "assets/images/pause_icon.png",
-                                    height: 53.w,
-                                    width: 53.w,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Spacer(),
-                          Container(
-                            height: 130.h,
-                            child: Image.asset(
-                              "assets/images/way_out_img.png",
-                              height: 140.w,
-                              width: 98.w,
-                              fit: BoxFit.fill,
-                            ),
-                          ),
-                          Spacer(),
-                          Container(
-                            padding: EdgeInsets.only(top: 15, bottom: 15),
-                            height: 140.h,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Image.asset(
-                                  "assets/images/leader_board_icon.png",
-                                  height: 53.w,
-                                  width: 53.w,
-                                ),
-                                Spacer(),
-                                Padding(
-                                  padding: EdgeInsets.only(top: 10.h),
-                                  child: InkWell(
-                                    onTap: controller.resetGame,
-                                    child: Image.asset(
-                                      "assets/images/reset_game_icon.png",
-                                      height: 53.w,
-                                      width: 53.w,
+                          Align(
+                            alignment: Alignment.bottomCenter,
+                            child: Visibility(
+                              visible: true,
+                              child: Row(
+                                children: [
+                                  Container(
+                                    padding:
+                                        EdgeInsets.only(top: 15, bottom: 15),
+                                    height: 140.h,
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        Image.asset(
+                                          "assets/images/full_screen_icon.png",
+                                          height: 53.w,
+                                          width: 53.w,
+                                        ),
+                                        Spacer(),
+                                        Padding(
+                                          padding: EdgeInsets.only(top: 10.h),
+                                          child: Image.asset(
+                                            "assets/images/pause_icon.png",
+                                            height: 53.w,
+                                            width: 53.w,
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
-                                ),
-                              ],
+                                  Spacer(),
+                                  Container(
+                                    height: 130.h,
+                                    child: Image.asset(
+                                      "assets/images/way_out_img.png",
+                                      height: 140.w,
+                                      width: 98.w,
+                                      fit: BoxFit.fill,
+                                    ),
+                                  ),
+                                  Spacer(),
+                                  Container(
+                                    padding:
+                                        EdgeInsets.only(top: 15, bottom: 15),
+                                    height: 140.h,
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        Image.asset(
+                                          "assets/images/leader_board_icon.png",
+                                          height: 53.w,
+                                          width: 53.w,
+                                        ),
+                                        Spacer(),
+                                        Padding(
+                                          padding: EdgeInsets.only(top: 10.h),
+                                          child: InkWell(
+                                            onTap: controller.resetGame,
+                                            child: Image.asset(
+                                              "assets/images/reset_game_icon.png",
+                                              height: 53.w,
+                                              width: 53.w,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
+                          Game(),
                         ],
                       ),
                     ),

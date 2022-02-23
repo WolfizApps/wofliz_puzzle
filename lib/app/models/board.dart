@@ -1,3 +1,6 @@
+import 'dart:convert';
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:puzzle_game/app/models/hero_block.dart';
@@ -41,6 +44,49 @@ class Board {
     }
 
     _checkIfCompleted();
+  }
+
+  String boardToString() {
+    final boardInJson = {};
+    boardInJson['coloumns'] = coloumns;
+    boardInJson['rows'] = rows;
+    boardInJson['blocks'] = [
+      for (final singleBlock in blocks)
+        {
+          "lottie_path": singleBlock.lottiePath,
+          "location": [
+            for (final loc in singleBlock.location)
+              {
+                "row_index": loc.rowIndex,
+                "col_index": loc.columnIndex,
+              }
+          ],
+        }
+    ];
+
+    return boardInJson.toString();
+  }
+
+  static Board fromString(String data, {required VoidCallback onWin}) {
+    final jsonData = json.decode(data);
+    return Board(
+      onWin: onWin,
+      coloumns: jsonData['coloumns'],
+      rows: jsonData['rows'],
+      blocks: <Block>[
+        for (final blockJson in jsonData['blocks'] as List<Map>)
+          Block(
+            lottiePath: blockJson['lottie_path'],
+            location: [
+              for (final locJson in blockJson['location'] as List<Map>)
+                Location(
+                  rowIndex: locJson['row_index'],
+                  columnIndex: locJson['col_index'],
+                ),
+            ],
+          ),
+      ].obs,
+    );
   }
 
   bool moveBlock({required Direction direction, required Block block}) {
@@ -168,9 +214,13 @@ class Board {
 
   bool canMoveDown({required Block block}) {
     bool spaceAvailable = true;
-
     var blockLastRowIndex = block.endingRowIndex;
-
+    var isNotHeroBlock = block.runtimeType != HeroBlock;
+    var wantsToMoveToWinBlock =
+        (blockLastRowIndex + 1 == 5) || (blockLastRowIndex + 1 == 6);
+    if ((isNotHeroBlock && wantsToMoveToWinBlock)) {
+      return false;
+    }
     if (blockLastRowIndex == (rows - 1)) {
       return false;
     }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
+import 'package:puzzle_game/app/models/solid_block.dart';
 import 'package:puzzle_game/app/modules/main_game/controllers/main_game_controller.dart';
 
 import '../../../../models/block.dart';
@@ -37,23 +38,25 @@ class BlockWidget extends StatelessWidget {
         onHorizontalDragUpdate: (dragUpdateDetails) {
           controller.dragUpdate(block, dragUpdateDetails, Axis.horizontal);
         },
-        child: Container(
-          height: block.height * controller.blockHeight,
-          width: block.width * controller.blockWidth,
-          child: Column(
-            children: [
-              Expanded(
-                child: Container(
-                  margin: EdgeInsets.symmetric(vertical: 2.h),
-                  child: Lottie.asset(
-                    'assets/lotties/${block.lottiePath}.json',
-                    fit: BoxFit.cover,
-                  ),
+        child: block.runtimeType == SolidBlock
+            ? SizedBox()
+            : Container(
+                height: block.height * controller.blockHeight,
+                width: block.width * controller.blockWidth,
+                child: Column(
+                  children: [
+                    Expanded(
+                      child: Container(
+                        margin: EdgeInsets.symmetric(vertical: 2.h),
+                        child: Lottie.asset(
+                          'assets/lotties/${block.lottiePath}.json',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
-            ],
-          ),
-        ),
       ),
     );
   }
