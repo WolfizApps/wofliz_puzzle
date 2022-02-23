@@ -68,6 +68,8 @@ class Board {
   bool _moveBlockRight(Block block) {
     final canMove = _canMoveRight(block);
     if (canMove) {
+      block.setOldLocation();
+
       for (final loc in block.location) {
         loc.columnIndex++;
       }
@@ -99,6 +101,8 @@ class Board {
   bool _moveBlockLeft(Block block) {
     final canMove = _canMoveLeft(block);
     if (canMove) {
+      block.setOldLocation();
+
       for (final loc in block.location) {
         loc.columnIndex--;
       }
@@ -130,10 +134,13 @@ class Board {
   bool _moveBlockDown(Block block) {
     final canMove = canMoveDown(block: block);
     if (canMove) {
+      block.setOldLocation();
+
       for (final loc in block.location) {
         loc.rowIndex++;
       }
     }
+
     return canMove;
   }
 
@@ -158,6 +165,7 @@ class Board {
   bool _moveBlockUp(Block block) {
     final canMove = canMoveUp(block: block);
     if (canMove) {
+      block.setOldLocation();
       for (final loc in block.location) {
         loc.rowIndex--;
       }

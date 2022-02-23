@@ -23,7 +23,10 @@ class MainGameController extends GetxController {
   Rx<Board> board = Rx<Board>(levelOneBoard);
 
   void dragUpdate(
-      Block block, DragUpdateDetails dragUpdateDetails, Axis initialAxis) {
+    Block block,
+    DragUpdateDetails dragUpdateDetails,
+    Axis initialAxis,
+  ) {
     if (blockMovingAxis != null) {
       return;
     }

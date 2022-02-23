@@ -6,68 +6,58 @@ import 'package:puzzle_game/app/modules/main_game/controllers/main_game_controll
 
 import '../../../../models/block.dart';
 
-class BlockWidget extends StatefulWidget {
+class BlockWidget extends StatelessWidget {
+  final controller = Get.find<MainGameController>();
+
   final Block block;
 
   BlockWidget(this.block);
 
-  @override
-  State<BlockWidget> createState() => _BlockWidgetState();
-}
+  double get positionTop => block.startingRowIndex * controller.blockHeight;
 
-class _BlockWidgetState extends State<BlockWidget>
-    with SingleTickerProviderStateMixin {
-  final controller = Get.find<MainGameController>();
+  double get oldPositionTop =>
+      block.oldStartingRowIndex * controller.blockHeight;
 
-  @override
-  void initState() {
-    super.initState();
-  }
+  double get positionLeft => block.startingColumnIndex * controller.blockWidth;
 
-  double positionTop(
-      {required Block block, required double blockW, required double blockH}) {
-    return block.startingRowIndex * blockH;
-  }
-
-  double positionLeft(
-      {required Block block, required double blockW, required double blockH}) {
-    return block.startingColumnIndex * blockW;
-  }
+  double get oldPositionLeft =>
+      block.oldStartingColumnIndex * controller.blockWidth;
 
   @override
   Widget build(BuildContext context) {
-    return Positioned(
-      top: positionTop(
-        block: widget.block,
-        blockW: controller.blockWidth,
-        blockH: controller.blockHeight,
-      ),
-      left: positionLeft(
-        block: widget.block,
-        blockW: controller.blockWidth,
-        blockH: controller.blockHeight,
-      ),
+    return AnimatedPositioned(
+      duration: Duration(milliseconds: 400),
+      top: positionTop,
+      left: positionLeft,
+      curve: Curves.fastOutSlowIn,
       child: GestureDetector(
         onVerticalDragEnd: (dragUpdateDetails) {
-          controller.dragEnded(widget.block);
+          controller.dragEnded(block);
         },
         onHorizontalDragEnd: (dragUpdateDetails) {
-          controller.dragEnded(widget.block);
+          controller.dragEnded(block);
         },
         onVerticalDragUpdate: (dragUpdateDetails) {
-          controller.dragUpdate(widget.block, dragUpdateDetails, Axis.vertical);
+          controller.dragUpdate(block, dragUpdateDetails, Axis.vertical);
         },
         onHorizontalDragUpdate: (dragUpdateDetails) {
-          controller.dragUpdate(
-              widget.block, dragUpdateDetails, Axis.horizontal);
+          controller.dragUpdate(block, dragUpdateDetails, Axis.horizontal);
         },
         child: Container(
-          padding: EdgeInsets.all(2.r),
-          height: widget.block.height * controller.blockHeight,
-          width: widget.block.width * controller.blockWidth,
-          child: Lottie.asset(
-            'assets/lotties/${widget.block.lottiePath}.json',
-            fit: BoxFit.cover,
+          height: block.height * controller.blockHeight,
+          width: block.width * controller.blockWidth,
+          child: Column(
+            children: [
+              Expanded(
+                child: Container(
+                  margin: EdgeInsets.symmetric(vertical: 2.h),
+                  child: Lottie.asset(
+                    'assets/lotties/${block.lottiePath}.json',
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       ),
