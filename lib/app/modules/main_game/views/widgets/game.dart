@@ -9,17 +9,13 @@ class Game extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(controller.board.blocks.first.startingColumnIndex);
-    print(controller.board.blocks.first.endingColumnIndex);
-    print(controller.board.blocks.first.startingRowIndex);
-    print(controller.board.blocks.first.endingRowIndex);
     return LayoutBuilder(builder: (_, BoxConstraints box) {
-      controller.blockHeight = box.maxHeight / controller.board.rows;
-      controller.blockWidth = box.maxWidth / controller.board.coloumns;
+      controller.blockHeight = box.maxHeight / controller.board.value.rows;
+      controller.blockWidth = box.maxWidth / controller.board.value.coloumns;
 
       return Obx(
         () => Stack(
-          children: controller.board.blocks
+          children: controller.board.value.blocks
               .map(
                 (block) => BlockWidget(block),
               )

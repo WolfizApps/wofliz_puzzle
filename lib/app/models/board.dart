@@ -8,12 +8,16 @@ class Board {
   final int coloumns;
   final int rows;
   final RxList<Block> blocks;
+  late final List<Block> initialSetup;
   List<List<_Space>> space = [];
 
   Board({required this.coloumns, required this.rows, required this.blocks}) {
     for (var i = 0; i < rows; i++) {
       space.add([for (var j = 0; j < coloumns; j++) _Space(true)]);
     }
+
+    // ignore: invalid_use_of_protected_member
+    initialSetup = blocks.value;
     _calculateSpace();
   }
 

@@ -261,19 +261,7 @@ class MainGameView extends GetView<MainGameController> {
                                 Padding(
                                   padding: EdgeInsets.only(top: 10.h),
                                   child: InkWell(
-                                    onTap: () {
-                                      /* controller.initialCellsData.clear();
-                                      controller.initialCellsData
-                                          .assignAll(controller.getCells());
-                                      controller.isRefreshData.value = true;
-                                      Future.delayed(
-                                          const Duration(milliseconds: 500),
-                                          () => controller.isRefreshData.value =
-                                              false);*/
-                                      /* controller
-                                          .update(controller.initialCellsData);
-                                      controller.refresh();*/
-                                    },
+                                    onTap: controller.resetGame,
                                     child: Image.asset(
                                       "assets/images/reset_game_icon.png",
                                       height: 53.w,

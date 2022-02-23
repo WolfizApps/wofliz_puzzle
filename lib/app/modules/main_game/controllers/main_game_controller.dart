@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:puzzle_game/app/models/board.dart';
 
 import '../../../data/level_one_board.dart';
 import '../../../models/block.dart';
@@ -19,7 +20,7 @@ class MainGameController extends GetxController {
   double blockHeight = 0.0;
   double blockWidth = 0.0;
 
-  final board = levelOneBoard;
+  Rx<Board> board = Rx<Board>(levelOneBoard);
 
   void dragUpdate(
       Block block, DragUpdateDetails dragUpdateDetails, Axis initialAxis) {
@@ -44,17 +45,22 @@ class MainGameController extends GetxController {
       }
     }
 
-    board.moveBlock(direction: dir, block: block);
+    board.value.moveBlock(direction: dir, block: block);
   }
 
   void dragEnded(Block block) {
     blockMovingAxis = null;
     block.draggingPosition = null;
-    board.blocks.refresh();
+    board.value.blocks.refresh();
+  }
+
+  void resetGame() {
+    board.value = levelOneBoard;
   }
 
   @override
   void onClose() {
-    board.blocks.close();
+    board.value.blocks.close();
+    board.close();
   }
 }
