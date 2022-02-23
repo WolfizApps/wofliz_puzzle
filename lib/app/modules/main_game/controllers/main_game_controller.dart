@@ -45,7 +45,10 @@ class MainGameController extends GetxController {
       }
     }
 
-    board.value.moveBlock(direction: dir, block: block);
+    final didMove = board.value.moveBlock(direction: dir, block: block);
+    if (didMove) {
+      steps.value++;
+    }
   }
 
   void dragEnded(Block block) {
@@ -56,11 +59,13 @@ class MainGameController extends GetxController {
 
   void resetGame() {
     board.value = levelOneBoard;
+    steps.value = 0;
   }
 
   @override
   void onClose() {
     board.value.blocks.close();
     board.close();
+    steps.close();
   }
 }

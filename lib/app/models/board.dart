@@ -36,38 +36,43 @@ class Board {
     _checkIfCompleted();
   }
 
-  void moveBlock({required Direction direction, required Block block}) {
+  bool moveBlock({required Direction direction, required Block block}) {
+    bool didMove = false;
     switch (direction) {
       case Direction.top:
-        _moveBlockUp(block);
+        didMove = _moveBlockUp(block);
         break;
       case Direction.down:
-        _moveBlockDown(block);
+        didMove = _moveBlockDown(block);
         break;
       case Direction.left:
-        _moveBlockLeft(block);
+        didMove = _moveBlockLeft(block);
         break;
       case Direction.right:
-        _moveBlockRight(block);
+        didMove = _moveBlockRight(block);
         break;
       default:
+        didMove = false;
         break;
     }
 
     _calculateSpace();
     blocks.refresh();
+    return didMove;
   }
 
   void _checkIfCompleted() {
     //
   }
 
-  void _moveBlockRight(Block block) {
-    if (_canMoveRight(block)) {
+  bool _moveBlockRight(Block block) {
+    final canMove = _canMoveRight(block);
+    if (canMove) {
       for (final loc in block.location) {
         loc.columnIndex++;
       }
     }
+    return canMove;
   }
 
   bool _canMoveRight(Block block) {
@@ -91,12 +96,14 @@ class Board {
     return spaceAvailable;
   }
 
-  void _moveBlockLeft(Block block) {
-    if (_canMoveLeft(block)) {
+  bool _moveBlockLeft(Block block) {
+    final canMove = _canMoveLeft(block);
+    if (canMove) {
       for (final loc in block.location) {
         loc.columnIndex--;
       }
     }
+    return canMove;
   }
 
   bool _canMoveLeft(Block block) {
@@ -120,12 +127,14 @@ class Board {
     return spaceAvailable;
   }
 
-  void _moveBlockDown(Block block) {
-    if (canMoveDown(block: block)) {
+  bool _moveBlockDown(Block block) {
+    final canMove = canMoveDown(block: block);
+    if (canMove) {
       for (final loc in block.location) {
         loc.rowIndex++;
       }
     }
+    return canMove;
   }
 
   bool canMoveDown({required Block block}) {
@@ -146,12 +155,14 @@ class Board {
     return spaceAvailable;
   }
 
-  void _moveBlockUp(Block block) {
-    if (canMoveUp(block: block)) {
+  bool _moveBlockUp(Block block) {
+    final canMove = canMoveUp(block: block);
+    if (canMove) {
       for (final loc in block.location) {
         loc.rowIndex--;
       }
     }
+    return canMove;
   }
 
   bool canMoveUp({required Block block}) {
