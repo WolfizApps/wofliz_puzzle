@@ -4,10 +4,12 @@ import 'package:get/get_core/src/get_main.dart';
 
 import 'package:video_player/video_player.dart';
 import 'package:flutter/material.dart';
-
+import 'dart:io' show Platform;
+import 'package:flutter/foundation.dart' show kIsWeb;
 import '../../../../utils/my_storage.dart';
 import '../../../routes/app_pages.dart';
 import 'instructions.dart';
+import 'package:dart_vlc/dart_vlc.dart';
 
 class VideoApp extends StatefulWidget {
   @override
@@ -16,6 +18,8 @@ class VideoApp extends StatefulWidget {
 
 class _VideoAppState extends State<VideoApp> {
   VideoPlayerController? _controller;
+  Player? player;
+
 
   @override
   void initState() {
@@ -31,13 +35,18 @@ class _VideoAppState extends State<VideoApp> {
       }
     });
     super.initState();
-    _controller = VideoPlayerController.asset('assets/videos/cutscene.mp4')
-      ..initialize().then((_) {
-        // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
-        setState(() {
-          _controller!.play();
+    //if(kIsWeb || Platform.isAndroid || Platform.isIOS) {
+      _controller = VideoPlayerController.asset('assets/videos/cutscene.mp4')
+        ..initialize().then((_) {
+          // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
+          setState(() {
+            _controller!.play();
+          });
         });
-      });
+   // }
+   //  else{
+   //    player= Playlist(medias:
+   //  }
   }
 
   @override
@@ -45,20 +54,27 @@ class _VideoAppState extends State<VideoApp> {
     return MaterialApp(
       //   title: 'Video Demo',
       home: Scaffold(
-        body: Center(
-          child: _controller!.value.isInitialized
-              ? Container(
-                  height: MediaQuery.of(context).size.height,
-                  width: MediaQuery.of(context).size.width,
-                  //aspectRatio: _controller!.value.aspectRatio,
+        body: _controller!.value.isInitialized
+            ? Stack(
+          children: <Widget>[
+            SizedBox.expand(
+              child: FittedBox(
+                fit: BoxFit.fill,
+                child: SizedBox(
+                  width: _controller!.value.size.width ?? 0,
+                  height: _controller!.value.size.height ?? 0,
                   child: VideoPlayer(_controller!),
-                )
-              : Container(
-                  height: MediaQuery.of(context).size.height,
-                  width: MediaQuery.of(context).size.width,
-                  color: Colors.black,
                 ),
-        ),
+              ),
+            ),
+            //FURTHER IMPLEMENTATION
+          ],
+        )
+            : Container(
+                height: MediaQuery.of(context).size.height,
+                width: MediaQuery.of(context).size.width,
+                color: Colors.black,
+              ),
       ),
     );
   }

@@ -48,19 +48,26 @@ class _InstructionState extends State<Instruction> {
     return MaterialApp(
      // title: 'Video Demo',
       home: Scaffold(
-        body: Center(
-          child: _controller!.value.isInitialized
-              ? Container(
-            height: MediaQuery.of(context).size.height,
-            width: MediaQuery.of(context).size.width,
-            //aspectRatio: _controller!.value.aspectRatio,
-            child: VideoPlayer(_controller!),
-          )
-              : Container(
-               height: MediaQuery.of(context).size.height,
-            width: MediaQuery.of(context).size.width,
-            color: Colors.black,
-          ),
+        body: _controller!.value.isInitialized
+            ? Stack(
+          children: <Widget>[
+            SizedBox.expand(
+              child: FittedBox(
+                fit: BoxFit.fill,
+                child: SizedBox(
+                  width: _controller!.value.size.width ?? 0,
+                  height: _controller!.value.size.height ?? 0,
+                  child: VideoPlayer(_controller!),
+                ),
+              ),
+            ),
+            //FURTHER IMPLEMENTATION
+          ],
+        )
+            : Container(
+             height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
+          color: Colors.black,
         ),
 
       ),
