@@ -11,6 +11,7 @@ class MainGameController extends GetxController {
   @override
   void onInit() {
     super.onInit();
+    board = Rx<Board>(levelOneBoard(onWin: onWin));
   }
 
   var playerName = "Zoraiz".obs;
@@ -20,7 +21,7 @@ class MainGameController extends GetxController {
   double blockHeight = 0.0;
   double blockWidth = 0.0;
 
-  Rx<Board> board = Rx<Board>(levelOneBoard);
+  late Rx<Board> board;
 
   void dragUpdate(
     Block block,
@@ -59,8 +60,12 @@ class MainGameController extends GetxController {
   }
 
   void resetGame() {
-    board.value = levelOneBoard;
+    board.value = levelOneBoard(onWin: onWin);
     steps.value = 0;
+  }
+
+  void onWin() {
+    //
   }
 
   @override

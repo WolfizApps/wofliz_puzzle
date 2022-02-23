@@ -1,4 +1,6 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:puzzle_game/app/models/hero_block.dart';
 
 import '../modules/main_game/controllers/main_game_controller.dart';
 import 'block.dart';
@@ -6,12 +8,17 @@ import 'location.dart';
 
 class Board {
   final int coloumns;
+  final VoidCallback onWin;
   final int rows;
   final RxList<Block> blocks;
   late final List<Block> initialSetup;
   List<List<_Space>> space = [];
 
-  Board({required this.coloumns, required this.rows, required this.blocks}) {
+  Board(
+      {required this.coloumns,
+      required this.rows,
+      required this.blocks,
+      required this.onWin}) {
     for (var i = 0; i < rows; i++) {
       space.add([for (var j = 0; j < coloumns; j++) _Space(true)]);
     }
@@ -62,14 +69,33 @@ class Board {
   }
 
   void _checkIfCompleted() {
-    //
+    final heroBlock = blocks.firstWhere(
+      (element) => element.runtimeType == HeroBlock,
+    );
+
+    bool hasCompleted = true;
+
+    for (final loc in heroBlock.location) {
+      final hasCompletedThisLoc = (heroBlock as HeroBlock).solution.any(
+            (element) =>
+                element.rowIndex == loc.rowIndex &&
+                element.columnIndex == loc.columnIndex,
+          );
+      hasCompleted = hasCompletedThisLoc;
+
+      if (!hasCompletedThisLoc) {
+        break;
+      }
+    }
+
+    if (hasCompleted) {
+      onWin();
+    }
   }
 
   bool _moveBlockRight(Block block) {
     final canMove = _canMoveRight(block);
     if (canMove) {
-      block.setOldLocation();
-
       for (final loc in block.location) {
         loc.columnIndex++;
       }
@@ -101,8 +127,6 @@ class Board {
   bool _moveBlockLeft(Block block) {
     final canMove = _canMoveLeft(block);
     if (canMove) {
-      block.setOldLocation();
-
       for (final loc in block.location) {
         loc.columnIndex--;
       }
@@ -134,8 +158,6 @@ class Board {
   bool _moveBlockDown(Block block) {
     final canMove = canMoveDown(block: block);
     if (canMove) {
-      block.setOldLocation();
-
       for (final loc in block.location) {
         loc.rowIndex++;
       }
@@ -165,7 +187,6 @@ class Board {
   bool _moveBlockUp(Block block) {
     final canMove = canMoveUp(block: block);
     if (canMove) {
-      block.setOldLocation();
       for (final loc in block.location) {
         loc.rowIndex--;
       }

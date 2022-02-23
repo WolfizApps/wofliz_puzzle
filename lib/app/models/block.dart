@@ -1,21 +1,13 @@
-import 'package:flutter/material.dart';
-
 import 'location.dart';
 
 class Block {
   List<Location> location;
-  Color color;
   String lottiePath;
 
   Block({
     required this.location,
-    required this.color,
     required this.lottiePath,
   });
-
-  void setOldLocation() {
-    // _oldLocation = location;
-  }
 
   int get height {
     int h = 0;
