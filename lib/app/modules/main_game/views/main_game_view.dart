@@ -120,7 +120,7 @@ class MainGameView extends GetView<MainGameController> {
                                             maxLines: 1,
                                             style: TextStyle(
                                               color: Colors.white,
-                                              fontSize: 26,
+                                              fontSize: 20,
                                               overflow: TextOverflow.ellipsis,
                                               fontFamily: "leiralite",
                                             ),
@@ -160,18 +160,24 @@ class MainGameView extends GetView<MainGameController> {
                               ),
                             ),
                             Spacer(),
-                            Image.asset(
-                              "assets/images/help_icon.png",
-                              height: 53.w,
-                              width: 53.w,
+                            InkWell(
+                              onTap: controller.showInstructions,
+                              child: Image.asset(
+                                "assets/images/help_icon.png",
+                                height: 53.w,
+                                width: 53.w,
+                              ),
                             ),
                             SizedBox(
                               width: 5,
                             ),
-                            Image.asset(
-                              "assets/images/settings_icon.png",
-                              height: 53.w,
-                              width: 53.w,
+                            InkWell(
+                              // onTap: controller.showInstructions,
+                              child: Image.asset(
+                                "assets/images/settings_icon.png",
+                                height: 53.w,
+                                width: 53.w,
+                              ),
                             )
                           ],
                         ),
@@ -226,10 +232,13 @@ class MainGameView extends GetView<MainGameController> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                Image.asset(
-                                  "assets/images/leader_board_icon.png",
-                                  height: 45.w,
-                                  width: 45.w,
+                                InkWell(
+                                  onTap: controller.showLeaderBoard,
+                                  child: Image.asset(
+                                    "assets/images/leader_board_icon.png",
+                                    height: 45.w,
+                                    width: 45.w,
+                                  ),
                                 ),
                                 Spacer(),
                                 Padding(

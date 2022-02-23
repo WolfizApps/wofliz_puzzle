@@ -17,16 +17,17 @@ class _InstructionState extends State<Instruction> {
   @override
   void initState() {
     Future.delayed(Duration(seconds: 13), () {
-      MyStorage.writeIsInstructionShow(true);
+      MyStorage.writeIsInstructionShow(false);
       Get.toNamed(Routes.MAIN_GAME);
     });
     super.initState();
-    _controller = VideoPlayerController.asset('assets/videos/instructions.mp4')
-      ..initialize().then((_) {
-        setState(() {
-          _controller!.play();
-        });
-      });
+    _controller =
+        VideoPlayerController.asset('assets/videos/instructions_video.mp4')
+          ..initialize().then((_) {
+            setState(() {
+              _controller!.play();
+            });
+          });
   }
 
   @override
@@ -45,7 +46,6 @@ class _InstructionState extends State<Instruction> {
                     ),
                   ),
                 ),
-                //FURTHER IMPLEMENTATION
               ],
             )
           : Container(

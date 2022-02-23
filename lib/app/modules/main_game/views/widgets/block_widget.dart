@@ -40,10 +40,11 @@ class BlockWidget extends StatelessWidget {
         child: Container(
           height: block.height * controller.blockHeight,
           width: block.width * controller.blockWidth,
-          padding: EdgeInsets.all(5),
+          padding: EdgeInsets.all(2),
+          // margin: EdgeInsets.only(left: 5, right: 15, top: 2, bottom: 2),
           child: Lottie.asset(
             'assets/lotties/${block.lottiePath}.json',
-            fit: BoxFit.cover,
+            fit: BoxFit.fill,
           ),
         ),
       ),
