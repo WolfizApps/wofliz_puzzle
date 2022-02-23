@@ -18,15 +18,10 @@ class BlockWidget extends StatefulWidget {
 class _BlockWidgetState extends State<BlockWidget>
     with SingleTickerProviderStateMixin {
   final controller = Get.find<MainGameController>();
-  late final AnimationController animationController;
-  late final Animation<double> animation;
 
   @override
   void initState() {
     super.initState();
-    animationController =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 300));
-    animation = Tween<double>(begin: 0, end: 10).animate(animationController);
   }
 
   double positionTop(

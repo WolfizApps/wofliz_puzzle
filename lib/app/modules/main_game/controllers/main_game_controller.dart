@@ -53,8 +53,6 @@ class MainGameController extends GetxController {
 
   void dragEnded(Block block) {
     blockMovingAxis = null;
-    block.draggingPosition = null;
-    board.value.blocks.refresh();
   }
 
   void resetGame() {

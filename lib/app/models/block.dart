@@ -4,7 +4,6 @@ import 'location.dart';
 
 class Block {
   List<Location> location;
-  Offset? draggingPosition;
   Color color;
   String lottiePath;
 
