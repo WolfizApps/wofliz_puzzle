@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:puzzle_game/app/modules/main_game/views/widgets/game.dart';
 import 'package:puzzle_game/utils/my_utils.dart';
 import 'package:puzzle_game/widgets/spannable_grid.dart';
 import 'package:puzzle_game/widgets/spannable_grid_options.dart';
@@ -37,7 +38,7 @@ class MainGameView extends GetView<MainGameController> {
             ],
           ),
         );*/
-        Get.dialog(Container(
+        await Get.dialog(Container(
           alignment: Alignment.center,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -203,38 +204,7 @@ class MainGameView extends GetView<MainGameController> {
                       ),
                     ),
                     Expanded(
-                      child: SizedBox(
-                        height: Get.height,
-                        width: Get.width,
-                        child: SpannableGrid(
-                          columns: 4,
-                          editingStrategy:
-                              SpannableGridEditingStrategy.immediate().copyWith(
-                            moveOnlyToNearby: true,
-                            allowed: true,
-                            immediate: true,
-                          ),
-                          showGrid: true,
-                          emptyCellView: Container(
-                            color: Colors.transparent,
-                          ),
-                          rows: 5,
-                          cells: /*controller.isRefreshData.value
-                              ? controller.getCells()
-                              : */
-                              controller.initialCellsData!,
-                          onCellChanged: (cell) {
-                            print(controller.steps.value);
-                            controller.varIncrementStep();
-                            print("Id: " +
-                                cell!.id.toString() +
-                                "Column: " +
-                                cell.column.toString() +
-                                ": Rows" +
-                                cell.row.toString());
-                          },
-                        ),
-                      ),
+                      child: Game(),
                     ),
                     Visibility(
                       visible: true,
