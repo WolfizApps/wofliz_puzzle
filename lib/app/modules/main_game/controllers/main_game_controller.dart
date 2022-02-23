@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 import 'package:puzzle_game/app/models/board.dart';
+import 'package:puzzle_game/widgets/win_dialog.dart';
 
 import '../../../data/level_one_board.dart';
 import '../../../models/block.dart';
@@ -64,8 +66,14 @@ class MainGameController extends GetxController {
     steps.value = 0;
   }
 
-  void onWin() {
-    //
+  Future<void> onWin() async {
+    await showDialog(
+      barrierDismissible: false,
+      context: Get.context!,
+      builder: (_) => winDialog(steps: steps.value, userName: playerName.value),
+    );
+
+    resetGame();
   }
 
   @override
