@@ -6,8 +6,10 @@ class Block {
   List<Location> location;
   Offset? draggingPosition;
   Color color;
+  String lottiePath;
 
-  Block({required this.location, required this.color});
+  Block(
+      {required this.location, required this.color, required this.lottiePath});
 
   int get height {
     int h = 0;

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 import 'package:puzzle_game/app/modules/main_game/controllers/main_game_controller.dart';
 
 import '../../../../models/block.dart';
@@ -65,17 +67,13 @@ class _BlockWidgetState extends State<BlockWidget>
               widget.block, dragUpdateDetails, Axis.horizontal);
         },
         child: Container(
+          padding: EdgeInsets.all(2.r),
           height: widget.block.height * controller.blockHeight,
           width: widget.block.width * controller.blockWidth,
-          decoration: BoxDecoration(
-            color: widget.block.color,
+          child: Lottie.asset(
+            'assets/lotties/${widget.block.lottiePath}.json',
+            fit: BoxFit.cover,
           ),
-          // child: Image.network(
-          //   widget.block.isHorizontal
-          //       ? "https://www.freeiconspng.com/uploads/police-car-top-png-11.png"
-          //       : "https://freepngimg.com/save/137298-top-ferrari-view-hd-image-free/900x1083",
-          //   fit: BoxFit.cover,
-          // ),
         ),
       ),
     );
