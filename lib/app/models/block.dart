@@ -6,7 +6,6 @@ class Block {
   List<Location> location;
   Color color;
   String lottiePath;
-  List<Location> _oldLocation = [];
 
   Block({
     required this.location,
@@ -14,7 +13,6 @@ class Block {
     required this.lottiePath,
   });
 
-  List<Location> get getOldLocation => _oldLocation;
   void setOldLocation() {
     // _oldLocation = location;
   }
@@ -57,37 +55,10 @@ class Block {
     return blockFirstRowIndex;
   }
 
-  int get oldStartingRowIndex {
-    final lc = _oldLocation.isEmpty ? location : _oldLocation;
-    int blockFirstRowIndex = lc.first.rowIndex;
-
-    for (final loc in lc) {
-      if (loc.rowIndex < blockFirstRowIndex) {
-        blockFirstRowIndex = loc.rowIndex;
-      }
-    }
-
-    return blockFirstRowIndex;
-  }
-
   int get endingRowIndex {
     int blockLastRowIndex = location.last.rowIndex;
 
     for (final loc in location) {
-      if (loc.rowIndex > blockLastRowIndex) {
-        blockLastRowIndex = loc.rowIndex;
-      }
-    }
-
-    return blockLastRowIndex;
-  }
-
-  int get oldEndingRowIndex {
-    final lc = _oldLocation.isEmpty ? location : _oldLocation;
-
-    int blockLastRowIndex = lc.last.rowIndex;
-
-    for (final loc in lc) {
       if (loc.rowIndex > blockLastRowIndex) {
         blockLastRowIndex = loc.rowIndex;
       }
@@ -108,38 +79,10 @@ class Block {
     return blockFirstColumnIndex;
   }
 
-  int get oldStartingColumnIndex {
-    final lc = _oldLocation.isEmpty ? location : _oldLocation;
-
-    int blockFirstColumnIndex = lc.first.columnIndex;
-
-    for (final loc in lc) {
-      if (loc.columnIndex < blockFirstColumnIndex) {
-        blockFirstColumnIndex = loc.columnIndex;
-      }
-    }
-
-    return blockFirstColumnIndex;
-  }
-
   int get endingColumnIndex {
     int blockLastColumnIndex = location.last.columnIndex;
 
     for (final loc in location) {
-      if (loc.columnIndex > blockLastColumnIndex) {
-        blockLastColumnIndex = loc.columnIndex;
-      }
-    }
-
-    return blockLastColumnIndex;
-  }
-
-  int get oldEndingColumnIndex {
-    final lc = _oldLocation.isEmpty ? location : _oldLocation;
-
-    int blockLastColumnIndex = lc.last.columnIndex;
-
-    for (final loc in lc) {
       if (loc.columnIndex > blockLastColumnIndex) {
         blockLastColumnIndex = loc.columnIndex;
       }
