@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 import 'package:puzzle_game/app/modules/main_game/views/widgets/game.dart';
 import 'package:puzzle_game/utils/my_utils.dart';
 import 'package:puzzle_game/widgets/spannable_grid.dart';
@@ -65,7 +66,7 @@ class MainGameView extends GetView<MainGameController> {
             decoration: BoxDecoration(
               image: DecorationImage(
                   image: AssetImage(
-                    "assets/images/main_game_bg.png",
+                    "assets/images/new_main_bg.png",
                   ),
                   fit: BoxFit.cover),
             ),
@@ -217,10 +218,10 @@ class MainGameView extends GetView<MainGameController> {
                                   Spacer(),
                                   Container(
                                     height: 130.h,
-                                    child: Image.asset(
-                                      "assets/images/way_out_img.png",
-                                      height: 140.w,
-                                      width: 98.w,
+                                    child: Lottie.asset(
+                                      "assets/lotties/heli_new1.json",
+                                      height: 190.h,
+                                      width: 170.w,
                                       fit: BoxFit.fill,
                                     ),
                                   ),
