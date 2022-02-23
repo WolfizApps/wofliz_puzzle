@@ -1,92 +1,255 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:puzzle_game/widgets/spannable_grid.dart';
-import 'package:puzzle_game/widgets/spannable_grid_options.dart';
-import 'package:puzzle_game/widgets/test_widgets.dart';
+import 'package:puzzle_game/app/modules/main_game/views/widgets/game.dart';
+import 'package:puzzle_game/utils/my_utils.dart';
 
 import '../controllers/main_game_controller.dart';
 
 class MainGameView extends GetView<MainGameController> {
-  //MainGameController controller=Get.put(MainGameController());
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.init(
-        BoxConstraints(
-            maxWidth: MediaQuery.of(context).size.width,
-            maxHeight: MediaQuery.of(context).size.height),
-        designSize: Size(457, 812),
-        context: context,
-        minTextAdapt: true,
-        orientation: Orientation.portrait);
-    // var w1 = Recipe(/*[],*/ 1, 1.0);
-    return Scaffold(
-      body: Center(
-        child: Container(
-          width: Get.width,
-          height: Get.height,
-          decoration: BoxDecoration(
+    MyUtils.makeScreenResponsive(context);
+    return WillPopScope(
+      onWillPop: () async {
+        bool shouldReturn = false;
+        await Get.dialog(Container(
+          alignment: Alignment.center,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Stack(
+                alignment: Alignment.topCenter,
+                children: [
+                  Image.asset("assets/images/app_close_img.png"),
+                  Container(
+                    margin: EdgeInsets.only(top: 60.h, right: 10),
+                    child: Align(
+                      alignment: Alignment.topRight,
+                      child: Material(
+                        color: Colors.transparent,
+                        child: InkWell(
+                          onTap: () {
+                            shouldReturn = false;
+                            Get.back();
+                          },
+                          child: SizedBox(
+                            height: 44.h,
+                            width: 44.h,
+                          ),
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+              Flexible(
+                child: Container(
+                    width: Get.width,
+                    height: 76.h,
+                    child: Image.asset("assets/images/quit_icon.png")),
+              )
+            ],
+          ),
+        ));
+        return shouldReturn;
+      },
+      child: Scaffold(
+        body: Center(
+          child: Container(
+            width: Get.width,
+            height: Get.height,
+            decoration: BoxDecoration(
               image: DecorationImage(
                   image: AssetImage(
                     "assets/images/main_game_bg.png",
                   ),
-                  fit: BoxFit.cover)),
-          child: Padding(
-            padding:  EdgeInsets.only(
-                top: 80.0.h, bottom: 110.h, left: 16.w, right: 16.w),
-            child: Container(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Expanded(
-                    child: SpannableGrid(
-                      columns: 4,
-                      editingStrategy:
-                          SpannableGridEditingStrategy.immediate().copyWith(
-                        moveOnlyToNearby: true,
-                        allowed: true,
-                        immediate: true,
+                  fit: BoxFit.cover),
+            ),
+            child: Padding(
+              padding: EdgeInsets.only(left: 16.w, right: 16.w),
+              child: Container(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Visibility(
+                      visible: true,
+                      child: Padding(
+                        padding: EdgeInsets.only(bottom: 20.h),
+                        child: Row(
+                          children: [
+                            Container(
+                              height: 95.h,
+                              width: 225.w,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage(
+                                      "assets/images/main_board_player_bg.png"),
+                                ),
+                              ),
+                              padding: EdgeInsets.only(top: 15, left: 35),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  Container(
+                                    alignment: Alignment.center,
+                                    margin: EdgeInsets.only(bottom: 15),
+                                    child: Image.asset(
+                                      "assets/images/user_icon.png",
+                                      width: 25.w,
+                                      height: 30.h,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  Expanded(
+                                    child: Obx(
+                                      () => Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            controller.playerName.value,
+                                            maxLines: 1,
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 26,
+                                              overflow: TextOverflow.ellipsis,
+                                              fontFamily: "leiralite",
+                                            ),
+                                          ),
+                                          Container(
+                                            child: Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  "Steps: ",
+                                                  maxLines: 1,
+                                                  style: TextStyle(
+                                                    color: Color(0xFFFFE948),
+                                                    fontSize: 18,
+                                                    fontFamily: "Babybo",
+                                                  ),
+                                                ),
+                                                Text(
+                                                  controller.steps.value
+                                                      .toString(),
+                                                  maxLines: 1,
+                                                  style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontSize: 18,
+                                                    fontFamily: "Babybo",
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Spacer(),
+                            Image.asset(
+                              "assets/images/help_icon.png",
+                              height: 53.w,
+                              width: 53.w,
+                            ),
+                            SizedBox(
+                              width: 5,
+                            ),
+                            Image.asset(
+                              "assets/images/settings_icon.png",
+                              height: 53.w,
+                              width: 53.w,
+                            )
+                          ],
+                        ),
                       ),
-                      showGrid: true,
-                      emptyCellView: Container(
-                        color: Colors.transparent,
-                      ),
-                      rows: 5,
-                      cells:
-                          /*controller.initalCellsData!*/ controller.getCells(),
-                      onCellChanged: (cell) {
-                            if(cell?.id=="1") {
-                              if (cell?.column == 2 && cell?.row == 4) {
-                                print("win");
-                              }
-                            }
-                        // print("Id: " +
-                        //     cell!.id.toString() +
-                        //     "Column: " +
-                        //     cell.column.toString() +
-                        //     ": Rows" +
-                        //     cell.row.toString());
-                      },
                     ),
-                  ),
-                /*  ElevatedButton(
-                    onPressed: () async {
-                      await controller.pool.play(controller.soundId!);
-                    },
-                    child: Text('Shuffle'),
-                  ),*/
-
-                  /*Container(
-                    height: 150,
-                    width: 150,
-                    child: Lottie.asset("assets/61023-character-walk.json",
-                        fit: BoxFit.cover, repeat: true),
-                  ),*/
-                  /*SizedBox(
-                    height: 20,
-                  ),
-                  */
-                ],
+                    Expanded(
+                      child: Game(),
+                    ),
+                    Visibility(
+                      visible: true,
+                      child: Row(
+                        children: [
+                          Container(
+                            padding: EdgeInsets.only(top: 15, bottom: 15),
+                            height: 140.h,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Image.asset(
+                                  "assets/images/full_screen_icon.png",
+                                  height: 45.w,
+                                  width: 45.w,
+                                ),
+                                Spacer(),
+                                Padding(
+                                  padding: EdgeInsets.only(top: 5.h),
+                                  child: Image.asset(
+                                    "assets/images/pause_icon.png",
+                                    height: 45.w,
+                                    width: 45.w,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Spacer(),
+                          Container(
+                            height: 130.h,
+                            child: Image.asset(
+                              "assets/images/way_out_img.png",
+                              height: 140.w,
+                              width: 98.w,
+                              fit: BoxFit.fill,
+                            ),
+                          ),
+                          Spacer(),
+                          Container(
+                            padding: EdgeInsets.only(top: 15, bottom: 15),
+                            height: 140.h,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Image.asset(
+                                  "assets/images/leader_board_icon.png",
+                                  height: 45.w,
+                                  width: 45.w,
+                                ),
+                                Spacer(),
+                                Padding(
+                                  padding: EdgeInsets.only(top: 5.h),
+                                  child: InkWell(
+                                    onTap: controller.resetGame,
+                                    child: Image.asset(
+                                      "assets/images/reset_game_icon.png",
+                                      height: 45.w,
+                                      width: 45.w,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),

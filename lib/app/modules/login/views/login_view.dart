@@ -10,7 +10,6 @@ class LoginView extends GetView<LoginController> {
   Widget build(BuildContext context) {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
         overlays: [SystemUiOverlay.bottom]);
-    //Set the fit size (fill in the screen size of the device in the design) If the design is based on the size of the 360*690(dp)
     ScreenUtil.init(
         BoxConstraints(
             maxWidth: MediaQuery.of(context).size.width,
@@ -30,176 +29,187 @@ class LoginView extends GetView<LoginController> {
               fit: BoxFit.cover,
             ),
           ),
-          child:
-          Container(
-            child: Stack(
-              children: [
-                Column(
-                  children: [
-                    Flexible(
-                      child: SizedBox(
-                        child: Container(
-                          width: Get.width,
-                          height: 500.h,
-                          margin: EdgeInsets.only(top: 165.h),
-                          child: Image.asset(
-                            "assets/images/login_sub_bg.png",
-                            fit: BoxFit.fill,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                Container(
-                  alignment: Alignment.center,
-                  margin: EdgeInsets.only(top: 350.h),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
+          child: Stack(
+            children: [
+              Container(
+                child: Container(
+                  child: Stack(
                     children: [
-                      Flexible(
-                        child: Container(
-                          alignment: Alignment.center,
-                          margin: EdgeInsets.only(left: 65.w, right: 65.w),
-                          width: ScreenUtil().screenWidth,
-                          padding: EdgeInsets.only(left: 8.w),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            gradient: LinearGradient(
-                              colors: [
-                                Color(0xFF606060),
-                                Color(0xFF2F2F2F)
-                              ],
+                      Column(
+                        children: [
+                          Flexible(
+                            child: SizedBox(
+                              child: Container(
+                                width: Get.width,
+                                height: 560.h,
+                                margin: EdgeInsets.only(top: 105.h),
+                                child: Image.asset(
+                                  "assets/images/login_sub_bg.png",
+                                  fit: BoxFit.fill,
+                                ),
+                              ),
                             ),
                           ),
-                          child: TextFormField(
-                            keyboardType: TextInputType.emailAddress,
-                            controller: controller.emailController,
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 22,
-                                fontFamily: "Babybo"),
-                            decoration: InputDecoration(
-                                border: InputBorder.none,
-                                hintText: "Email",
-                                hintStyle: TextStyle(
-                                    color: Color(0xFFA2A2A2),
-                                    fontSize: 22,
-                                    fontFamily: "Babybo")),
-                          ),
-                        ),
+                        ],
                       ),
-                      Flexible(
-                        child: SizedBox(
-                          height: 16,
-                        ),
-                      ),
-                      Flexible(
-                        child: Container(
-                          alignment: Alignment.center,
-                          margin: EdgeInsets.only(left: 65.w, right: 65.w),
-                          width: ScreenUtil().screenWidth,
-                          padding: EdgeInsets.only(left: 8.w),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            gradient: LinearGradient(
-                              colors: [
-                                Color(0xFF606060),
-                                Color(0xFF2F2F2F)
-                              ],
-                            ),
-                          ),
-                          child: TextFormField(
-                            keyboardType: TextInputType.text,
-                            obscureText: true,
-                            controller: controller.passwordController,
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 22,
-                                fontFamily: "Babybo"),
-                            decoration: InputDecoration(
-                                border: InputBorder.none,
-                                hintText: "Password",
-                                hintStyle: TextStyle(
-                                    color: Color(0xFFA2A2A2),
-                                    fontSize: 22,
-                                    fontFamily: "Babybo")),
-                          ),
-                        ),
-                      ),
-                      Flexible(
-                        child: SizedBox(
-                          height: 86,
-                        ),
-                      ),
-                      Flexible(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
+                      Container(
+                        alignment: Alignment.center,
+                        margin: EdgeInsets.only(top: 280.h),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Flexible(
-                              child: InkWell(
-                                onTap: controller.goToForgotPassword,
-                                child: Text(
-                                  "Don't  have an account?",
-                                  style: TextStyle(
-                                      fontFamily: "Babybo",
-                                      fontSize: 16,
-                                      color: Color(0xFFA2A2A2)),
+                              child: Container(
+                                alignment: Alignment.center,
+                                margin:
+                                EdgeInsets.only(left: 65.w, right: 65.w),
+                                width: ScreenUtil().screenWidth,
+                                padding: EdgeInsets.only(left: 8.w),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10.r),
+                                  gradient: LinearGradient(
+                                    colors: [
+                                      Color(0xFF606060),
+                                      Color(0xFF2F2F2F)
+                                    ],
+                                  ),
                                 ),
+                                child: TextFormField(
+                                  keyboardType: TextInputType.emailAddress,
+                                  controller: controller.emailController,
+                                  cursorColor: Colors.white,
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 22,
+                                      fontFamily: "Babybo"),
+                                  decoration: InputDecoration(
+                                      border: InputBorder.none,
+                                      contentPadding:
+                                      EdgeInsets.only(top: 2, left: 3),
+                                      hintText: "Email",
+                                      hintStyle: TextStyle(
+                                          color: Color(0xFFA2A2A2),
+                                          fontSize: 22,
+                                          fontFamily: "Babybo")),
+                                ),
+                              ),
+                            ),
+                            Flexible(
+                              child: SizedBox(
+                                height: 16.h,
+                              ),
+                            ),
+                            Flexible(
+                              child: Container(
+                                alignment: Alignment.center,
+                                margin:
+                                EdgeInsets.only(left: 65.w, right: 65.w),
+                                width: ScreenUtil().screenWidth,
+                                padding: EdgeInsets.only(left: 8.w),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  gradient: LinearGradient(
+                                    colors: [
+                                      Color(0xFF606060),
+                                      Color(0xFF2F2F2F)
+                                    ],
+                                  ),
+                                ),
+                                child: TextFormField(
+                                  keyboardType: TextInputType.text,
+                                  obscureText: true,
+                                  cursorColor: Colors.white,
+                                  controller: controller.passwordController,
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 22,
+                                      fontFamily: "Babybo"),
+                                  decoration: InputDecoration(
+                                      border: InputBorder.none,
+                                      contentPadding:
+                                      EdgeInsets.only(top: 2, left: 3),
+                                      hintText: "Password",
+                                      hintStyle: TextStyle(
+                                          color: Color(0xFFA2A2A2),
+                                          fontSize: 22,
+                                          fontFamily: "Babybo")),
+                                ),
+                              ),
+                            ),
+                            Flexible(
+                              child: SizedBox(
+                                height: 75,
+                              ),
+                            ),
+                            Flexible(
+                              child: Padding(
+                                padding: EdgeInsets.only(
+                                  left: 75.w,
+                                ),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Flexible(
+                                      child: InkWell(
+                                        onTap: controller.goToForgotPassword,
+                                        child: Text(
+                                          "Forgot password?",
+                                          style: TextStyle(
+                                              fontSize: 16,
+                                              color: Color(0xFFA2A2A2),
+                                              fontFamily: "Babybo"),
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 30,
+                            ),
+                            InkWell(
+                              onTap: controller.login,
+                              child: Container(
+                                width: 238,
+                                height: 66,
+                                margin:
+                                EdgeInsets.only(left: 110.w, right: 110.w),
+                                child: Image.asset(
+                                  "assets/images/login_btn.png",
+                                  fit: BoxFit.fill,
+                                  width: 238,
+                                  height: 106.h,
+                                ),
+                              ),
+                            ),
+                            Flexible(
+                              child: SizedBox(
+                                height: 20,
                               ),
                             ),
                           ],
                         ),
                       ),
-
-                      Flexible(
-                        child: SizedBox(
-                          height: 35.h,
-                        ),
-                      ),
-                      Flexible(
-                        child: InkWell(
-                          onTap: controller.login,
-
-                          child: Container(
-                            margin: EdgeInsets.only(left: 170.w, right: 170.w),
+                      Align(
+                        alignment: Alignment.bottomCenter,
+                        child: Padding(
+                          padding: EdgeInsets.only(bottom: 36.0),
+                          child: InkWell(
+                            onTap: controller.playAsaGuest,
                             child: Image.asset(
-                              "assets/images/login_btn.png",
-                              height: 76.h,
-                              width: 238.w,
-                              fit: BoxFit.fill,
+                              "assets/images/paly_as_guest_btn.png",
+                              height: 86.h,
+                              width: 268.w,
                             ),
                           ),
                         ),
-                      ),
-                      Flexible(
-                        child: SizedBox(
-                          height: 20,
-                        ),
-                      ),
-
-                      // Flexible(child: SizedBox(height: double.infinity,))
-                      // Expanded(child: Container())
+                      )
                     ],
-
                   ),
                 ),
-                Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Padding(
-                    padding: EdgeInsets.only(bottom: 36.0),
-                    child: InkWell(
-                      onTap: controller.playAsaGuest,
-                      child: Image.asset(
-                        "assets/images/paly_as_guest_btn.png",
-                        height: 86.h,
-                        width: 268.w,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

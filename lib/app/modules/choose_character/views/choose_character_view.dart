@@ -1,15 +1,17 @@
+import 'dart:io' show Platform;
+
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'dart:io' show Platform;
-import 'package:flutter/foundation.dart' show kIsWeb;
+
 import '../controllers/choose_character_controller.dart';
 
 class ChooseCharacterView extends GetView<ChooseCharacterController> {
   @override
   Widget build(BuildContext context) {
-   // ChooseCharacterController controller=Get.put(ChooseCharacterController());
+    // ChooseCharacterController controller=Get.put(ChooseCharacterController());
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
         overlays: [SystemUiOverlay.bottom]);
     ScreenUtil.init(
@@ -40,7 +42,8 @@ class ChooseCharacterView extends GetView<ChooseCharacterController> {
                     Container(
                       width: Get.width,
                       height: 650.h,
-                      margin: EdgeInsets.only(top: Get.height / 20.h, left: 10.w),
+                      margin: EdgeInsets.only(
+                          top: Get.height / 20.h /*, left: 10.w*/),
                       child: Image.asset(
                         "assets/images/characters_bg.png",
                         fit: BoxFit.fill,
@@ -62,42 +65,29 @@ class ChooseCharacterView extends GetView<ChooseCharacterController> {
                         visible: controller.selectedCharacter.value ==
                             SelectedCharacter.first,
                         child: Container(
-                          height: 285.h,
-                          width: 130.w,
+                          height: 340.h,
+                          width: 160.w,
                           decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  image: AssetImage(
-                                    "assets/images/selectboy.png",
-
-                                  ),
+                            // color: Colors.red,
+                            image: DecorationImage(
+                                image: AssetImage(
+                                  "assets/images/selectboy.png",
+                                ),
                                 //  fit: BoxFit.fill,
-                                  invertColors: false)),
+                                invertColors: false),
+                          ),
                           alignment: Alignment.topRight,
                         ),
                       ),
-                      // Visibility(
-                      //   visible: controller.selectedCharacter.value ==
-                      //       SelectedCharacter.first,
-                      //   child: Align(
-                      //     alignment: Alignment.topCenter,
-                      //     child: Padding(
-                      //       padding: EdgeInsets.only(right: 40.w),
-                      //       child: Image.asset(
-                      //         "assets/images/done_icon.png",
-                      //         height: 40.h,
-                      //         width: 40.w,
-                      //       ),
-                      //     ),
-                      //   ),
-                      // ),
                       Visibility(
                         visible: controller.selectedCharacter.value ==
                             SelectedCharacter.second,
                         child: Align(
                           alignment: Alignment.topRight,
                           child: Container(
-                            height: 285.h,
-                            width: 130.w,
+                            height: 340.h,
+                            width: 160.w,
+                            margin: EdgeInsets.only(right: 10),
                             decoration: BoxDecoration(
                                 image: DecorationImage(
                                     image: AssetImage(
@@ -109,23 +99,7 @@ class ChooseCharacterView extends GetView<ChooseCharacterController> {
                           ),
                         ),
                       ),
-                      // Visibility(
-                      //   visible: controller.selectedCharacter.value ==
-                      //       SelectedCharacter.second,
-                      //   child: Align(
-                      //     alignment: Alignment.topRight,
-                      //     child: Padding(
-                      //       padding: EdgeInsets.only(right: 100.w),
-                      //       child: Image.asset(
-                      //         "assets/images/done_icon.png",
-                      //         height: 40.h,
-                      //         width: 40.w,
-                      //       ),
-                      //     ),
-                      //   ),
-                      // ),
                       Column(
-                        // crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -139,20 +113,17 @@ class ChooseCharacterView extends GetView<ChooseCharacterController> {
                                         SelectedCharacter.first;
                                   },
                                   child: Container(
-                                    height: 285.h,
+                                    height: 330.h,
                                     width: 125.w,
                                     child: Image.asset(
                                       "assets/images/first_character.png",
-                                      fit: kIsWeb || Platform.isWindows? BoxFit.fill:BoxFit.cover,
+                                      fit: kIsWeb || Platform.isWindows
+                                          ? BoxFit.fill
+                                          : BoxFit.cover,
                                     ),
                                   ),
                                 ),
                               ),
-                              // Flexible(
-                              //   child: SizedBox(
-                              //     width: 53.w,
-                              //   ),
-                              // ),
                               Flexible(
                                 flex: 6,
                                 child: InkWell(
@@ -161,11 +132,13 @@ class ChooseCharacterView extends GetView<ChooseCharacterController> {
                                         SelectedCharacter.second;
                                   },
                                   child: Container(
-                                    height: 285.h,
+                                    height: 330.h,
                                     width: 125.w,
                                     child: Image.asset(
                                       "assets/images/second_character.png",
-                                      fit: kIsWeb || Platform.isWindows? BoxFit.fill:BoxFit.cover,
+                                      fit: kIsWeb || Platform.isWindows
+                                          ? BoxFit.fill
+                                          : BoxFit.cover,
                                     ),
                                   ),
                                 ),
@@ -175,10 +148,9 @@ class ChooseCharacterView extends GetView<ChooseCharacterController> {
                           Flexible(
                             child: Container(
                               alignment: Alignment.center,
-                              margin: EdgeInsets.only(left: 65.w, right: 65.w),
+                              margin: EdgeInsets.only(left: 35.w, right: 35.w, top: 30),
                               width: 262.w,
-                              height: 46.h,
-
+                              height: 52.h,
                               padding: EdgeInsets.only(left: 8.w),
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
@@ -191,6 +163,7 @@ class ChooseCharacterView extends GetView<ChooseCharacterController> {
                               ),
                               child: TextFormField(
                                 keyboardType: TextInputType.emailAddress,
+                                cursorColor: Colors.white,
                                 controller: controller.userNameController,
                                 style: TextStyle(
                                     color: Color(0XFF272B3C),
@@ -198,8 +171,8 @@ class ChooseCharacterView extends GetView<ChooseCharacterController> {
                                     fontFamily: "Babybo"),
                                 decoration: InputDecoration(
                                     border: InputBorder.none,
-                                    hintText:
-                                        "name",
+                                    contentPadding: EdgeInsets.only(left: 3, top: 3),
+                                    hintText: "name",
                                     hintStyle: TextStyle(
                                         color: Color(0XFF272B3C),
                                         fontSize: 22,

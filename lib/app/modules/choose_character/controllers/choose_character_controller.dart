@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:puzzle_game/app/modules/login/views/cut_scene.dart';
 import 'package:puzzle_game/app/routes/app_pages.dart';
 import 'package:puzzle_game/utils/my_utils.dart';
-
-import '../../main_game/views/cut_scene.dart';
 
 enum SelectedCharacter { no, first, second }
 

@@ -1,0 +1,6284 @@
+{
+  "v": "5.8.1",
+  "fr": 30,
+  "ip": 0,
+  "op": 113,
+  "w": 168,
+  "h": 216,
+  "nm": "Group 5584",
+  "ddd": 0,
+  "assets": [
+    {
+      "id": "image_0",
+      "w": 500,
+      "h": 500,
+      "u": "images/",
+      "p": "img_hand0.png",
+      "e": 0
+    },
+    {
+      "id": "image_1",
+      "w": 500,
+      "h": 500,
+      "u": "images/",
+      "p": "img_hand1.png",
+      "e": 0
+    },
+    {
+      "id": "image_2",
+      "w": 500,
+      "h": 500,
+      "u": "images/",
+      "p": "img_hand2.png",
+      "e": 0
+    },
+    {
+      "id": "image_3",
+      "w": 500,
+      "h": 500,
+      "u": "images/",
+      "p": "img_hand3.png",
+      "e": 0
+    },
+    {
+      "id": "image_4",
+      "w": 500,
+      "h": 500,
+      "u": "images/",
+      "p": "img_hand4.png",
+      "e": 0
+    },
+    {
+      "id": "image_5",
+      "w": 500,
+      "h": 500,
+      "u": "images/",
+      "p": "img_hand5.png",
+      "e": 0
+    },
+    {
+      "id": "image_6",
+      "w": 500,
+      "h": 500,
+      "u": "images/",
+      "p": "img_hand6.png",
+      "e": 0
+    },
+    {
+      "id": "image_7",
+      "w": 500,
+      "h": 500,
+      "u": "images/",
+      "p": "img_hand7.png",
+      "e": 0
+    },
+    {
+      "id": "image_8",
+      "w": 500,
+      "h": 500,
+      "u": "images/",
+      "p": "img_hand8.png",
+      "e": 0
+    },
+    {
+      "id": "image_9",
+      "w": 500,
+      "h": 500,
+      "u": "images/",
+      "p": "img_hand9.png",
+      "e": 0
+    },
+    {
+      "id": "image_10",
+      "w": 500,
+      "h": 500,
+      "u": "images/",
+      "p": "img_hand10.png",
+      "e": 0
+    },
+    {
+      "id": "image_11",
+      "w": 500,
+      "h": 500,
+      "u": "images/",
+      "p": "img_hand11.png",
+      "e": 0
+    },
+    {
+      "id": "image_12",
+      "w": 500,
+      "h": 500,
+      "u": "images/",
+      "p": "img_hand12.png",
+      "e": 0
+    },
+    {
+      "id": "image_13",
+      "w": 500,
+      "h": 500,
+      "u": "images/",
+      "p": "img_hand13.png",
+      "e": 0
+    },
+    {
+      "id": "image_14",
+      "w": 500,
+      "h": 500,
+      "u": "images/",
+      "p": "img_hand14.png",
+      "e": 0
+    },
+    {
+      "id": "image_15",
+      "w": 500,
+      "h": 500,
+      "u": "images/",
+      "p": "img_hand15.png",
+      "e": 0
+    },
+    {
+      "id": "image_16",
+      "w": 500,
+      "h": 500,
+      "u": "images/",
+      "p": "img_hand16.png",
+      "e": 0
+    },
+    {
+      "id": "image_17",
+      "w": 500,
+      "h": 500,
+      "u": "images/",
+      "p": "img_hand17.png",
+      "e": 0
+    },
+    {
+      "id": "image_18",
+      "w": 500,
+      "h": 500,
+      "u": "images/",
+      "p": "img_hand18.png",
+      "e": 0
+    },
+    {
+      "id": "image_19",
+      "w": 500,
+      "h": 500,
+      "u": "images/",
+      "p": "img_hand19.png",
+      "e": 0
+    },
+    {
+      "id": "image_20",
+      "w": 168,
+      "h": 216,
+      "u": "images/",
+      "p": "img_hand20.png",
+      "e": 0
+    },
+    {
+      "id": "comp_0",
+      "nm": "Pre-comp 1",
+      "fr": 30,
+      "layers": [
+        {
+          "ddd": 0,
+          "ind": 1,
+          "ty": 2,
+          "nm": "grave__00002.png",
+          "cl": "png",
+          "refId": "image_0",
+          "sr": 1,
+          "ks": {
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                80,
+                107,
+                0
+              ],
+              "ix": 2,
+              "l": 2
+            },
+            "a": {
+              "a": 0,
+              "k": [
+                250,
+                250,
+                0
+              ],
+              "ix": 1,
+              "l": 2
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                33,
+                33,
+                100
+              ],
+              "ix": 6,
+              "l": 2
+            }
+          },
+          "ao": 0,
+          "ef": [
+            {
+              "ty": 5,
+              "nm": "Hue/Saturation",
+              "np": 11,
+              "mn": "ADBE HUE SATURATION",
+              "ix": 1,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 7,
+                  "nm": "Channel Control",
+                  "mn": "ADBE HUE SATURATION-0002",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 1,
+                    "ix": 1
+                  }
+                },
+                {},
+                {
+                  "ty": 0,
+                  "nm": "Master Hue",
+                  "mn": "ADBE HUE SATURATION-0004",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Saturation",
+                  "mn": "ADBE HUE SATURATION-0005",
+                  "ix": 4,
+                  "v": {
+                    "a": 0,
+                    "k": -100,
+                    "ix": 4
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Lightness",
+                  "mn": "ADBE HUE SATURATION-0006",
+                  "ix": 5,
+                  "v": {
+                    "a": 0,
+                    "k": 23,
+                    "ix": 5
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Colorize",
+                  "mn": "ADBE HUE SATURATION-0007",
+                  "ix": 6,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 6
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Hue",
+                  "mn": "ADBE HUE SATURATION-0008",
+                  "ix": 7,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 7
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Saturation",
+                  "mn": "ADBE HUE SATURATION-0009",
+                  "ix": 8,
+                  "v": {
+                    "a": 0,
+                    "k": 25,
+                    "ix": 8
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Lightness",
+                  "mn": "ADBE HUE SATURATION-0010",
+                  "ix": 9,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 9
+                  }
+                }
+              ]
+            },
+            {
+              "ty": 5,
+              "nm": "Hue/Saturation 2",
+              "np": 11,
+              "mn": "ADBE HUE SATURATION",
+              "ix": 2,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 7,
+                  "nm": "Channel Control",
+                  "mn": "ADBE HUE SATURATION-0002",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 1,
+                    "ix": 1
+                  }
+                },
+                {},
+                {
+                  "ty": 0,
+                  "nm": "Master Hue",
+                  "mn": "ADBE HUE SATURATION-0004",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Saturation",
+                  "mn": "ADBE HUE SATURATION-0005",
+                  "ix": 4,
+                  "v": {
+                    "a": 0,
+                    "k": -25,
+                    "ix": 4
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Lightness",
+                  "mn": "ADBE HUE SATURATION-0006",
+                  "ix": 5,
+                  "v": {
+                    "a": 0,
+                    "k": 33,
+                    "ix": 5
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Colorize",
+                  "mn": "ADBE HUE SATURATION-0007",
+                  "ix": 6,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 6
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Hue",
+                  "mn": "ADBE HUE SATURATION-0008",
+                  "ix": 7,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 7
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Saturation",
+                  "mn": "ADBE HUE SATURATION-0009",
+                  "ix": 8,
+                  "v": {
+                    "a": 0,
+                    "k": 25,
+                    "ix": 8
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Lightness",
+                  "mn": "ADBE HUE SATURATION-0010",
+                  "ix": 9,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 9
+                  }
+                }
+              ]
+            },
+            {
+              "ty": 5,
+              "nm": "Brightness & Contrast",
+              "np": 5,
+              "mn": "ADBE Brightness & Contrast 2",
+              "ix": 3,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 0,
+                  "nm": "Brightness",
+                  "mn": "ADBE Brightness & Contrast 2-0001",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 31,
+                    "ix": 1
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Contrast",
+                  "mn": "ADBE Brightness & Contrast 2-0002",
+                  "ix": 2,
+                  "v": {
+                    "a": 0,
+                    "k": 100,
+                    "ix": 2
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Use Legacy (supports HDR)",
+                  "mn": "ADBE Brightness & Contrast 2-0003",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                }
+              ]
+            }
+          ],
+          "ip": 0,
+          "op": 3,
+          "st": 0,
+          "bm": 0
+        },
+        {
+          "ddd": 0,
+          "ind": 2,
+          "ty": 2,
+          "nm": "grave__00004.png",
+          "cl": "png",
+          "refId": "image_1",
+          "sr": 1,
+          "ks": {
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                80,
+                107,
+                0
+              ],
+              "ix": 2,
+              "l": 2
+            },
+            "a": {
+              "a": 0,
+              "k": [
+                250,
+                250,
+                0
+              ],
+              "ix": 1,
+              "l": 2
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                33,
+                33,
+                100
+              ],
+              "ix": 6,
+              "l": 2
+            }
+          },
+          "ao": 0,
+          "ef": [
+            {
+              "ty": 5,
+              "nm": "Hue/Saturation",
+              "np": 11,
+              "mn": "ADBE HUE SATURATION",
+              "ix": 1,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 7,
+                  "nm": "Channel Control",
+                  "mn": "ADBE HUE SATURATION-0002",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 1,
+                    "ix": 1
+                  }
+                },
+                {},
+                {
+                  "ty": 0,
+                  "nm": "Master Hue",
+                  "mn": "ADBE HUE SATURATION-0004",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Saturation",
+                  "mn": "ADBE HUE SATURATION-0005",
+                  "ix": 4,
+                  "v": {
+                    "a": 0,
+                    "k": -100,
+                    "ix": 4
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Lightness",
+                  "mn": "ADBE HUE SATURATION-0006",
+                  "ix": 5,
+                  "v": {
+                    "a": 0,
+                    "k": 23,
+                    "ix": 5
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Colorize",
+                  "mn": "ADBE HUE SATURATION-0007",
+                  "ix": 6,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 6
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Hue",
+                  "mn": "ADBE HUE SATURATION-0008",
+                  "ix": 7,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 7
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Saturation",
+                  "mn": "ADBE HUE SATURATION-0009",
+                  "ix": 8,
+                  "v": {
+                    "a": 0,
+                    "k": 25,
+                    "ix": 8
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Lightness",
+                  "mn": "ADBE HUE SATURATION-0010",
+                  "ix": 9,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 9
+                  }
+                }
+              ]
+            },
+            {
+              "ty": 5,
+              "nm": "Hue/Saturation 2",
+              "np": 11,
+              "mn": "ADBE HUE SATURATION",
+              "ix": 2,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 7,
+                  "nm": "Channel Control",
+                  "mn": "ADBE HUE SATURATION-0002",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 1,
+                    "ix": 1
+                  }
+                },
+                {},
+                {
+                  "ty": 0,
+                  "nm": "Master Hue",
+                  "mn": "ADBE HUE SATURATION-0004",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Saturation",
+                  "mn": "ADBE HUE SATURATION-0005",
+                  "ix": 4,
+                  "v": {
+                    "a": 0,
+                    "k": -25,
+                    "ix": 4
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Lightness",
+                  "mn": "ADBE HUE SATURATION-0006",
+                  "ix": 5,
+                  "v": {
+                    "a": 0,
+                    "k": 33,
+                    "ix": 5
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Colorize",
+                  "mn": "ADBE HUE SATURATION-0007",
+                  "ix": 6,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 6
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Hue",
+                  "mn": "ADBE HUE SATURATION-0008",
+                  "ix": 7,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 7
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Saturation",
+                  "mn": "ADBE HUE SATURATION-0009",
+                  "ix": 8,
+                  "v": {
+                    "a": 0,
+                    "k": 25,
+                    "ix": 8
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Lightness",
+                  "mn": "ADBE HUE SATURATION-0010",
+                  "ix": 9,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 9
+                  }
+                }
+              ]
+            },
+            {
+              "ty": 5,
+              "nm": "Brightness & Contrast",
+              "np": 5,
+              "mn": "ADBE Brightness & Contrast 2",
+              "ix": 3,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 0,
+                  "nm": "Brightness",
+                  "mn": "ADBE Brightness & Contrast 2-0001",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 31,
+                    "ix": 1
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Contrast",
+                  "mn": "ADBE Brightness & Contrast 2-0002",
+                  "ix": 2,
+                  "v": {
+                    "a": 0,
+                    "k": 100,
+                    "ix": 2
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Use Legacy (supports HDR)",
+                  "mn": "ADBE Brightness & Contrast 2-0003",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                }
+              ]
+            }
+          ],
+          "ip": 3,
+          "op": 6,
+          "st": 3,
+          "bm": 0
+        },
+        {
+          "ddd": 0,
+          "ind": 3,
+          "ty": 2,
+          "nm": "grave__00006.png",
+          "cl": "png",
+          "refId": "image_2",
+          "sr": 1,
+          "ks": {
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                80,
+                107,
+                0
+              ],
+              "ix": 2,
+              "l": 2
+            },
+            "a": {
+              "a": 0,
+              "k": [
+                250,
+                250,
+                0
+              ],
+              "ix": 1,
+              "l": 2
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                33,
+                33,
+                100
+              ],
+              "ix": 6,
+              "l": 2
+            }
+          },
+          "ao": 0,
+          "ef": [
+            {
+              "ty": 5,
+              "nm": "Hue/Saturation",
+              "np": 11,
+              "mn": "ADBE HUE SATURATION",
+              "ix": 1,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 7,
+                  "nm": "Channel Control",
+                  "mn": "ADBE HUE SATURATION-0002",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 1,
+                    "ix": 1
+                  }
+                },
+                {},
+                {
+                  "ty": 0,
+                  "nm": "Master Hue",
+                  "mn": "ADBE HUE SATURATION-0004",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Saturation",
+                  "mn": "ADBE HUE SATURATION-0005",
+                  "ix": 4,
+                  "v": {
+                    "a": 0,
+                    "k": -100,
+                    "ix": 4
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Lightness",
+                  "mn": "ADBE HUE SATURATION-0006",
+                  "ix": 5,
+                  "v": {
+                    "a": 0,
+                    "k": 23,
+                    "ix": 5
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Colorize",
+                  "mn": "ADBE HUE SATURATION-0007",
+                  "ix": 6,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 6
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Hue",
+                  "mn": "ADBE HUE SATURATION-0008",
+                  "ix": 7,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 7
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Saturation",
+                  "mn": "ADBE HUE SATURATION-0009",
+                  "ix": 8,
+                  "v": {
+                    "a": 0,
+                    "k": 25,
+                    "ix": 8
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Lightness",
+                  "mn": "ADBE HUE SATURATION-0010",
+                  "ix": 9,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 9
+                  }
+                }
+              ]
+            },
+            {
+              "ty": 5,
+              "nm": "Hue/Saturation 2",
+              "np": 11,
+              "mn": "ADBE HUE SATURATION",
+              "ix": 2,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 7,
+                  "nm": "Channel Control",
+                  "mn": "ADBE HUE SATURATION-0002",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 1,
+                    "ix": 1
+                  }
+                },
+                {},
+                {
+                  "ty": 0,
+                  "nm": "Master Hue",
+                  "mn": "ADBE HUE SATURATION-0004",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Saturation",
+                  "mn": "ADBE HUE SATURATION-0005",
+                  "ix": 4,
+                  "v": {
+                    "a": 0,
+                    "k": -25,
+                    "ix": 4
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Lightness",
+                  "mn": "ADBE HUE SATURATION-0006",
+                  "ix": 5,
+                  "v": {
+                    "a": 0,
+                    "k": 33,
+                    "ix": 5
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Colorize",
+                  "mn": "ADBE HUE SATURATION-0007",
+                  "ix": 6,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 6
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Hue",
+                  "mn": "ADBE HUE SATURATION-0008",
+                  "ix": 7,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 7
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Saturation",
+                  "mn": "ADBE HUE SATURATION-0009",
+                  "ix": 8,
+                  "v": {
+                    "a": 0,
+                    "k": 25,
+                    "ix": 8
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Lightness",
+                  "mn": "ADBE HUE SATURATION-0010",
+                  "ix": 9,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 9
+                  }
+                }
+              ]
+            },
+            {
+              "ty": 5,
+              "nm": "Brightness & Contrast",
+              "np": 5,
+              "mn": "ADBE Brightness & Contrast 2",
+              "ix": 3,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 0,
+                  "nm": "Brightness",
+                  "mn": "ADBE Brightness & Contrast 2-0001",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 31,
+                    "ix": 1
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Contrast",
+                  "mn": "ADBE Brightness & Contrast 2-0002",
+                  "ix": 2,
+                  "v": {
+                    "a": 0,
+                    "k": 100,
+                    "ix": 2
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Use Legacy (supports HDR)",
+                  "mn": "ADBE Brightness & Contrast 2-0003",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                }
+              ]
+            }
+          ],
+          "ip": 6,
+          "op": 9,
+          "st": 6,
+          "bm": 0
+        },
+        {
+          "ddd": 0,
+          "ind": 4,
+          "ty": 2,
+          "nm": "grave__00008.png",
+          "cl": "png",
+          "refId": "image_3",
+          "sr": 1,
+          "ks": {
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                80,
+                107,
+                0
+              ],
+              "ix": 2,
+              "l": 2
+            },
+            "a": {
+              "a": 0,
+              "k": [
+                250,
+                250,
+                0
+              ],
+              "ix": 1,
+              "l": 2
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                33,
+                33,
+                100
+              ],
+              "ix": 6,
+              "l": 2
+            }
+          },
+          "ao": 0,
+          "ef": [
+            {
+              "ty": 5,
+              "nm": "Hue/Saturation",
+              "np": 11,
+              "mn": "ADBE HUE SATURATION",
+              "ix": 1,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 7,
+                  "nm": "Channel Control",
+                  "mn": "ADBE HUE SATURATION-0002",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 1,
+                    "ix": 1
+                  }
+                },
+                {},
+                {
+                  "ty": 0,
+                  "nm": "Master Hue",
+                  "mn": "ADBE HUE SATURATION-0004",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Saturation",
+                  "mn": "ADBE HUE SATURATION-0005",
+                  "ix": 4,
+                  "v": {
+                    "a": 0,
+                    "k": -100,
+                    "ix": 4
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Lightness",
+                  "mn": "ADBE HUE SATURATION-0006",
+                  "ix": 5,
+                  "v": {
+                    "a": 0,
+                    "k": 23,
+                    "ix": 5
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Colorize",
+                  "mn": "ADBE HUE SATURATION-0007",
+                  "ix": 6,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 6
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Hue",
+                  "mn": "ADBE HUE SATURATION-0008",
+                  "ix": 7,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 7
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Saturation",
+                  "mn": "ADBE HUE SATURATION-0009",
+                  "ix": 8,
+                  "v": {
+                    "a": 0,
+                    "k": 25,
+                    "ix": 8
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Lightness",
+                  "mn": "ADBE HUE SATURATION-0010",
+                  "ix": 9,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 9
+                  }
+                }
+              ]
+            },
+            {
+              "ty": 5,
+              "nm": "Hue/Saturation 2",
+              "np": 11,
+              "mn": "ADBE HUE SATURATION",
+              "ix": 2,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 7,
+                  "nm": "Channel Control",
+                  "mn": "ADBE HUE SATURATION-0002",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 1,
+                    "ix": 1
+                  }
+                },
+                {},
+                {
+                  "ty": 0,
+                  "nm": "Master Hue",
+                  "mn": "ADBE HUE SATURATION-0004",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Saturation",
+                  "mn": "ADBE HUE SATURATION-0005",
+                  "ix": 4,
+                  "v": {
+                    "a": 0,
+                    "k": -25,
+                    "ix": 4
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Lightness",
+                  "mn": "ADBE HUE SATURATION-0006",
+                  "ix": 5,
+                  "v": {
+                    "a": 0,
+                    "k": 33,
+                    "ix": 5
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Colorize",
+                  "mn": "ADBE HUE SATURATION-0007",
+                  "ix": 6,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 6
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Hue",
+                  "mn": "ADBE HUE SATURATION-0008",
+                  "ix": 7,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 7
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Saturation",
+                  "mn": "ADBE HUE SATURATION-0009",
+                  "ix": 8,
+                  "v": {
+                    "a": 0,
+                    "k": 25,
+                    "ix": 8
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Lightness",
+                  "mn": "ADBE HUE SATURATION-0010",
+                  "ix": 9,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 9
+                  }
+                }
+              ]
+            },
+            {
+              "ty": 5,
+              "nm": "Brightness & Contrast",
+              "np": 5,
+              "mn": "ADBE Brightness & Contrast 2",
+              "ix": 3,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 0,
+                  "nm": "Brightness",
+                  "mn": "ADBE Brightness & Contrast 2-0001",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 31,
+                    "ix": 1
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Contrast",
+                  "mn": "ADBE Brightness & Contrast 2-0002",
+                  "ix": 2,
+                  "v": {
+                    "a": 0,
+                    "k": 100,
+                    "ix": 2
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Use Legacy (supports HDR)",
+                  "mn": "ADBE Brightness & Contrast 2-0003",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                }
+              ]
+            }
+          ],
+          "ip": 9,
+          "op": 12,
+          "st": 9,
+          "bm": 0
+        },
+        {
+          "ddd": 0,
+          "ind": 5,
+          "ty": 2,
+          "nm": "grave__00011.png",
+          "cl": "png",
+          "refId": "image_4",
+          "sr": 1,
+          "ks": {
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                80,
+                107,
+                0
+              ],
+              "ix": 2,
+              "l": 2
+            },
+            "a": {
+              "a": 0,
+              "k": [
+                250,
+                250,
+                0
+              ],
+              "ix": 1,
+              "l": 2
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                33,
+                33,
+                100
+              ],
+              "ix": 6,
+              "l": 2
+            }
+          },
+          "ao": 0,
+          "ef": [
+            {
+              "ty": 5,
+              "nm": "Hue/Saturation",
+              "np": 11,
+              "mn": "ADBE HUE SATURATION",
+              "ix": 1,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 7,
+                  "nm": "Channel Control",
+                  "mn": "ADBE HUE SATURATION-0002",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 1,
+                    "ix": 1
+                  }
+                },
+                {},
+                {
+                  "ty": 0,
+                  "nm": "Master Hue",
+                  "mn": "ADBE HUE SATURATION-0004",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Saturation",
+                  "mn": "ADBE HUE SATURATION-0005",
+                  "ix": 4,
+                  "v": {
+                    "a": 0,
+                    "k": -100,
+                    "ix": 4
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Lightness",
+                  "mn": "ADBE HUE SATURATION-0006",
+                  "ix": 5,
+                  "v": {
+                    "a": 0,
+                    "k": 23,
+                    "ix": 5
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Colorize",
+                  "mn": "ADBE HUE SATURATION-0007",
+                  "ix": 6,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 6
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Hue",
+                  "mn": "ADBE HUE SATURATION-0008",
+                  "ix": 7,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 7
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Saturation",
+                  "mn": "ADBE HUE SATURATION-0009",
+                  "ix": 8,
+                  "v": {
+                    "a": 0,
+                    "k": 25,
+                    "ix": 8
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Lightness",
+                  "mn": "ADBE HUE SATURATION-0010",
+                  "ix": 9,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 9
+                  }
+                }
+              ]
+            },
+            {
+              "ty": 5,
+              "nm": "Hue/Saturation 2",
+              "np": 11,
+              "mn": "ADBE HUE SATURATION",
+              "ix": 2,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 7,
+                  "nm": "Channel Control",
+                  "mn": "ADBE HUE SATURATION-0002",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 1,
+                    "ix": 1
+                  }
+                },
+                {},
+                {
+                  "ty": 0,
+                  "nm": "Master Hue",
+                  "mn": "ADBE HUE SATURATION-0004",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Saturation",
+                  "mn": "ADBE HUE SATURATION-0005",
+                  "ix": 4,
+                  "v": {
+                    "a": 0,
+                    "k": -25,
+                    "ix": 4
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Lightness",
+                  "mn": "ADBE HUE SATURATION-0006",
+                  "ix": 5,
+                  "v": {
+                    "a": 0,
+                    "k": 33,
+                    "ix": 5
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Colorize",
+                  "mn": "ADBE HUE SATURATION-0007",
+                  "ix": 6,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 6
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Hue",
+                  "mn": "ADBE HUE SATURATION-0008",
+                  "ix": 7,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 7
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Saturation",
+                  "mn": "ADBE HUE SATURATION-0009",
+                  "ix": 8,
+                  "v": {
+                    "a": 0,
+                    "k": 25,
+                    "ix": 8
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Lightness",
+                  "mn": "ADBE HUE SATURATION-0010",
+                  "ix": 9,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 9
+                  }
+                }
+              ]
+            },
+            {
+              "ty": 5,
+              "nm": "Brightness & Contrast",
+              "np": 5,
+              "mn": "ADBE Brightness & Contrast 2",
+              "ix": 3,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 0,
+                  "nm": "Brightness",
+                  "mn": "ADBE Brightness & Contrast 2-0001",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 31,
+                    "ix": 1
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Contrast",
+                  "mn": "ADBE Brightness & Contrast 2-0002",
+                  "ix": 2,
+                  "v": {
+                    "a": 0,
+                    "k": 100,
+                    "ix": 2
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Use Legacy (supports HDR)",
+                  "mn": "ADBE Brightness & Contrast 2-0003",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                }
+              ]
+            }
+          ],
+          "ip": 12,
+          "op": 15,
+          "st": 12,
+          "bm": 0
+        },
+        {
+          "ddd": 0,
+          "ind": 6,
+          "ty": 2,
+          "nm": "grave__00013.png",
+          "cl": "png",
+          "refId": "image_5",
+          "sr": 1,
+          "ks": {
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                80,
+                107,
+                0
+              ],
+              "ix": 2,
+              "l": 2
+            },
+            "a": {
+              "a": 0,
+              "k": [
+                250,
+                250,
+                0
+              ],
+              "ix": 1,
+              "l": 2
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                33,
+                33,
+                100
+              ],
+              "ix": 6,
+              "l": 2
+            }
+          },
+          "ao": 0,
+          "ef": [
+            {
+              "ty": 5,
+              "nm": "Hue/Saturation",
+              "np": 11,
+              "mn": "ADBE HUE SATURATION",
+              "ix": 1,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 7,
+                  "nm": "Channel Control",
+                  "mn": "ADBE HUE SATURATION-0002",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 1,
+                    "ix": 1
+                  }
+                },
+                {},
+                {
+                  "ty": 0,
+                  "nm": "Master Hue",
+                  "mn": "ADBE HUE SATURATION-0004",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Saturation",
+                  "mn": "ADBE HUE SATURATION-0005",
+                  "ix": 4,
+                  "v": {
+                    "a": 0,
+                    "k": -100,
+                    "ix": 4
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Lightness",
+                  "mn": "ADBE HUE SATURATION-0006",
+                  "ix": 5,
+                  "v": {
+                    "a": 0,
+                    "k": 23,
+                    "ix": 5
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Colorize",
+                  "mn": "ADBE HUE SATURATION-0007",
+                  "ix": 6,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 6
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Hue",
+                  "mn": "ADBE HUE SATURATION-0008",
+                  "ix": 7,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 7
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Saturation",
+                  "mn": "ADBE HUE SATURATION-0009",
+                  "ix": 8,
+                  "v": {
+                    "a": 0,
+                    "k": 25,
+                    "ix": 8
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Lightness",
+                  "mn": "ADBE HUE SATURATION-0010",
+                  "ix": 9,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 9
+                  }
+                }
+              ]
+            },
+            {
+              "ty": 5,
+              "nm": "Hue/Saturation 2",
+              "np": 11,
+              "mn": "ADBE HUE SATURATION",
+              "ix": 2,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 7,
+                  "nm": "Channel Control",
+                  "mn": "ADBE HUE SATURATION-0002",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 1,
+                    "ix": 1
+                  }
+                },
+                {},
+                {
+                  "ty": 0,
+                  "nm": "Master Hue",
+                  "mn": "ADBE HUE SATURATION-0004",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Saturation",
+                  "mn": "ADBE HUE SATURATION-0005",
+                  "ix": 4,
+                  "v": {
+                    "a": 0,
+                    "k": -25,
+                    "ix": 4
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Lightness",
+                  "mn": "ADBE HUE SATURATION-0006",
+                  "ix": 5,
+                  "v": {
+                    "a": 0,
+                    "k": 33,
+                    "ix": 5
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Colorize",
+                  "mn": "ADBE HUE SATURATION-0007",
+                  "ix": 6,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 6
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Hue",
+                  "mn": "ADBE HUE SATURATION-0008",
+                  "ix": 7,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 7
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Saturation",
+                  "mn": "ADBE HUE SATURATION-0009",
+                  "ix": 8,
+                  "v": {
+                    "a": 0,
+                    "k": 25,
+                    "ix": 8
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Lightness",
+                  "mn": "ADBE HUE SATURATION-0010",
+                  "ix": 9,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 9
+                  }
+                }
+              ]
+            },
+            {
+              "ty": 5,
+              "nm": "Brightness & Contrast",
+              "np": 5,
+              "mn": "ADBE Brightness & Contrast 2",
+              "ix": 3,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 0,
+                  "nm": "Brightness",
+                  "mn": "ADBE Brightness & Contrast 2-0001",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 31,
+                    "ix": 1
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Contrast",
+                  "mn": "ADBE Brightness & Contrast 2-0002",
+                  "ix": 2,
+                  "v": {
+                    "a": 0,
+                    "k": 100,
+                    "ix": 2
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Use Legacy (supports HDR)",
+                  "mn": "ADBE Brightness & Contrast 2-0003",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                }
+              ]
+            }
+          ],
+          "ip": 15,
+          "op": 18,
+          "st": 15,
+          "bm": 0
+        },
+        {
+          "ddd": 0,
+          "ind": 7,
+          "ty": 2,
+          "nm": "grave__00016.png",
+          "cl": "png",
+          "refId": "image_6",
+          "sr": 1,
+          "ks": {
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                80,
+                107,
+                0
+              ],
+              "ix": 2,
+              "l": 2
+            },
+            "a": {
+              "a": 0,
+              "k": [
+                250,
+                250,
+                0
+              ],
+              "ix": 1,
+              "l": 2
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                33,
+                33,
+                100
+              ],
+              "ix": 6,
+              "l": 2
+            }
+          },
+          "ao": 0,
+          "ef": [
+            {
+              "ty": 5,
+              "nm": "Hue/Saturation",
+              "np": 11,
+              "mn": "ADBE HUE SATURATION",
+              "ix": 1,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 7,
+                  "nm": "Channel Control",
+                  "mn": "ADBE HUE SATURATION-0002",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 1,
+                    "ix": 1
+                  }
+                },
+                {},
+                {
+                  "ty": 0,
+                  "nm": "Master Hue",
+                  "mn": "ADBE HUE SATURATION-0004",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Saturation",
+                  "mn": "ADBE HUE SATURATION-0005",
+                  "ix": 4,
+                  "v": {
+                    "a": 0,
+                    "k": -100,
+                    "ix": 4
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Lightness",
+                  "mn": "ADBE HUE SATURATION-0006",
+                  "ix": 5,
+                  "v": {
+                    "a": 0,
+                    "k": 23,
+                    "ix": 5
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Colorize",
+                  "mn": "ADBE HUE SATURATION-0007",
+                  "ix": 6,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 6
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Hue",
+                  "mn": "ADBE HUE SATURATION-0008",
+                  "ix": 7,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 7
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Saturation",
+                  "mn": "ADBE HUE SATURATION-0009",
+                  "ix": 8,
+                  "v": {
+                    "a": 0,
+                    "k": 25,
+                    "ix": 8
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Lightness",
+                  "mn": "ADBE HUE SATURATION-0010",
+                  "ix": 9,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 9
+                  }
+                }
+              ]
+            },
+            {
+              "ty": 5,
+              "nm": "Hue/Saturation 2",
+              "np": 11,
+              "mn": "ADBE HUE SATURATION",
+              "ix": 2,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 7,
+                  "nm": "Channel Control",
+                  "mn": "ADBE HUE SATURATION-0002",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 1,
+                    "ix": 1
+                  }
+                },
+                {},
+                {
+                  "ty": 0,
+                  "nm": "Master Hue",
+                  "mn": "ADBE HUE SATURATION-0004",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Saturation",
+                  "mn": "ADBE HUE SATURATION-0005",
+                  "ix": 4,
+                  "v": {
+                    "a": 0,
+                    "k": -25,
+                    "ix": 4
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Lightness",
+                  "mn": "ADBE HUE SATURATION-0006",
+                  "ix": 5,
+                  "v": {
+                    "a": 0,
+                    "k": 33,
+                    "ix": 5
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Colorize",
+                  "mn": "ADBE HUE SATURATION-0007",
+                  "ix": 6,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 6
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Hue",
+                  "mn": "ADBE HUE SATURATION-0008",
+                  "ix": 7,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 7
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Saturation",
+                  "mn": "ADBE HUE SATURATION-0009",
+                  "ix": 8,
+                  "v": {
+                    "a": 0,
+                    "k": 25,
+                    "ix": 8
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Lightness",
+                  "mn": "ADBE HUE SATURATION-0010",
+                  "ix": 9,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 9
+                  }
+                }
+              ]
+            },
+            {
+              "ty": 5,
+              "nm": "Brightness & Contrast",
+              "np": 5,
+              "mn": "ADBE Brightness & Contrast 2",
+              "ix": 3,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 0,
+                  "nm": "Brightness",
+                  "mn": "ADBE Brightness & Contrast 2-0001",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 31,
+                    "ix": 1
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Contrast",
+                  "mn": "ADBE Brightness & Contrast 2-0002",
+                  "ix": 2,
+                  "v": {
+                    "a": 0,
+                    "k": 100,
+                    "ix": 2
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Use Legacy (supports HDR)",
+                  "mn": "ADBE Brightness & Contrast 2-0003",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                }
+              ]
+            }
+          ],
+          "ip": 18,
+          "op": 21,
+          "st": 18,
+          "bm": 0
+        },
+        {
+          "ddd": 0,
+          "ind": 8,
+          "ty": 2,
+          "nm": "grave__00018.png",
+          "cl": "png",
+          "refId": "image_7",
+          "sr": 1,
+          "ks": {
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                80,
+                107,
+                0
+              ],
+              "ix": 2,
+              "l": 2
+            },
+            "a": {
+              "a": 0,
+              "k": [
+                250,
+                250,
+                0
+              ],
+              "ix": 1,
+              "l": 2
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                33,
+                33,
+                100
+              ],
+              "ix": 6,
+              "l": 2
+            }
+          },
+          "ao": 0,
+          "ef": [
+            {
+              "ty": 5,
+              "nm": "Hue/Saturation",
+              "np": 11,
+              "mn": "ADBE HUE SATURATION",
+              "ix": 1,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 7,
+                  "nm": "Channel Control",
+                  "mn": "ADBE HUE SATURATION-0002",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 1,
+                    "ix": 1
+                  }
+                },
+                {},
+                {
+                  "ty": 0,
+                  "nm": "Master Hue",
+                  "mn": "ADBE HUE SATURATION-0004",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Saturation",
+                  "mn": "ADBE HUE SATURATION-0005",
+                  "ix": 4,
+                  "v": {
+                    "a": 0,
+                    "k": -100,
+                    "ix": 4
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Lightness",
+                  "mn": "ADBE HUE SATURATION-0006",
+                  "ix": 5,
+                  "v": {
+                    "a": 0,
+                    "k": 23,
+                    "ix": 5
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Colorize",
+                  "mn": "ADBE HUE SATURATION-0007",
+                  "ix": 6,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 6
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Hue",
+                  "mn": "ADBE HUE SATURATION-0008",
+                  "ix": 7,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 7
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Saturation",
+                  "mn": "ADBE HUE SATURATION-0009",
+                  "ix": 8,
+                  "v": {
+                    "a": 0,
+                    "k": 25,
+                    "ix": 8
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Lightness",
+                  "mn": "ADBE HUE SATURATION-0010",
+                  "ix": 9,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 9
+                  }
+                }
+              ]
+            },
+            {
+              "ty": 5,
+              "nm": "Hue/Saturation 2",
+              "np": 11,
+              "mn": "ADBE HUE SATURATION",
+              "ix": 2,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 7,
+                  "nm": "Channel Control",
+                  "mn": "ADBE HUE SATURATION-0002",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 1,
+                    "ix": 1
+                  }
+                },
+                {},
+                {
+                  "ty": 0,
+                  "nm": "Master Hue",
+                  "mn": "ADBE HUE SATURATION-0004",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Saturation",
+                  "mn": "ADBE HUE SATURATION-0005",
+                  "ix": 4,
+                  "v": {
+                    "a": 0,
+                    "k": -25,
+                    "ix": 4
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Lightness",
+                  "mn": "ADBE HUE SATURATION-0006",
+                  "ix": 5,
+                  "v": {
+                    "a": 0,
+                    "k": 33,
+                    "ix": 5
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Colorize",
+                  "mn": "ADBE HUE SATURATION-0007",
+                  "ix": 6,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 6
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Hue",
+                  "mn": "ADBE HUE SATURATION-0008",
+                  "ix": 7,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 7
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Saturation",
+                  "mn": "ADBE HUE SATURATION-0009",
+                  "ix": 8,
+                  "v": {
+                    "a": 0,
+                    "k": 25,
+                    "ix": 8
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Lightness",
+                  "mn": "ADBE HUE SATURATION-0010",
+                  "ix": 9,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 9
+                  }
+                }
+              ]
+            },
+            {
+              "ty": 5,
+              "nm": "Brightness & Contrast",
+              "np": 5,
+              "mn": "ADBE Brightness & Contrast 2",
+              "ix": 3,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 0,
+                  "nm": "Brightness",
+                  "mn": "ADBE Brightness & Contrast 2-0001",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 31,
+                    "ix": 1
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Contrast",
+                  "mn": "ADBE Brightness & Contrast 2-0002",
+                  "ix": 2,
+                  "v": {
+                    "a": 0,
+                    "k": 100,
+                    "ix": 2
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Use Legacy (supports HDR)",
+                  "mn": "ADBE Brightness & Contrast 2-0003",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                }
+              ]
+            }
+          ],
+          "ip": 21,
+          "op": 24,
+          "st": 21,
+          "bm": 0
+        },
+        {
+          "ddd": 0,
+          "ind": 9,
+          "ty": 2,
+          "nm": "grave__00021.png",
+          "cl": "png",
+          "refId": "image_8",
+          "sr": 1,
+          "ks": {
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                80,
+                107,
+                0
+              ],
+              "ix": 2,
+              "l": 2
+            },
+            "a": {
+              "a": 0,
+              "k": [
+                250,
+                250,
+                0
+              ],
+              "ix": 1,
+              "l": 2
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                33,
+                33,
+                100
+              ],
+              "ix": 6,
+              "l": 2
+            }
+          },
+          "ao": 0,
+          "ef": [
+            {
+              "ty": 5,
+              "nm": "Hue/Saturation",
+              "np": 11,
+              "mn": "ADBE HUE SATURATION",
+              "ix": 1,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 7,
+                  "nm": "Channel Control",
+                  "mn": "ADBE HUE SATURATION-0002",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 1,
+                    "ix": 1
+                  }
+                },
+                {},
+                {
+                  "ty": 0,
+                  "nm": "Master Hue",
+                  "mn": "ADBE HUE SATURATION-0004",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Saturation",
+                  "mn": "ADBE HUE SATURATION-0005",
+                  "ix": 4,
+                  "v": {
+                    "a": 0,
+                    "k": -100,
+                    "ix": 4
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Lightness",
+                  "mn": "ADBE HUE SATURATION-0006",
+                  "ix": 5,
+                  "v": {
+                    "a": 0,
+                    "k": 23,
+                    "ix": 5
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Colorize",
+                  "mn": "ADBE HUE SATURATION-0007",
+                  "ix": 6,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 6
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Hue",
+                  "mn": "ADBE HUE SATURATION-0008",
+                  "ix": 7,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 7
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Saturation",
+                  "mn": "ADBE HUE SATURATION-0009",
+                  "ix": 8,
+                  "v": {
+                    "a": 0,
+                    "k": 25,
+                    "ix": 8
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Lightness",
+                  "mn": "ADBE HUE SATURATION-0010",
+                  "ix": 9,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 9
+                  }
+                }
+              ]
+            },
+            {
+              "ty": 5,
+              "nm": "Hue/Saturation 2",
+              "np": 11,
+              "mn": "ADBE HUE SATURATION",
+              "ix": 2,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 7,
+                  "nm": "Channel Control",
+                  "mn": "ADBE HUE SATURATION-0002",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 1,
+                    "ix": 1
+                  }
+                },
+                {},
+                {
+                  "ty": 0,
+                  "nm": "Master Hue",
+                  "mn": "ADBE HUE SATURATION-0004",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Saturation",
+                  "mn": "ADBE HUE SATURATION-0005",
+                  "ix": 4,
+                  "v": {
+                    "a": 0,
+                    "k": -25,
+                    "ix": 4
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Lightness",
+                  "mn": "ADBE HUE SATURATION-0006",
+                  "ix": 5,
+                  "v": {
+                    "a": 0,
+                    "k": 33,
+                    "ix": 5
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Colorize",
+                  "mn": "ADBE HUE SATURATION-0007",
+                  "ix": 6,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 6
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Hue",
+                  "mn": "ADBE HUE SATURATION-0008",
+                  "ix": 7,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 7
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Saturation",
+                  "mn": "ADBE HUE SATURATION-0009",
+                  "ix": 8,
+                  "v": {
+                    "a": 0,
+                    "k": 25,
+                    "ix": 8
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Lightness",
+                  "mn": "ADBE HUE SATURATION-0010",
+                  "ix": 9,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 9
+                  }
+                }
+              ]
+            },
+            {
+              "ty": 5,
+              "nm": "Brightness & Contrast",
+              "np": 5,
+              "mn": "ADBE Brightness & Contrast 2",
+              "ix": 3,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 0,
+                  "nm": "Brightness",
+                  "mn": "ADBE Brightness & Contrast 2-0001",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 31,
+                    "ix": 1
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Contrast",
+                  "mn": "ADBE Brightness & Contrast 2-0002",
+                  "ix": 2,
+                  "v": {
+                    "a": 0,
+                    "k": 100,
+                    "ix": 2
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Use Legacy (supports HDR)",
+                  "mn": "ADBE Brightness & Contrast 2-0003",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                }
+              ]
+            }
+          ],
+          "ip": 24,
+          "op": 27,
+          "st": 24,
+          "bm": 0
+        },
+        {
+          "ddd": 0,
+          "ind": 10,
+          "ty": 2,
+          "nm": "grave__00027.png",
+          "cl": "png",
+          "refId": "image_9",
+          "sr": 1,
+          "ks": {
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                80,
+                107,
+                0
+              ],
+              "ix": 2,
+              "l": 2
+            },
+            "a": {
+              "a": 0,
+              "k": [
+                250,
+                250,
+                0
+              ],
+              "ix": 1,
+              "l": 2
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                33,
+                33,
+                100
+              ],
+              "ix": 6,
+              "l": 2
+            }
+          },
+          "ao": 0,
+          "ef": [
+            {
+              "ty": 5,
+              "nm": "Hue/Saturation",
+              "np": 11,
+              "mn": "ADBE HUE SATURATION",
+              "ix": 1,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 7,
+                  "nm": "Channel Control",
+                  "mn": "ADBE HUE SATURATION-0002",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 1,
+                    "ix": 1
+                  }
+                },
+                {},
+                {
+                  "ty": 0,
+                  "nm": "Master Hue",
+                  "mn": "ADBE HUE SATURATION-0004",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Saturation",
+                  "mn": "ADBE HUE SATURATION-0005",
+                  "ix": 4,
+                  "v": {
+                    "a": 0,
+                    "k": -100,
+                    "ix": 4
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Lightness",
+                  "mn": "ADBE HUE SATURATION-0006",
+                  "ix": 5,
+                  "v": {
+                    "a": 0,
+                    "k": 23,
+                    "ix": 5
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Colorize",
+                  "mn": "ADBE HUE SATURATION-0007",
+                  "ix": 6,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 6
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Hue",
+                  "mn": "ADBE HUE SATURATION-0008",
+                  "ix": 7,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 7
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Saturation",
+                  "mn": "ADBE HUE SATURATION-0009",
+                  "ix": 8,
+                  "v": {
+                    "a": 0,
+                    "k": 25,
+                    "ix": 8
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Lightness",
+                  "mn": "ADBE HUE SATURATION-0010",
+                  "ix": 9,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 9
+                  }
+                }
+              ]
+            },
+            {
+              "ty": 5,
+              "nm": "Hue/Saturation 2",
+              "np": 11,
+              "mn": "ADBE HUE SATURATION",
+              "ix": 2,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 7,
+                  "nm": "Channel Control",
+                  "mn": "ADBE HUE SATURATION-0002",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 1,
+                    "ix": 1
+                  }
+                },
+                {},
+                {
+                  "ty": 0,
+                  "nm": "Master Hue",
+                  "mn": "ADBE HUE SATURATION-0004",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Saturation",
+                  "mn": "ADBE HUE SATURATION-0005",
+                  "ix": 4,
+                  "v": {
+                    "a": 0,
+                    "k": -25,
+                    "ix": 4
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Lightness",
+                  "mn": "ADBE HUE SATURATION-0006",
+                  "ix": 5,
+                  "v": {
+                    "a": 0,
+                    "k": 33,
+                    "ix": 5
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Colorize",
+                  "mn": "ADBE HUE SATURATION-0007",
+                  "ix": 6,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 6
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Hue",
+                  "mn": "ADBE HUE SATURATION-0008",
+                  "ix": 7,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 7
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Saturation",
+                  "mn": "ADBE HUE SATURATION-0009",
+                  "ix": 8,
+                  "v": {
+                    "a": 0,
+                    "k": 25,
+                    "ix": 8
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Lightness",
+                  "mn": "ADBE HUE SATURATION-0010",
+                  "ix": 9,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 9
+                  }
+                }
+              ]
+            },
+            {
+              "ty": 5,
+              "nm": "Brightness & Contrast",
+              "np": 5,
+              "mn": "ADBE Brightness & Contrast 2",
+              "ix": 3,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 0,
+                  "nm": "Brightness",
+                  "mn": "ADBE Brightness & Contrast 2-0001",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 31,
+                    "ix": 1
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Contrast",
+                  "mn": "ADBE Brightness & Contrast 2-0002",
+                  "ix": 2,
+                  "v": {
+                    "a": 0,
+                    "k": 100,
+                    "ix": 2
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Use Legacy (supports HDR)",
+                  "mn": "ADBE Brightness & Contrast 2-0003",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                }
+              ]
+            }
+          ],
+          "ip": 27,
+          "op": 30,
+          "st": 27,
+          "bm": 0
+        },
+        {
+          "ddd": 0,
+          "ind": 11,
+          "ty": 2,
+          "nm": "grave__00029.png",
+          "cl": "png",
+          "refId": "image_10",
+          "sr": 1,
+          "ks": {
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                80,
+                107,
+                0
+              ],
+              "ix": 2,
+              "l": 2
+            },
+            "a": {
+              "a": 0,
+              "k": [
+                250,
+                250,
+                0
+              ],
+              "ix": 1,
+              "l": 2
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                33,
+                33,
+                100
+              ],
+              "ix": 6,
+              "l": 2
+            }
+          },
+          "ao": 0,
+          "ef": [
+            {
+              "ty": 5,
+              "nm": "Hue/Saturation",
+              "np": 11,
+              "mn": "ADBE HUE SATURATION",
+              "ix": 1,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 7,
+                  "nm": "Channel Control",
+                  "mn": "ADBE HUE SATURATION-0002",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 1,
+                    "ix": 1
+                  }
+                },
+                {},
+                {
+                  "ty": 0,
+                  "nm": "Master Hue",
+                  "mn": "ADBE HUE SATURATION-0004",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Saturation",
+                  "mn": "ADBE HUE SATURATION-0005",
+                  "ix": 4,
+                  "v": {
+                    "a": 0,
+                    "k": -100,
+                    "ix": 4
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Lightness",
+                  "mn": "ADBE HUE SATURATION-0006",
+                  "ix": 5,
+                  "v": {
+                    "a": 0,
+                    "k": 23,
+                    "ix": 5
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Colorize",
+                  "mn": "ADBE HUE SATURATION-0007",
+                  "ix": 6,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 6
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Hue",
+                  "mn": "ADBE HUE SATURATION-0008",
+                  "ix": 7,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 7
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Saturation",
+                  "mn": "ADBE HUE SATURATION-0009",
+                  "ix": 8,
+                  "v": {
+                    "a": 0,
+                    "k": 25,
+                    "ix": 8
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Lightness",
+                  "mn": "ADBE HUE SATURATION-0010",
+                  "ix": 9,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 9
+                  }
+                }
+              ]
+            },
+            {
+              "ty": 5,
+              "nm": "Hue/Saturation 2",
+              "np": 11,
+              "mn": "ADBE HUE SATURATION",
+              "ix": 2,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 7,
+                  "nm": "Channel Control",
+                  "mn": "ADBE HUE SATURATION-0002",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 1,
+                    "ix": 1
+                  }
+                },
+                {},
+                {
+                  "ty": 0,
+                  "nm": "Master Hue",
+                  "mn": "ADBE HUE SATURATION-0004",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Saturation",
+                  "mn": "ADBE HUE SATURATION-0005",
+                  "ix": 4,
+                  "v": {
+                    "a": 0,
+                    "k": -25,
+                    "ix": 4
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Lightness",
+                  "mn": "ADBE HUE SATURATION-0006",
+                  "ix": 5,
+                  "v": {
+                    "a": 0,
+                    "k": 33,
+                    "ix": 5
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Colorize",
+                  "mn": "ADBE HUE SATURATION-0007",
+                  "ix": 6,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 6
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Hue",
+                  "mn": "ADBE HUE SATURATION-0008",
+                  "ix": 7,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 7
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Saturation",
+                  "mn": "ADBE HUE SATURATION-0009",
+                  "ix": 8,
+                  "v": {
+                    "a": 0,
+                    "k": 25,
+                    "ix": 8
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Lightness",
+                  "mn": "ADBE HUE SATURATION-0010",
+                  "ix": 9,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 9
+                  }
+                }
+              ]
+            },
+            {
+              "ty": 5,
+              "nm": "Brightness & Contrast",
+              "np": 5,
+              "mn": "ADBE Brightness & Contrast 2",
+              "ix": 3,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 0,
+                  "nm": "Brightness",
+                  "mn": "ADBE Brightness & Contrast 2-0001",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 31,
+                    "ix": 1
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Contrast",
+                  "mn": "ADBE Brightness & Contrast 2-0002",
+                  "ix": 2,
+                  "v": {
+                    "a": 0,
+                    "k": 100,
+                    "ix": 2
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Use Legacy (supports HDR)",
+                  "mn": "ADBE Brightness & Contrast 2-0003",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                }
+              ]
+            }
+          ],
+          "ip": 30,
+          "op": 33,
+          "st": 30,
+          "bm": 0
+        },
+        {
+          "ddd": 0,
+          "ind": 12,
+          "ty": 2,
+          "nm": "grave__00034.png",
+          "cl": "png",
+          "refId": "image_11",
+          "sr": 1,
+          "ks": {
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                80,
+                107,
+                0
+              ],
+              "ix": 2,
+              "l": 2
+            },
+            "a": {
+              "a": 0,
+              "k": [
+                250,
+                250,
+                0
+              ],
+              "ix": 1,
+              "l": 2
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                33,
+                33,
+                100
+              ],
+              "ix": 6,
+              "l": 2
+            }
+          },
+          "ao": 0,
+          "ef": [
+            {
+              "ty": 5,
+              "nm": "Hue/Saturation",
+              "np": 11,
+              "mn": "ADBE HUE SATURATION",
+              "ix": 1,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 7,
+                  "nm": "Channel Control",
+                  "mn": "ADBE HUE SATURATION-0002",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 1,
+                    "ix": 1
+                  }
+                },
+                {},
+                {
+                  "ty": 0,
+                  "nm": "Master Hue",
+                  "mn": "ADBE HUE SATURATION-0004",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Saturation",
+                  "mn": "ADBE HUE SATURATION-0005",
+                  "ix": 4,
+                  "v": {
+                    "a": 0,
+                    "k": -25,
+                    "ix": 4
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Lightness",
+                  "mn": "ADBE HUE SATURATION-0006",
+                  "ix": 5,
+                  "v": {
+                    "a": 0,
+                    "k": 33,
+                    "ix": 5
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Colorize",
+                  "mn": "ADBE HUE SATURATION-0007",
+                  "ix": 6,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 6
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Hue",
+                  "mn": "ADBE HUE SATURATION-0008",
+                  "ix": 7,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 7
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Saturation",
+                  "mn": "ADBE HUE SATURATION-0009",
+                  "ix": 8,
+                  "v": {
+                    "a": 0,
+                    "k": 25,
+                    "ix": 8
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Lightness",
+                  "mn": "ADBE HUE SATURATION-0010",
+                  "ix": 9,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 9
+                  }
+                }
+              ]
+            },
+            {
+              "ty": 5,
+              "nm": "Brightness & Contrast",
+              "np": 5,
+              "mn": "ADBE Brightness & Contrast 2",
+              "ix": 2,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 0,
+                  "nm": "Brightness",
+                  "mn": "ADBE Brightness & Contrast 2-0001",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 31,
+                    "ix": 1
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Contrast",
+                  "mn": "ADBE Brightness & Contrast 2-0002",
+                  "ix": 2,
+                  "v": {
+                    "a": 0,
+                    "k": 100,
+                    "ix": 2
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Use Legacy (supports HDR)",
+                  "mn": "ADBE Brightness & Contrast 2-0003",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                }
+              ]
+            },
+            {
+              "ty": 5,
+              "nm": "Hue/Saturation 2",
+              "np": 11,
+              "mn": "ADBE HUE SATURATION",
+              "ix": 3,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 7,
+                  "nm": "Channel Control",
+                  "mn": "ADBE HUE SATURATION-0002",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 1,
+                    "ix": 1
+                  }
+                },
+                {},
+                {
+                  "ty": 0,
+                  "nm": "Master Hue",
+                  "mn": "ADBE HUE SATURATION-0004",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Saturation",
+                  "mn": "ADBE HUE SATURATION-0005",
+                  "ix": 4,
+                  "v": {
+                    "a": 0,
+                    "k": -25,
+                    "ix": 4
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Lightness",
+                  "mn": "ADBE HUE SATURATION-0006",
+                  "ix": 5,
+                  "v": {
+                    "a": 0,
+                    "k": 33,
+                    "ix": 5
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Colorize",
+                  "mn": "ADBE HUE SATURATION-0007",
+                  "ix": 6,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 6
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Hue",
+                  "mn": "ADBE HUE SATURATION-0008",
+                  "ix": 7,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 7
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Saturation",
+                  "mn": "ADBE HUE SATURATION-0009",
+                  "ix": 8,
+                  "v": {
+                    "a": 0,
+                    "k": 25,
+                    "ix": 8
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Lightness",
+                  "mn": "ADBE HUE SATURATION-0010",
+                  "ix": 9,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 9
+                  }
+                }
+              ]
+            },
+            {
+              "ty": 5,
+              "nm": "Brightness & Contrast 2",
+              "np": 5,
+              "mn": "ADBE Brightness & Contrast 2",
+              "ix": 4,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 0,
+                  "nm": "Brightness",
+                  "mn": "ADBE Brightness & Contrast 2-0001",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 31,
+                    "ix": 1
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Contrast",
+                  "mn": "ADBE Brightness & Contrast 2-0002",
+                  "ix": 2,
+                  "v": {
+                    "a": 0,
+                    "k": 100,
+                    "ix": 2
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Use Legacy (supports HDR)",
+                  "mn": "ADBE Brightness & Contrast 2-0003",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                }
+              ]
+            }
+          ],
+          "ip": 33,
+          "op": 36,
+          "st": 33,
+          "bm": 0
+        },
+        {
+          "ddd": 0,
+          "ind": 13,
+          "ty": 2,
+          "nm": "grave__00037.png",
+          "cl": "png",
+          "refId": "image_12",
+          "sr": 1,
+          "ks": {
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                80,
+                107,
+                0
+              ],
+              "ix": 2,
+              "l": 2
+            },
+            "a": {
+              "a": 0,
+              "k": [
+                250,
+                250,
+                0
+              ],
+              "ix": 1,
+              "l": 2
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                33,
+                33,
+                100
+              ],
+              "ix": 6,
+              "l": 2
+            }
+          },
+          "ao": 0,
+          "ef": [
+            {
+              "ty": 5,
+              "nm": "Hue/Saturation",
+              "np": 11,
+              "mn": "ADBE HUE SATURATION",
+              "ix": 1,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 7,
+                  "nm": "Channel Control",
+                  "mn": "ADBE HUE SATURATION-0002",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 1,
+                    "ix": 1
+                  }
+                },
+                {},
+                {
+                  "ty": 0,
+                  "nm": "Master Hue",
+                  "mn": "ADBE HUE SATURATION-0004",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Saturation",
+                  "mn": "ADBE HUE SATURATION-0005",
+                  "ix": 4,
+                  "v": {
+                    "a": 0,
+                    "k": -100,
+                    "ix": 4
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Lightness",
+                  "mn": "ADBE HUE SATURATION-0006",
+                  "ix": 5,
+                  "v": {
+                    "a": 0,
+                    "k": 23,
+                    "ix": 5
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Colorize",
+                  "mn": "ADBE HUE SATURATION-0007",
+                  "ix": 6,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 6
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Hue",
+                  "mn": "ADBE HUE SATURATION-0008",
+                  "ix": 7,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 7
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Saturation",
+                  "mn": "ADBE HUE SATURATION-0009",
+                  "ix": 8,
+                  "v": {
+                    "a": 0,
+                    "k": 25,
+                    "ix": 8
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Lightness",
+                  "mn": "ADBE HUE SATURATION-0010",
+                  "ix": 9,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 9
+                  }
+                }
+              ]
+            },
+            {
+              "ty": 5,
+              "nm": "Hue/Saturation 2",
+              "np": 11,
+              "mn": "ADBE HUE SATURATION",
+              "ix": 2,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 7,
+                  "nm": "Channel Control",
+                  "mn": "ADBE HUE SATURATION-0002",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 1,
+                    "ix": 1
+                  }
+                },
+                {},
+                {
+                  "ty": 0,
+                  "nm": "Master Hue",
+                  "mn": "ADBE HUE SATURATION-0004",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Saturation",
+                  "mn": "ADBE HUE SATURATION-0005",
+                  "ix": 4,
+                  "v": {
+                    "a": 0,
+                    "k": -25,
+                    "ix": 4
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Lightness",
+                  "mn": "ADBE HUE SATURATION-0006",
+                  "ix": 5,
+                  "v": {
+                    "a": 0,
+                    "k": 33,
+                    "ix": 5
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Colorize",
+                  "mn": "ADBE HUE SATURATION-0007",
+                  "ix": 6,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 6
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Hue",
+                  "mn": "ADBE HUE SATURATION-0008",
+                  "ix": 7,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 7
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Saturation",
+                  "mn": "ADBE HUE SATURATION-0009",
+                  "ix": 8,
+                  "v": {
+                    "a": 0,
+                    "k": 25,
+                    "ix": 8
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Lightness",
+                  "mn": "ADBE HUE SATURATION-0010",
+                  "ix": 9,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 9
+                  }
+                }
+              ]
+            },
+            {
+              "ty": 5,
+              "nm": "Brightness & Contrast",
+              "np": 5,
+              "mn": "ADBE Brightness & Contrast 2",
+              "ix": 3,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 0,
+                  "nm": "Brightness",
+                  "mn": "ADBE Brightness & Contrast 2-0001",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 31,
+                    "ix": 1
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Contrast",
+                  "mn": "ADBE Brightness & Contrast 2-0002",
+                  "ix": 2,
+                  "v": {
+                    "a": 0,
+                    "k": 100,
+                    "ix": 2
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Use Legacy (supports HDR)",
+                  "mn": "ADBE Brightness & Contrast 2-0003",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                }
+              ]
+            }
+          ],
+          "ip": 36,
+          "op": 39,
+          "st": 36,
+          "bm": 0
+        },
+        {
+          "ddd": 0,
+          "ind": 14,
+          "ty": 2,
+          "nm": "grave__00042.png",
+          "cl": "png",
+          "refId": "image_13",
+          "sr": 1,
+          "ks": {
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                80,
+                107,
+                0
+              ],
+              "ix": 2,
+              "l": 2
+            },
+            "a": {
+              "a": 0,
+              "k": [
+                250,
+                250,
+                0
+              ],
+              "ix": 1,
+              "l": 2
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                33,
+                33,
+                100
+              ],
+              "ix": 6,
+              "l": 2
+            }
+          },
+          "ao": 0,
+          "ef": [
+            {
+              "ty": 5,
+              "nm": "Hue/Saturation",
+              "np": 11,
+              "mn": "ADBE HUE SATURATION",
+              "ix": 1,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 7,
+                  "nm": "Channel Control",
+                  "mn": "ADBE HUE SATURATION-0002",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 1,
+                    "ix": 1
+                  }
+                },
+                {},
+                {
+                  "ty": 0,
+                  "nm": "Master Hue",
+                  "mn": "ADBE HUE SATURATION-0004",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Saturation",
+                  "mn": "ADBE HUE SATURATION-0005",
+                  "ix": 4,
+                  "v": {
+                    "a": 0,
+                    "k": -100,
+                    "ix": 4
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Lightness",
+                  "mn": "ADBE HUE SATURATION-0006",
+                  "ix": 5,
+                  "v": {
+                    "a": 0,
+                    "k": 23,
+                    "ix": 5
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Colorize",
+                  "mn": "ADBE HUE SATURATION-0007",
+                  "ix": 6,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 6
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Hue",
+                  "mn": "ADBE HUE SATURATION-0008",
+                  "ix": 7,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 7
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Saturation",
+                  "mn": "ADBE HUE SATURATION-0009",
+                  "ix": 8,
+                  "v": {
+                    "a": 0,
+                    "k": 25,
+                    "ix": 8
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Lightness",
+                  "mn": "ADBE HUE SATURATION-0010",
+                  "ix": 9,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 9
+                  }
+                }
+              ]
+            },
+            {
+              "ty": 5,
+              "nm": "Hue/Saturation 2",
+              "np": 11,
+              "mn": "ADBE HUE SATURATION",
+              "ix": 2,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 7,
+                  "nm": "Channel Control",
+                  "mn": "ADBE HUE SATURATION-0002",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 1,
+                    "ix": 1
+                  }
+                },
+                {},
+                {
+                  "ty": 0,
+                  "nm": "Master Hue",
+                  "mn": "ADBE HUE SATURATION-0004",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Saturation",
+                  "mn": "ADBE HUE SATURATION-0005",
+                  "ix": 4,
+                  "v": {
+                    "a": 0,
+                    "k": -25,
+                    "ix": 4
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Lightness",
+                  "mn": "ADBE HUE SATURATION-0006",
+                  "ix": 5,
+                  "v": {
+                    "a": 0,
+                    "k": 33,
+                    "ix": 5
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Colorize",
+                  "mn": "ADBE HUE SATURATION-0007",
+                  "ix": 6,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 6
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Hue",
+                  "mn": "ADBE HUE SATURATION-0008",
+                  "ix": 7,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 7
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Saturation",
+                  "mn": "ADBE HUE SATURATION-0009",
+                  "ix": 8,
+                  "v": {
+                    "a": 0,
+                    "k": 25,
+                    "ix": 8
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Lightness",
+                  "mn": "ADBE HUE SATURATION-0010",
+                  "ix": 9,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 9
+                  }
+                }
+              ]
+            },
+            {
+              "ty": 5,
+              "nm": "Brightness & Contrast",
+              "np": 5,
+              "mn": "ADBE Brightness & Contrast 2",
+              "ix": 3,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 0,
+                  "nm": "Brightness",
+                  "mn": "ADBE Brightness & Contrast 2-0001",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 31,
+                    "ix": 1
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Contrast",
+                  "mn": "ADBE Brightness & Contrast 2-0002",
+                  "ix": 2,
+                  "v": {
+                    "a": 0,
+                    "k": 100,
+                    "ix": 2
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Use Legacy (supports HDR)",
+                  "mn": "ADBE Brightness & Contrast 2-0003",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                }
+              ]
+            }
+          ],
+          "ip": 39,
+          "op": 42,
+          "st": 39,
+          "bm": 0
+        },
+        {
+          "ddd": 0,
+          "ind": 15,
+          "ty": 2,
+          "nm": "grave__00052.png",
+          "cl": "png",
+          "refId": "image_14",
+          "sr": 1,
+          "ks": {
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                80,
+                107,
+                0
+              ],
+              "ix": 2,
+              "l": 2
+            },
+            "a": {
+              "a": 0,
+              "k": [
+                250,
+                250,
+                0
+              ],
+              "ix": 1,
+              "l": 2
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                33,
+                33,
+                100
+              ],
+              "ix": 6,
+              "l": 2
+            }
+          },
+          "ao": 0,
+          "ef": [
+            {
+              "ty": 5,
+              "nm": "Hue/Saturation",
+              "np": 11,
+              "mn": "ADBE HUE SATURATION",
+              "ix": 1,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 7,
+                  "nm": "Channel Control",
+                  "mn": "ADBE HUE SATURATION-0002",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 1,
+                    "ix": 1
+                  }
+                },
+                {},
+                {
+                  "ty": 0,
+                  "nm": "Master Hue",
+                  "mn": "ADBE HUE SATURATION-0004",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Saturation",
+                  "mn": "ADBE HUE SATURATION-0005",
+                  "ix": 4,
+                  "v": {
+                    "a": 0,
+                    "k": -100,
+                    "ix": 4
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Lightness",
+                  "mn": "ADBE HUE SATURATION-0006",
+                  "ix": 5,
+                  "v": {
+                    "a": 0,
+                    "k": 23,
+                    "ix": 5
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Colorize",
+                  "mn": "ADBE HUE SATURATION-0007",
+                  "ix": 6,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 6
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Hue",
+                  "mn": "ADBE HUE SATURATION-0008",
+                  "ix": 7,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 7
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Saturation",
+                  "mn": "ADBE HUE SATURATION-0009",
+                  "ix": 8,
+                  "v": {
+                    "a": 0,
+                    "k": 25,
+                    "ix": 8
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Lightness",
+                  "mn": "ADBE HUE SATURATION-0010",
+                  "ix": 9,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 9
+                  }
+                }
+              ]
+            },
+            {
+              "ty": 5,
+              "nm": "Hue/Saturation 2",
+              "np": 11,
+              "mn": "ADBE HUE SATURATION",
+              "ix": 2,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 7,
+                  "nm": "Channel Control",
+                  "mn": "ADBE HUE SATURATION-0002",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 1,
+                    "ix": 1
+                  }
+                },
+                {},
+                {
+                  "ty": 0,
+                  "nm": "Master Hue",
+                  "mn": "ADBE HUE SATURATION-0004",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Saturation",
+                  "mn": "ADBE HUE SATURATION-0005",
+                  "ix": 4,
+                  "v": {
+                    "a": 0,
+                    "k": -25,
+                    "ix": 4
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Lightness",
+                  "mn": "ADBE HUE SATURATION-0006",
+                  "ix": 5,
+                  "v": {
+                    "a": 0,
+                    "k": 33,
+                    "ix": 5
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Colorize",
+                  "mn": "ADBE HUE SATURATION-0007",
+                  "ix": 6,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 6
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Hue",
+                  "mn": "ADBE HUE SATURATION-0008",
+                  "ix": 7,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 7
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Saturation",
+                  "mn": "ADBE HUE SATURATION-0009",
+                  "ix": 8,
+                  "v": {
+                    "a": 0,
+                    "k": 25,
+                    "ix": 8
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Lightness",
+                  "mn": "ADBE HUE SATURATION-0010",
+                  "ix": 9,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 9
+                  }
+                }
+              ]
+            },
+            {
+              "ty": 5,
+              "nm": "Brightness & Contrast",
+              "np": 5,
+              "mn": "ADBE Brightness & Contrast 2",
+              "ix": 3,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 0,
+                  "nm": "Brightness",
+                  "mn": "ADBE Brightness & Contrast 2-0001",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 31,
+                    "ix": 1
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Contrast",
+                  "mn": "ADBE Brightness & Contrast 2-0002",
+                  "ix": 2,
+                  "v": {
+                    "a": 0,
+                    "k": 100,
+                    "ix": 2
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Use Legacy (supports HDR)",
+                  "mn": "ADBE Brightness & Contrast 2-0003",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                }
+              ]
+            }
+          ],
+          "ip": 42,
+          "op": 45,
+          "st": 42,
+          "bm": 0
+        },
+        {
+          "ddd": 0,
+          "ind": 16,
+          "ty": 2,
+          "nm": "grave__00062.png",
+          "cl": "png",
+          "refId": "image_15",
+          "sr": 1,
+          "ks": {
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                80,
+                107,
+                0
+              ],
+              "ix": 2,
+              "l": 2
+            },
+            "a": {
+              "a": 0,
+              "k": [
+                250,
+                250,
+                0
+              ],
+              "ix": 1,
+              "l": 2
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                33,
+                33,
+                100
+              ],
+              "ix": 6,
+              "l": 2
+            }
+          },
+          "ao": 0,
+          "ef": [
+            {
+              "ty": 5,
+              "nm": "Hue/Saturation",
+              "np": 11,
+              "mn": "ADBE HUE SATURATION",
+              "ix": 1,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 7,
+                  "nm": "Channel Control",
+                  "mn": "ADBE HUE SATURATION-0002",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 1,
+                    "ix": 1
+                  }
+                },
+                {},
+                {
+                  "ty": 0,
+                  "nm": "Master Hue",
+                  "mn": "ADBE HUE SATURATION-0004",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Saturation",
+                  "mn": "ADBE HUE SATURATION-0005",
+                  "ix": 4,
+                  "v": {
+                    "a": 0,
+                    "k": -100,
+                    "ix": 4
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Lightness",
+                  "mn": "ADBE HUE SATURATION-0006",
+                  "ix": 5,
+                  "v": {
+                    "a": 0,
+                    "k": 23,
+                    "ix": 5
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Colorize",
+                  "mn": "ADBE HUE SATURATION-0007",
+                  "ix": 6,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 6
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Hue",
+                  "mn": "ADBE HUE SATURATION-0008",
+                  "ix": 7,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 7
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Saturation",
+                  "mn": "ADBE HUE SATURATION-0009",
+                  "ix": 8,
+                  "v": {
+                    "a": 0,
+                    "k": 25,
+                    "ix": 8
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Lightness",
+                  "mn": "ADBE HUE SATURATION-0010",
+                  "ix": 9,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 9
+                  }
+                }
+              ]
+            },
+            {
+              "ty": 5,
+              "nm": "Hue/Saturation 2",
+              "np": 11,
+              "mn": "ADBE HUE SATURATION",
+              "ix": 2,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 7,
+                  "nm": "Channel Control",
+                  "mn": "ADBE HUE SATURATION-0002",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 1,
+                    "ix": 1
+                  }
+                },
+                {},
+                {
+                  "ty": 0,
+                  "nm": "Master Hue",
+                  "mn": "ADBE HUE SATURATION-0004",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Saturation",
+                  "mn": "ADBE HUE SATURATION-0005",
+                  "ix": 4,
+                  "v": {
+                    "a": 0,
+                    "k": -25,
+                    "ix": 4
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Lightness",
+                  "mn": "ADBE HUE SATURATION-0006",
+                  "ix": 5,
+                  "v": {
+                    "a": 0,
+                    "k": 33,
+                    "ix": 5
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Colorize",
+                  "mn": "ADBE HUE SATURATION-0007",
+                  "ix": 6,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 6
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Hue",
+                  "mn": "ADBE HUE SATURATION-0008",
+                  "ix": 7,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 7
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Saturation",
+                  "mn": "ADBE HUE SATURATION-0009",
+                  "ix": 8,
+                  "v": {
+                    "a": 0,
+                    "k": 25,
+                    "ix": 8
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Lightness",
+                  "mn": "ADBE HUE SATURATION-0010",
+                  "ix": 9,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 9
+                  }
+                }
+              ]
+            },
+            {
+              "ty": 5,
+              "nm": "Brightness & Contrast",
+              "np": 5,
+              "mn": "ADBE Brightness & Contrast 2",
+              "ix": 3,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 0,
+                  "nm": "Brightness",
+                  "mn": "ADBE Brightness & Contrast 2-0001",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 31,
+                    "ix": 1
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Contrast",
+                  "mn": "ADBE Brightness & Contrast 2-0002",
+                  "ix": 2,
+                  "v": {
+                    "a": 0,
+                    "k": 100,
+                    "ix": 2
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Use Legacy (supports HDR)",
+                  "mn": "ADBE Brightness & Contrast 2-0003",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                }
+              ]
+            }
+          ],
+          "ip": 45,
+          "op": 48,
+          "st": 45,
+          "bm": 0
+        },
+        {
+          "ddd": 0,
+          "ind": 17,
+          "ty": 2,
+          "nm": "grave__00068.png",
+          "cl": "png",
+          "refId": "image_16",
+          "sr": 1,
+          "ks": {
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                80,
+                107,
+                0
+              ],
+              "ix": 2,
+              "l": 2
+            },
+            "a": {
+              "a": 0,
+              "k": [
+                250,
+                250,
+                0
+              ],
+              "ix": 1,
+              "l": 2
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                33,
+                33,
+                100
+              ],
+              "ix": 6,
+              "l": 2
+            }
+          },
+          "ao": 0,
+          "ef": [
+            {
+              "ty": 5,
+              "nm": "Hue/Saturation",
+              "np": 11,
+              "mn": "ADBE HUE SATURATION",
+              "ix": 1,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 7,
+                  "nm": "Channel Control",
+                  "mn": "ADBE HUE SATURATION-0002",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 1,
+                    "ix": 1
+                  }
+                },
+                {},
+                {
+                  "ty": 0,
+                  "nm": "Master Hue",
+                  "mn": "ADBE HUE SATURATION-0004",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Saturation",
+                  "mn": "ADBE HUE SATURATION-0005",
+                  "ix": 4,
+                  "v": {
+                    "a": 0,
+                    "k": -100,
+                    "ix": 4
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Lightness",
+                  "mn": "ADBE HUE SATURATION-0006",
+                  "ix": 5,
+                  "v": {
+                    "a": 0,
+                    "k": 23,
+                    "ix": 5
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Colorize",
+                  "mn": "ADBE HUE SATURATION-0007",
+                  "ix": 6,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 6
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Hue",
+                  "mn": "ADBE HUE SATURATION-0008",
+                  "ix": 7,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 7
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Saturation",
+                  "mn": "ADBE HUE SATURATION-0009",
+                  "ix": 8,
+                  "v": {
+                    "a": 0,
+                    "k": 25,
+                    "ix": 8
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Lightness",
+                  "mn": "ADBE HUE SATURATION-0010",
+                  "ix": 9,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 9
+                  }
+                }
+              ]
+            },
+            {
+              "ty": 5,
+              "nm": "Hue/Saturation 2",
+              "np": 11,
+              "mn": "ADBE HUE SATURATION",
+              "ix": 2,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 7,
+                  "nm": "Channel Control",
+                  "mn": "ADBE HUE SATURATION-0002",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 1,
+                    "ix": 1
+                  }
+                },
+                {},
+                {
+                  "ty": 0,
+                  "nm": "Master Hue",
+                  "mn": "ADBE HUE SATURATION-0004",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Saturation",
+                  "mn": "ADBE HUE SATURATION-0005",
+                  "ix": 4,
+                  "v": {
+                    "a": 0,
+                    "k": -25,
+                    "ix": 4
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Lightness",
+                  "mn": "ADBE HUE SATURATION-0006",
+                  "ix": 5,
+                  "v": {
+                    "a": 0,
+                    "k": 33,
+                    "ix": 5
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Colorize",
+                  "mn": "ADBE HUE SATURATION-0007",
+                  "ix": 6,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 6
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Hue",
+                  "mn": "ADBE HUE SATURATION-0008",
+                  "ix": 7,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 7
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Saturation",
+                  "mn": "ADBE HUE SATURATION-0009",
+                  "ix": 8,
+                  "v": {
+                    "a": 0,
+                    "k": 25,
+                    "ix": 8
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Lightness",
+                  "mn": "ADBE HUE SATURATION-0010",
+                  "ix": 9,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 9
+                  }
+                }
+              ]
+            },
+            {
+              "ty": 5,
+              "nm": "Brightness & Contrast",
+              "np": 5,
+              "mn": "ADBE Brightness & Contrast 2",
+              "ix": 3,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 0,
+                  "nm": "Brightness",
+                  "mn": "ADBE Brightness & Contrast 2-0001",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 31,
+                    "ix": 1
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Contrast",
+                  "mn": "ADBE Brightness & Contrast 2-0002",
+                  "ix": 2,
+                  "v": {
+                    "a": 0,
+                    "k": 100,
+                    "ix": 2
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Use Legacy (supports HDR)",
+                  "mn": "ADBE Brightness & Contrast 2-0003",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                }
+              ]
+            }
+          ],
+          "ip": 48,
+          "op": 51,
+          "st": 48,
+          "bm": 0
+        },
+        {
+          "ddd": 0,
+          "ind": 18,
+          "ty": 2,
+          "nm": "grave__00071.png",
+          "cl": "png",
+          "refId": "image_17",
+          "sr": 1,
+          "ks": {
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                80,
+                107,
+                0
+              ],
+              "ix": 2,
+              "l": 2
+            },
+            "a": {
+              "a": 0,
+              "k": [
+                250,
+                250,
+                0
+              ],
+              "ix": 1,
+              "l": 2
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                33,
+                33,
+                100
+              ],
+              "ix": 6,
+              "l": 2
+            }
+          },
+          "ao": 0,
+          "ef": [
+            {
+              "ty": 5,
+              "nm": "Hue/Saturation",
+              "np": 11,
+              "mn": "ADBE HUE SATURATION",
+              "ix": 1,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 7,
+                  "nm": "Channel Control",
+                  "mn": "ADBE HUE SATURATION-0002",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 1,
+                    "ix": 1
+                  }
+                },
+                {},
+                {
+                  "ty": 0,
+                  "nm": "Master Hue",
+                  "mn": "ADBE HUE SATURATION-0004",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Saturation",
+                  "mn": "ADBE HUE SATURATION-0005",
+                  "ix": 4,
+                  "v": {
+                    "a": 0,
+                    "k": -100,
+                    "ix": 4
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Lightness",
+                  "mn": "ADBE HUE SATURATION-0006",
+                  "ix": 5,
+                  "v": {
+                    "a": 0,
+                    "k": 23,
+                    "ix": 5
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Colorize",
+                  "mn": "ADBE HUE SATURATION-0007",
+                  "ix": 6,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 6
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Hue",
+                  "mn": "ADBE HUE SATURATION-0008",
+                  "ix": 7,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 7
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Saturation",
+                  "mn": "ADBE HUE SATURATION-0009",
+                  "ix": 8,
+                  "v": {
+                    "a": 0,
+                    "k": 25,
+                    "ix": 8
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Lightness",
+                  "mn": "ADBE HUE SATURATION-0010",
+                  "ix": 9,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 9
+                  }
+                }
+              ]
+            },
+            {
+              "ty": 5,
+              "nm": "Hue/Saturation 2",
+              "np": 11,
+              "mn": "ADBE HUE SATURATION",
+              "ix": 2,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 7,
+                  "nm": "Channel Control",
+                  "mn": "ADBE HUE SATURATION-0002",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 1,
+                    "ix": 1
+                  }
+                },
+                {},
+                {
+                  "ty": 0,
+                  "nm": "Master Hue",
+                  "mn": "ADBE HUE SATURATION-0004",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Saturation",
+                  "mn": "ADBE HUE SATURATION-0005",
+                  "ix": 4,
+                  "v": {
+                    "a": 0,
+                    "k": -25,
+                    "ix": 4
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Lightness",
+                  "mn": "ADBE HUE SATURATION-0006",
+                  "ix": 5,
+                  "v": {
+                    "a": 0,
+                    "k": 33,
+                    "ix": 5
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Colorize",
+                  "mn": "ADBE HUE SATURATION-0007",
+                  "ix": 6,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 6
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Hue",
+                  "mn": "ADBE HUE SATURATION-0008",
+                  "ix": 7,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 7
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Saturation",
+                  "mn": "ADBE HUE SATURATION-0009",
+                  "ix": 8,
+                  "v": {
+                    "a": 0,
+                    "k": 25,
+                    "ix": 8
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Lightness",
+                  "mn": "ADBE HUE SATURATION-0010",
+                  "ix": 9,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 9
+                  }
+                }
+              ]
+            },
+            {
+              "ty": 5,
+              "nm": "Brightness & Contrast",
+              "np": 5,
+              "mn": "ADBE Brightness & Contrast 2",
+              "ix": 3,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 0,
+                  "nm": "Brightness",
+                  "mn": "ADBE Brightness & Contrast 2-0001",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 31,
+                    "ix": 1
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Contrast",
+                  "mn": "ADBE Brightness & Contrast 2-0002",
+                  "ix": 2,
+                  "v": {
+                    "a": 0,
+                    "k": 100,
+                    "ix": 2
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Use Legacy (supports HDR)",
+                  "mn": "ADBE Brightness & Contrast 2-0003",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                }
+              ]
+            }
+          ],
+          "ip": 51,
+          "op": 54,
+          "st": 51,
+          "bm": 0
+        },
+        {
+          "ddd": 0,
+          "ind": 19,
+          "ty": 2,
+          "nm": "grave__00074.png",
+          "cl": "png",
+          "refId": "image_18",
+          "sr": 1,
+          "ks": {
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                80,
+                107,
+                0
+              ],
+              "ix": 2,
+              "l": 2
+            },
+            "a": {
+              "a": 0,
+              "k": [
+                250,
+                250,
+                0
+              ],
+              "ix": 1,
+              "l": 2
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                33,
+                33,
+                100
+              ],
+              "ix": 6,
+              "l": 2
+            }
+          },
+          "ao": 0,
+          "ef": [
+            {
+              "ty": 5,
+              "nm": "Hue/Saturation",
+              "np": 11,
+              "mn": "ADBE HUE SATURATION",
+              "ix": 1,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 7,
+                  "nm": "Channel Control",
+                  "mn": "ADBE HUE SATURATION-0002",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 1,
+                    "ix": 1
+                  }
+                },
+                {},
+                {
+                  "ty": 0,
+                  "nm": "Master Hue",
+                  "mn": "ADBE HUE SATURATION-0004",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Saturation",
+                  "mn": "ADBE HUE SATURATION-0005",
+                  "ix": 4,
+                  "v": {
+                    "a": 0,
+                    "k": -100,
+                    "ix": 4
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Lightness",
+                  "mn": "ADBE HUE SATURATION-0006",
+                  "ix": 5,
+                  "v": {
+                    "a": 0,
+                    "k": 23,
+                    "ix": 5
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Colorize",
+                  "mn": "ADBE HUE SATURATION-0007",
+                  "ix": 6,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 6
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Hue",
+                  "mn": "ADBE HUE SATURATION-0008",
+                  "ix": 7,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 7
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Saturation",
+                  "mn": "ADBE HUE SATURATION-0009",
+                  "ix": 8,
+                  "v": {
+                    "a": 0,
+                    "k": 25,
+                    "ix": 8
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Lightness",
+                  "mn": "ADBE HUE SATURATION-0010",
+                  "ix": 9,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 9
+                  }
+                }
+              ]
+            },
+            {
+              "ty": 5,
+              "nm": "Hue/Saturation 2",
+              "np": 11,
+              "mn": "ADBE HUE SATURATION",
+              "ix": 2,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 7,
+                  "nm": "Channel Control",
+                  "mn": "ADBE HUE SATURATION-0002",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 1,
+                    "ix": 1
+                  }
+                },
+                {},
+                {
+                  "ty": 0,
+                  "nm": "Master Hue",
+                  "mn": "ADBE HUE SATURATION-0004",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Saturation",
+                  "mn": "ADBE HUE SATURATION-0005",
+                  "ix": 4,
+                  "v": {
+                    "a": 0,
+                    "k": -25,
+                    "ix": 4
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Lightness",
+                  "mn": "ADBE HUE SATURATION-0006",
+                  "ix": 5,
+                  "v": {
+                    "a": 0,
+                    "k": 33,
+                    "ix": 5
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Colorize",
+                  "mn": "ADBE HUE SATURATION-0007",
+                  "ix": 6,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 6
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Hue",
+                  "mn": "ADBE HUE SATURATION-0008",
+                  "ix": 7,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 7
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Saturation",
+                  "mn": "ADBE HUE SATURATION-0009",
+                  "ix": 8,
+                  "v": {
+                    "a": 0,
+                    "k": 25,
+                    "ix": 8
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Lightness",
+                  "mn": "ADBE HUE SATURATION-0010",
+                  "ix": 9,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 9
+                  }
+                }
+              ]
+            },
+            {
+              "ty": 5,
+              "nm": "Brightness & Contrast",
+              "np": 5,
+              "mn": "ADBE Brightness & Contrast 2",
+              "ix": 3,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 0,
+                  "nm": "Brightness",
+                  "mn": "ADBE Brightness & Contrast 2-0001",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 31,
+                    "ix": 1
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Contrast",
+                  "mn": "ADBE Brightness & Contrast 2-0002",
+                  "ix": 2,
+                  "v": {
+                    "a": 0,
+                    "k": 100,
+                    "ix": 2
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Use Legacy (supports HDR)",
+                  "mn": "ADBE Brightness & Contrast 2-0003",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                }
+              ]
+            }
+          ],
+          "ip": 54,
+          "op": 57,
+          "st": 54,
+          "bm": 0
+        },
+        {
+          "ddd": 0,
+          "ind": 20,
+          "ty": 2,
+          "nm": "grave__00077.png",
+          "cl": "png",
+          "refId": "image_19",
+          "sr": 1,
+          "ks": {
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                80,
+                107,
+                0
+              ],
+              "ix": 2,
+              "l": 2
+            },
+            "a": {
+              "a": 0,
+              "k": [
+                250,
+                250,
+                0
+              ],
+              "ix": 1,
+              "l": 2
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                33,
+                33,
+                100
+              ],
+              "ix": 6,
+              "l": 2
+            }
+          },
+          "ao": 0,
+          "ef": [
+            {
+              "ty": 5,
+              "nm": "Hue/Saturation",
+              "np": 11,
+              "mn": "ADBE HUE SATURATION",
+              "ix": 1,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 7,
+                  "nm": "Channel Control",
+                  "mn": "ADBE HUE SATURATION-0002",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 1,
+                    "ix": 1
+                  }
+                },
+                {},
+                {
+                  "ty": 0,
+                  "nm": "Master Hue",
+                  "mn": "ADBE HUE SATURATION-0004",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Saturation",
+                  "mn": "ADBE HUE SATURATION-0005",
+                  "ix": 4,
+                  "v": {
+                    "a": 0,
+                    "k": -100,
+                    "ix": 4
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Master Lightness",
+                  "mn": "ADBE HUE SATURATION-0006",
+                  "ix": 5,
+                  "v": {
+                    "a": 0,
+                    "k": 23,
+                    "ix": 5
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Colorize",
+                  "mn": "ADBE HUE SATURATION-0007",
+                  "ix": 6,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 6
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Hue",
+                  "mn": "ADBE HUE SATURATION-0008",
+                  "ix": 7,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 7
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Saturation",
+                  "mn": "ADBE HUE SATURATION-0009",
+                  "ix": 8,
+                  "v": {
+                    "a": 0,
+                    "k": 25,
+                    "ix": 8
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Colorize Lightness",
+                  "mn": "ADBE HUE SATURATION-0010",
+                  "ix": 9,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 9
+                  }
+                }
+              ]
+            },
+            {
+              "ty": 5,
+              "nm": "Brightness & Contrast",
+              "np": 5,
+              "mn": "ADBE Brightness & Contrast 2",
+              "ix": 3,
+              "en": 1,
+              "ef": [
+                {
+                  "ty": 0,
+                  "nm": "Brightness",
+                  "mn": "ADBE Brightness & Contrast 2-0001",
+                  "ix": 1,
+                  "v": {
+                    "a": 0,
+                    "k": 31,
+                    "ix": 1
+                  }
+                },
+                {
+                  "ty": 0,
+                  "nm": "Contrast",
+                  "mn": "ADBE Brightness & Contrast 2-0002",
+                  "ix": 2,
+                  "v": {
+                    "a": 0,
+                    "k": 100,
+                    "ix": 2
+                  }
+                },
+                {
+                  "ty": 7,
+                  "nm": "Use Legacy (supports HDR)",
+                  "mn": "ADBE Brightness & Contrast 2-0003",
+                  "ix": 3,
+                  "v": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 3
+                  }
+                }
+              ]
+            }
+          ],
+          "ip": 57,
+          "op": 60,
+          "st": 57,
+          "bm": 0
+        }
+      ]
+    }
+  ],
+  "layers": [
+    {
+      "ddd": 0,
+      "ind": 1,
+      "ty": 0,
+      "nm": "Pre-comp 1",
+      "refId": "comp_0",
+      "sr": -1,
+      "ks": {
+        "o": {
+          "a": 0,
+          "k": 100,
+          "ix": 11
+        },
+        "r": {
+          "a": 0,
+          "k": 0,
+          "ix": 10
+        },
+        "p": {
+          "a": 0,
+          "k": [
+            84,
+            108,
+            0
+          ],
+          "ix": 2,
+          "l": 2
+        },
+        "a": {
+          "a": 0,
+          "k": [
+            84,
+            108,
+            0
+          ],
+          "ix": 1,
+          "l": 2
+        },
+        "s": {
+          "a": 0,
+          "k": [
+            100,
+            100,
+            100
+          ],
+          "ix": 6,
+          "l": 2
+        }
+      },
+      "ao": 0,
+      "w": 168,
+      "h": 216,
+      "ip": 114.99,
+      "op": 54.99,
+      "st": 115,
+      "bm": 0
+    },
+    {
+      "ddd": 0,
+      "ind": 2,
+      "ty": 0,
+      "nm": "Pre-comp 1",
+      "refId": "comp_0",
+      "sr": 1,
+      "ks": {
+        "o": {
+          "a": 0,
+          "k": 100,
+          "ix": 11
+        },
+        "r": {
+          "a": 0,
+          "k": 0,
+          "ix": 10
+        },
+        "p": {
+          "a": 0,
+          "k": [
+            84,
+            108,
+            0
+          ],
+          "ix": 2,
+          "l": 2
+        },
+        "a": {
+          "a": 0,
+          "k": [
+            84,
+            108,
+            0
+          ],
+          "ix": 1,
+          "l": 2
+        },
+        "s": {
+          "a": 0,
+          "k": [
+            100,
+            100,
+            100
+          ],
+          "ix": 6,
+          "l": 2
+        }
+      },
+      "ao": 0,
+      "w": 168,
+      "h": 216,
+      "ip": 0,
+      "op": 60,
+      "st": 0,
+      "bm": 0
+    },
+    {
+      "ddd": 0,
+      "ind": 3,
+      "ty": 2,
+      "nm": "Group 5584.png",
+      "cl": "png",
+      "refId": "image_20",
+      "sr": 1,
+      "ks": {
+        "o": {
+          "a": 0,
+          "k": 100,
+          "ix": 11
+        },
+        "r": {
+          "a": 0,
+          "k": 0,
+          "ix": 10
+        },
+        "p": {
+          "a": 0,
+          "k": [
+            84,
+            108,
+            0
+          ],
+          "ix": 2,
+          "l": 2
+        },
+        "a": {
+          "a": 0,
+          "k": [
+            84,
+            108,
+            0
+          ],
+          "ix": 1,
+          "l": 2
+        },
+        "s": {
+          "a": 0,
+          "k": [
+            100,
+            100,
+            100
+          ],
+          "ix": 6,
+          "l": 2
+        }
+      },
+      "ao": 0,
+      "ip": 0,
+      "op": 630,
+      "st": 0,
+      "bm": 0
+    }
+  ],
+  "markers": []
+}

@@ -8,7 +8,6 @@ import '../controllers/register_controller.dart';
 class RegisterView extends GetView<RegisterController> {
   @override
   Widget build(BuildContext context) {
-
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
         overlays: [SystemUiOverlay.bottom]);
     ScreenUtil.init(
@@ -42,8 +41,8 @@ class RegisterView extends GetView<RegisterController> {
                             child: SizedBox(
                               child: Container(
                                 width: Get.width,
-                                height: 500.h,
-                                margin: EdgeInsets.only(top: 165.h),
+                                height: 560.h,
+                                margin: EdgeInsets.only(top: 105.h),
                                 child: Image.asset(
                                   "assets/images/register_sub_bg.png",
                                   fit: BoxFit.fill,
@@ -55,18 +54,19 @@ class RegisterView extends GetView<RegisterController> {
                       ),
                       Container(
                         alignment: Alignment.center,
-                        margin: EdgeInsets.only(top: 350.h),
+                        margin: EdgeInsets.only(top: 280.h),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Flexible(
                               child: Container(
                                 alignment: Alignment.center,
-                                margin: EdgeInsets.only(left: 65.w, right: 65.w),
+                                margin:
+                                    EdgeInsets.only(left: 65.w, right: 65.w),
                                 width: ScreenUtil().screenWidth,
                                 padding: EdgeInsets.only(left: 8.w),
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
+                                  borderRadius: BorderRadius.circular(10.r),
                                   gradient: LinearGradient(
                                     colors: [
                                       Color(0xFF606060),
@@ -77,12 +77,15 @@ class RegisterView extends GetView<RegisterController> {
                                 child: TextFormField(
                                   keyboardType: TextInputType.emailAddress,
                                   controller: controller.emailController,
+                                  cursorColor: Colors.white,
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 22,
                                       fontFamily: "Babybo"),
                                   decoration: InputDecoration(
                                       border: InputBorder.none,
+                                      contentPadding:
+                                          EdgeInsets.only(top: 2, left: 3),
                                       hintText: "Email",
                                       hintStyle: TextStyle(
                                           color: Color(0xFFA2A2A2),
@@ -99,7 +102,8 @@ class RegisterView extends GetView<RegisterController> {
                             Flexible(
                               child: Container(
                                 alignment: Alignment.center,
-                                margin: EdgeInsets.only(left: 65.w, right: 65.w),
+                                margin:
+                                    EdgeInsets.only(left: 65.w, right: 65.w),
                                 width: ScreenUtil().screenWidth,
                                 padding: EdgeInsets.only(left: 8.w),
                                 decoration: BoxDecoration(
@@ -114,6 +118,7 @@ class RegisterView extends GetView<RegisterController> {
                                 child: TextFormField(
                                   keyboardType: TextInputType.text,
                                   obscureText: true,
+                                  cursorColor: Colors.white,
                                   controller: controller.passwordController,
                                   style: TextStyle(
                                       color: Colors.white,
@@ -121,6 +126,8 @@ class RegisterView extends GetView<RegisterController> {
                                       fontFamily: "Babybo"),
                                   decoration: InputDecoration(
                                       border: InputBorder.none,
+                                      contentPadding:
+                                          EdgeInsets.only(top: 2, left: 3),
                                       hintText: "Password",
                                       hintStyle: TextStyle(
                                           color: Color(0xFFA2A2A2),
@@ -137,7 +144,8 @@ class RegisterView extends GetView<RegisterController> {
                             Flexible(
                               child: Container(
                                 alignment: Alignment.center,
-                                margin: EdgeInsets.only(left: 65.w, right: 65.w),
+                                margin:
+                                    EdgeInsets.only(left: 65.w, right: 65.w),
                                 width: ScreenUtil().screenWidth,
                                 padding: EdgeInsets.only(left: 8.w),
                                 decoration: BoxDecoration(
@@ -152,14 +160,17 @@ class RegisterView extends GetView<RegisterController> {
                                 child: TextFormField(
                                   keyboardType: TextInputType.text,
                                   obscureText: true,
+                                  cursorColor: Colors.white,
                                   controller:
-                                  controller.confirmPasswordController,
+                                      controller.confirmPasswordController,
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 22,
                                       fontFamily: "Babybo"),
                                   decoration: InputDecoration(
                                       border: InputBorder.none,
+                                      contentPadding:
+                                          EdgeInsets.only(top: 2.h, left: 3.w),
                                       hintText: "Confirm Password",
                                       hintStyle: TextStyle(
                                           color: Color(0xFFA2A2A2),
@@ -170,55 +181,60 @@ class RegisterView extends GetView<RegisterController> {
                             ),
                             Flexible(
                               child: SizedBox(
-                                height: 17,
+                                height: 85,
                               ),
                             ),
                             Flexible(
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Flexible(
-                                    child: Text(
-                                      "Already have account?",
-                                      style: TextStyle(
-                                          fontFamily: "Babybo",
-                                          fontSize: 16,
-                                          color: Color(0xFFA2A2A2)),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 7,
-                                  ),
-                                  Flexible(
-                                    child: InkWell(
-                                      onTap: controller.goToLogin,
+                              child: Padding(
+                                padding: EdgeInsets.only(
+                                  left: 65.w,
+                                ),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Flexible(
                                       child: Text(
-                                        "Login here",
+                                        "Already have account?",
                                         style: TextStyle(
+                                            fontFamily: "Babybo",
                                             fontSize: 16,
-                                            color: Color(0xFFFFE948),
-                                            fontFamily: "Babybo"),
+                                            color: Color(0xFFA2A2A2)),
                                       ),
                                     ),
-                                  )
-                                ],
+                                    SizedBox(
+                                      width: 7,
+                                    ),
+                                    Flexible(
+                                      child: InkWell(
+                                        onTap: controller.goToLogin,
+                                        child: Text(
+                                          "Login here",
+                                          style: TextStyle(
+                                              fontSize: 16,
+                                              color: Color(0xFFFFE948),
+                                              fontFamily: "Babybo"),
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ),
                               ),
                             ),
                             SizedBox(
-                              height: 35,
+                              height: 20,
                             ),
-                            Flexible(
-                              child: InkWell(
-                                onTap: controller.register,
-                                child: Container(
-                                  margin: EdgeInsets.only(left: 170.w, right: 170.w),
-                                  child: Image.asset(
-                                    "assets/images/register_btn.png",
-                                    fit: BoxFit.fill,
-                                    width: 238,
-                                    height: 76.h,
-
-                                  ),
+                            InkWell(
+                              onTap: controller.register,
+                              child: Container(
+                                width: 238,
+                                height: 66,
+                                margin:
+                                    EdgeInsets.only(left: 110.w, right: 110.w),
+                                child: Image.asset(
+                                  "assets/images/register_btn.png",
+                                  fit: BoxFit.fill,
+                                  width: 238,
+                                  height: 106.h,
                                 ),
                               ),
                             ),

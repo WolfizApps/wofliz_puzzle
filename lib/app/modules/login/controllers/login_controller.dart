@@ -1,11 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:puzzle_game/app/modules/login/views/cut_scene.dart';
 import 'package:puzzle_game/app/routes/app_pages.dart';
 import 'package:puzzle_game/utils/my_storage.dart';
 import 'package:puzzle_game/utils/my_utils.dart';
-
-import '../../main_game/views/cut_scene.dart';
 
 class LoginController extends GetxController {
   //TODO: Implement LoginController
@@ -54,12 +53,12 @@ class LoginController extends GetxController {
   }
 
   goToRegister() {
-    Get.offNamed(Routes.REGISTER);
+    Get.offNamed(Routes.FORGOT_PASSWORD);
   }
 
   playAsaGuest() {
     print("Play as a guest is clicked");
-  //  Get.offNamed(Routes.CHOOSE_CHARACTER);
+    //  Get.offNamed(Routes.CHOOSE_CHARACTER);
     Get.to(VideoApp());
   }
 
