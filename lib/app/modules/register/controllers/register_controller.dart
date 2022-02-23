@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:puzzle_game/app/modules/leader_board/views/leader_board_view.dart';
 import 'package:puzzle_game/app/routes/app_pages.dart';
 import 'package:puzzle_game/utils/my_storage.dart';
 import 'package:puzzle_game/utils/my_utils.dart';
@@ -38,6 +39,7 @@ class RegisterController extends GetxController {
       MyUtils.showToast("Both passwords are not matched");
     } else {
       try {
+        print(emailController.text);
         var credenitals = await FirebaseAuth.instance
             .createUserWithEmailAndPassword(
                 email: emailController.text, password: passwordController.text);
@@ -55,9 +57,10 @@ class RegisterController extends GetxController {
         MyUtils.showToast(exp.toString());
       }
     }
+   //Get.toNamed(Routes.LEADER_BOARD);
   }
 
   playAsaGuest() {
-    Get.offNamed(Routes.CHOOSE_CHARACTER);
+    Get.toNamed(Routes.CHOOSE_CHARACTER);
   }
 }

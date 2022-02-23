@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:puzzle_game/utils/my_utils.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+import '../models/leaderboard.dart';
 
 class LeaderBoardController extends GetxController {
   //TODO: Implement LeaderBoardController
 
   final count = 0.obs;
+  List<LeaderBoard> list=[];
   Map<String, dynamic> listOfDuas = {
     "duas": [
       {
@@ -24,8 +29,27 @@ class LeaderBoardController extends GetxController {
     ]
   };
 
+
+  Future<List<LeaderBoard>> get_board() async {
+
+    var querySnapshot = await FirebaseFirestore.instance.collection("leaderboard").get();
+    for (int i = querySnapshot.docs.length-1; i >=0 ; i--) {
+      var a = querySnapshot.docs[i];
+      //print("Player Name:"+a.get("name"));
+      list.add(
+          LeaderBoard(name: a.get("name"), email: a.get("email"), stage: a.get("stage"))
+      );
+
+    }
+    list.sort((a, b) => a.stage.compareTo(b.stage));
+    print(list);
+    return list;
+
+  }
+
   @override
   void onInit() {
+
     super.onInit();
   }
 

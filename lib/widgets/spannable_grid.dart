@@ -38,6 +38,9 @@ import 'spannable_grid_options.dart';
 /// - [SpannableGridStyle]
 /// - [SpannableGridSize]
 ///
+///
+ String direction="";
+ Axis? decideaxis=null;
 class SpannableGrid extends StatefulWidget {
   static SpannableGridCellData? chk;
   static int? right;
@@ -304,8 +307,7 @@ class _SpannableGridState extends State<SpannableGrid> {
                 final maxY = row - dragRowOffset + _editingCell!.rowSpan - 1;
                 for (int y = minY; y <= maxY; y++) {
                   final minX = column - dragColumnOffset;
-                  final maxX =
-                      column - dragColumnOffset + _editingCell!.columnSpan - 1;
+                  final maxX = column - dragColumnOffset + _editingCell!.columnSpan - 1;
                   for (int x = minX; x <= maxX; x++) {
                     if (y - 1 < 0 ||
                         y > widget.rows ||
@@ -499,17 +501,27 @@ class _SpannableGridState extends State<SpannableGrid> {
     if (cell.row > 1) {
       bool sideResult = true;
       for (int column = minColumn; column <= maxColumn; column++) {
+        if(cell.id=="4")
+        {
+          print("id 4 CELL INFO::");
+          print(cell.row-2);
+          print("id 4 CELL INFO::");
+          print(column -1);
+        }
         if (!_availableCells[cell.row - 2][column - 1]) {
           sideResult = false;
           break;
         }
       }
       if (sideResult) {
+       // direction="verticle";
+       //decideaxis= decideMoveNearby(cell);
         return true;
       }
     }
     // Bottom
     if (cell.row + cell.rowSpan - 1 < widget.rows) {
+
       bool sideResult = true;
       for (int column = minColumn; column <= maxColumn; column++) {
         if (!_availableCells[cell.row + cell.rowSpan - 1][column - 1]) {
@@ -518,6 +530,8 @@ class _SpannableGridState extends State<SpannableGrid> {
         }
       }
       if (sideResult) {
+        //direction="verticle";
+        //decideaxis= decideMoveNearby(cell);
         return true;
       }
     }
@@ -531,6 +545,8 @@ class _SpannableGridState extends State<SpannableGrid> {
         }
       }
       if (sideResult) {
+        //direction="horizontal";
+        //decideaxis= decideMoveNearby(cell);
         return true;
       }
     }
@@ -544,9 +560,99 @@ class _SpannableGridState extends State<SpannableGrid> {
         }
       }
       if (sideResult) {
+       // direction="horizontal";
+   //     decideaxis=  decideMoveNearby(cell);
         return true;
       }
     }
     return false;
   }
+
+
+
+
+  Axis? decideMoveNearby(SpannableGridCellData cell) {
+    final minColumn = cell.column;
+    final maxColumn = cell.column + cell.columnSpan - 1;
+    final minRow = cell.row;
+    final maxRow = cell.row + cell.rowSpan - 1;
+    // Check top
+    if (cell.row > 1) {
+      bool sideResult = true;
+      for (int column = minColumn; column <= maxColumn; column++) {
+
+        if (!_availableCells[cell.row - 2][column - 1]) {
+          sideResult = false;
+          break;
+        }
+      }
+      if (sideResult) {
+        direction="top ";
+        //return true;
+      }
+    }
+    // Bottom
+    if (cell.row + cell.rowSpan - 1 < widget.rows) {
+      bool sideResult = true;
+      for (int column = minColumn; column <= maxColumn; column++) {
+        if (!_availableCells[cell.row + cell.rowSpan - 1][column - 1]) {
+          sideResult = false;
+          break;
+        }
+      }
+      if (sideResult) {
+        direction+="bottom ";
+        //return true;
+      }
+    }
+    // Left
+    if (cell.column > 1) {
+      bool sideResult = true;
+      for (int row = minRow; row <= maxRow; row++) {
+        if (!_availableCells[row - 1][cell.column - 2]) {
+          sideResult = false;
+          break;
+        }
+      }
+      if (sideResult) {
+        direction+="left ";
+        // return true;
+      }
+    }
+    // Right
+    if (cell.column + cell.columnSpan - 1 < widget.columns) {
+      bool sideResult = true;
+      for (int row = minRow; row <= maxRow; row++) {
+        if (!_availableCells[row - 1][cell.column + cell.columnSpan - 1]) {
+          sideResult = false;
+          break;
+        }
+      }
+      if (sideResult) {
+        direction+="right ";
+        //return true;
+      }
+    }
+
+    if(direction=="")
+    {
+      return null;
+    }
+    else if(direction.split("")=="top" || direction.split("")=="bottom" || direction=="top bottom" )
+    {
+      return Axis.horizontal;
+    }
+    else{
+      return Axis.vertical;
+    }
+
+    //return false;
+  }
+
+
+
+
+
+
+
 }

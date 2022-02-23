@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../controllers/forgot_password_controller.dart';
@@ -10,6 +10,14 @@ class ForgotPasswordView extends GetView<ForgotPasswordController> {
   Widget build(BuildContext context) {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
         overlays: [SystemUiOverlay.bottom]);
+    ScreenUtil.init(
+        BoxConstraints(
+            maxWidth: MediaQuery.of(context).size.width,
+            maxHeight: MediaQuery.of(context).size.height),
+        designSize: Size(457, 812),
+        context: context,
+        minTextAdapt: true,
+        orientation: Orientation.portrait);
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
@@ -18,97 +26,108 @@ class ForgotPasswordView extends GetView<ForgotPasswordController> {
           decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage("assets/images/forgot_password_bg.png"),
-              fit: BoxFit.cover,
+              fit: BoxFit.fill,
             ),
           ),
-          child: Container(
-            alignment: Alignment.center,
-            child: Stack(
-              alignment: Alignment.topCenter,
-              children: [
-                Align(
-                  alignment: Alignment.topLeft,
-                  child: Container(
-                    width: 54,
-                    height: 54,
-                    alignment: Alignment.centerLeft,
-                    margin: EdgeInsets.only(top: 15, left: 20),
-                    child: Image.asset(
-                      "assets/images/back_btn.png",
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-                Container(
-                  width: Get.width/1.2,
-                  // height: 475,
-                  alignment: Alignment.center,
-                  margin: EdgeInsets.only(top: 0),
-                  child: Image.asset(
-                    "assets/images/forgot_password_new_bg.png",
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                Container(
-                  alignment: Alignment.center,
-                  margin: EdgeInsets.only(top: 335),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
+          child: Stack(
+            children: [
+              Container(
+                child: Container(
+                  child: Stack(
                     children: [
+                      Column(
+                        children: [
+                          Flexible(
+                            child: SizedBox(
+                              child: Container(
+                                width: Get.width,
+                                height: 520.h,
+                                margin: EdgeInsets.only(
+                                    top: 135.h, left: 30.w, right: 30.w),
+                                child: Image.asset(
+                                  "assets/images/forgot_password_new_bg.png",
+                                  fit: BoxFit.fill,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                       Container(
                         alignment: Alignment.center,
-                        height: 47,
-                        width: 220,
-                        child: Stack(
+                        margin: EdgeInsets.only(top: 400.h),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Image.asset("assets/images/edit_text_bg2.png"),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 8.0),
-                              child: TextFormField(
-                                keyboardType: TextInputType.emailAddress,
-                                controller: controller.emailController,
-                                style: TextStyle(
-                                    color: Color(0xFF272B3C),
-                                    fontSize: 22,
-                                    fontFamily: "Babybo"),
-                                decoration: InputDecoration(
-                                    border: InputBorder.none,
-                                    hintText: "Email",
-                                    hintStyle: TextStyle(
-                                        color: Color(0xFF272B3C),
-                                        fontSize: 22,
-                                        fontFamily: "Babybo")),
+                            Flexible(
+                              child: Container(
+                                alignment: Alignment.center,
+                                margin:
+                                    EdgeInsets.only(left: 82.w, right: 82.w),
+                                width: ScreenUtil().screenWidth,
+                                height: 46.h,
+                                padding: EdgeInsets.only(left: 8.w),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  gradient: LinearGradient(
+                                    colors: [
+                                      Color(0xFFD6B792),
+                                      Color(0xFFB09274)
+                                    ],
+                                  ),
+                                ),
+                                child: TextFormField(
+                                  keyboardType: TextInputType.emailAddress,
+                                  cursorColor: Colors.white,
+                                  controller: controller.emailController,
+                                  style: TextStyle(
+                                      color: Color(0XFF272B3C),
+                                      fontSize: 22,
+                                      fontFamily: "Babybo"),
+                                  decoration: InputDecoration(
+                                      border: InputBorder.none,
+                                      contentPadding:
+                                          EdgeInsets.only(left: 5, bottom: 2),
+                                      hintText: "Email",
+                                      hintStyle: TextStyle(
+                                          color: Color(0XFF272B3C),
+                                          fontSize: 22,
+                                          fontFamily: "Babybo")),
+                                ),
+                              ),
+                            ),
+                            Flexible(
+                              child: SizedBox(
+                                height: 180,
+                              ),
+                            ),
+                            Flexible(
+                              child: SizedBox(
+                                height: 20,
                               ),
                             ),
                           ],
                         ),
                       ),
-                      SizedBox(
-                        height: 180,
-                      ),
-
-                      SizedBox(
-                        height: 20,
-                      ),
+                      Align(
+                        alignment: Alignment.bottomCenter,
+                        child: Padding(
+                          padding: EdgeInsets.only(bottom: 36.0),
+                          child: InkWell(
+                            onTap: controller.resetPassword,
+                            child: Image.asset(
+                              "assets/images/reset_btn.png",
+                              height: 86.h,
+                              width: 268.w,
+                            ),
+                          ),
+                        ),
+                      )
                     ],
                   ),
                 ),
-                Align(
-                  alignment: Alignment.bottomCenter,
-                  child: InkWell(
-                    onTap: controller.resetPassword,
-                    child: Padding(
-                      padding: EdgeInsets.only(bottom: 40 ),
-                      child: Image.asset(
-                        "assets/images/reset_btn.png",
-                        height: 76,
-                        width: 238,
-                      ),
-                    ),
-                  ),
-                )
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

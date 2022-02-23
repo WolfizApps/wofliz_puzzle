@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:puzzle_game/app/modules/login/views/cut_scene.dart';
 import 'package:puzzle_game/app/routes/app_pages.dart';
 import 'package:puzzle_game/utils/my_utils.dart';
 
@@ -37,7 +38,8 @@ class ChooseCharacterController extends GetxController {
       MyUtils.showToast("Please enter Player Name");
     } else {
       // MyUtils.showToast("Your game is about to start");
-      Get.offNamed(Routes.MAIN_GAME);
+     // Get.toNamed(Routes.MAIN_GAME);
+      Get.to(VideoApp());
     }
 
     print("Play as a guest is clicked");

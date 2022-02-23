@@ -16,28 +16,6 @@ class MainGameView extends GetView<MainGameController> {
     return WillPopScope(
       onWillPop: () async {
         bool shouldReturn = false;
-        /*showDialog(
-          context: context,
-          builder: (_) => AlertDialog(
-            content: Text('Are you sure you want to exit?'),
-            actions: [
-              TextButton(
-                onPressed: () {
-                  shouldReturn = false;
-                  Navigator.pop(context);
-                },
-                child: Text('No'),
-              ),
-              TextButton(
-                onPressed: () {
-                  shouldReturn = true;
-                  Navigator.pop(context);
-                },
-                child: Text('Yes'),
-              )
-            ],
-          ),
-        );*/
         await Get.dialog(Container(
           alignment: Alignment.center,
           child: Column(
@@ -61,9 +39,6 @@ class MainGameView extends GetView<MainGameController> {
                           child: SizedBox(
                             height: 44.h,
                             width: 44.h,
-                            /* child: Image.asset("assets/images/cross_icon.png",
-                            height: 44.h,
-                            width: 44.h,),*/
                           ),
                         ),
                       ),

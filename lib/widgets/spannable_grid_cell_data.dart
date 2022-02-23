@@ -54,4 +54,5 @@ class SpannableGridCellData {
   int row;
   int columnSpan;
   int rowSpan;
+
 }

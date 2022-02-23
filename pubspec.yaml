@@ -2,7 +2,7 @@ name: puzzle_game
 version: 1.0.0+1
 publish_to: none
 description: A new Flutter project.
-environment: 
+environment:
   sdk: '>=2.15.0-208.0.dev <3.0.0'
 
 dependencies: 
@@ -14,16 +14,20 @@ dependencies:
   animated_widgets: ^1.1.0
   flutter_slidable: ^1.2.0
   slide_to_act: ^2.0.1
+  dart_vlc: ^0.1.8
   fluttertoast: ^8.0.8
- # spannable_grid: ^0.3.0
+  flutter_screenutil:
+  firebase_core_desktop: ^0.1.1-dev.3
+  firebase_auth_desktop: ^0.1.1-dev.5
   lottie: ^1.2.2
   firebase_core: ^1.12.0
+  video_player: ^2.2.18
+
   firebase_auth: ^3.3.7
   cloud_firestore: ^3.1.8
   flutter_staggered_animations: ^1.0.0
   soundpool: ^2.3.0
   just_audio: ^0.9.20
-  flutter_screenutil: ^5.3.0
   flutter: 
     sdk: flutter
 
@@ -54,5 +58,7 @@ flutter:
     - assets/lotties/
     - assets/lotties/images/
     - assets/fonts/
+    - assets/gif/
     - assets/music/
+    - assets/videos/
 
