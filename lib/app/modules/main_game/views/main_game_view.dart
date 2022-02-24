@@ -26,9 +26,9 @@ class MainGameView extends GetView<MainGameController> {
             color: Color(0xFF1A1614),
             image: DecorationImage(
               image: AssetImage(
-                "assets/images/new_main_bg.png",
+                "assets/images/bg.png",
               ),
-              fit: BoxFit.contain,
+              fit: BoxFit.cover,
             ),
           ),
           child: Get.width > Get.height ? WebLayout() : MobileLayout(),

@@ -18,6 +18,7 @@ class UsernameTile extends StatelessWidget {
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage("assets/images/main_board_player_bg.png"),
+          fit: BoxFit.cover,
         ),
       ),
       padding: EdgeInsets.only(top: 15, left: 35),

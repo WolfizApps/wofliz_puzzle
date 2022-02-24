@@ -51,15 +51,25 @@ class WebLayout extends StatelessWidget {
                   width: (Get.width * 0.85) - (Get.width * 0.04),
                   child: Stack(
                     children: [
-                      Game(),
                       Container(
-                        height: controller.blockHeight,
-                        width: controller.blockWidth * 2,
-                        child: Lottie.asset(
-                          "assets/lotties/heli_new1.json",
-                          height: controller.blockHeight,
-                          width: controller.blockWidth * 2,
-                          fit: BoxFit.contain,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(
+                              "assets/images/game_area.png",
+                            ),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        child: Game(),
+                      ),
+                      Align(
+                        alignment: Alignment.bottomCenter,
+                        child: Container(
+                          child: Lottie.asset(
+                            "assets/lotties/heli_new1.json",
+                            height: 130.h,
+                            fit: BoxFit.contain,
+                          ),
                         ),
                       ),
                     ],
@@ -71,7 +81,7 @@ class WebLayout extends StatelessWidget {
         ),
         Expanded(
           child: Padding(
-            padding: EdgeInsets.symmetric(vertical: 2.h),
+            padding: EdgeInsets.symmetric(vertical: 20.h),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [

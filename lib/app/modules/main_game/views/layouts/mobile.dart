@@ -85,6 +85,14 @@ class MobileLayout extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(
+                        "assets/images/game_area.png",
+                      ),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
                   constraints: BoxConstraints(
                     maxHeight: Get.width * 2,
                     maxWidth: (Get.height * 0.5) - 25.w,

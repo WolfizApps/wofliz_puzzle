@@ -71,7 +71,6 @@ class MainGameController extends GetxController {
   }
 
   Future<void> loadSound() async {
-    // ignore: unnecessary_null_comparison
     if (audioPlayer == null) {
       audioPlayer = AudioPlayer();
       await audioPlayer?.setAsset('assets/music/rock slide.mp3', preload: true);
