@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:just_audio/just_audio.dart';
 import 'package:puzzle_game/app/models/board.dart';
 import 'package:puzzle_game/utils/my_storage.dart';
 import 'package:puzzle_game/widgets/win_dialog.dart';
@@ -16,12 +17,15 @@ class MainGameController extends GetxController {
   void onInit() {
     super.onInit();
     getBoard();
+    loadSound();
     _controller =
         VideoPlayerController.asset('assets/videos/instructions_video.mp4')
           ..initialize();
 
     playerName.value = MyStorage.readQuserName();
   }
+
+  AudioPlayer? audioPlayer;
 
   var playerName = "".obs;
 
@@ -62,7 +66,24 @@ class MainGameController extends GetxController {
     final didMove = board.value.moveBlock(direction: dir, block: block);
     if (didMove) {
       board.value.stepIncrement();
+      playSlideSound();
     }
+  }
+
+  Future<void> loadSound() async {
+    // ignore: unnecessary_null_comparison
+    if (audioPlayer == null) {
+      audioPlayer = AudioPlayer();
+      await audioPlayer?.setAsset('assets/music/rock slide.mp3', preload: true);
+      await audioPlayer?.setSpeed(5.0);
+    }
+  }
+
+  void playSlideSound() async {
+    // audioPlayer!.pause();
+    // audioPlayer!.play();
+    await audioPlayer?.setAsset('assets/music/rock slide.mp3', preload: true);
+    await audioPlayer!.play();
   }
 
   void onUpdate(Board board) async {
@@ -92,6 +113,7 @@ class MainGameController extends GetxController {
   }
 
   Future<void> onWin() async {
+    //TODO: Call Firebase Function for updating leaderboard
     await showDialog(
       barrierDismissible: false,
       context: Get.context!,
@@ -108,9 +130,9 @@ class MainGameController extends GetxController {
     Get.toNamed(Routes.LEADER_BOARD);
   }
 
-  void showInstructions() {
+  Future<void> showInstructions() async {
     _controller!.play();
-    Get.dialog(Container(
+    await Get.dialog(Container(
       alignment: Alignment.center,
       child: Stack(
         children: <Widget>[
@@ -127,6 +149,7 @@ class MainGameController extends GetxController {
         ],
       ),
     ));
+    _controller!.pause();
   }
 
   @override
