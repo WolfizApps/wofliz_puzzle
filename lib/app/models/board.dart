@@ -1,10 +1,8 @@
 import 'dart:convert';
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:puzzle_game/app/models/hero_block.dart';
-
+import 'package:puzzle_game/app/models/solid_block.dart';
 import '../modules/main_game/controllers/main_game_controller.dart';
 import 'block.dart';
 import 'location.dart';
@@ -14,14 +12,18 @@ class Board {
   final VoidCallback onWin;
   final int rows;
   final RxList<Block> blocks;
+  final Rx<int> steps = RxInt(0);
   late final List<Block> initialSetup;
   List<List<_Space>> space = [];
+  final Function(Board) onUpdate;
 
-  Board(
-      {required this.coloumns,
-      required this.rows,
-      required this.blocks,
-      required this.onWin}) {
+  Board({
+    required this.coloumns,
+    required this.rows,
+    required this.blocks,
+    required this.onWin,
+    required this.onUpdate,
+  }) {
     for (var i = 0; i < rows; i++) {
       space.add([for (var j = 0; j < coloumns; j++) _Space(true)]);
     }
@@ -29,6 +31,9 @@ class Board {
     // ignore: invalid_use_of_protected_member
     initialSetup = blocks.value;
     _calculateSpace();
+    ever(steps, (_) {
+      onUpdate(this);
+    });
   }
 
   void _calculateSpace() {
@@ -46,14 +51,31 @@ class Board {
     _checkIfCompleted();
   }
 
+  void dispose() {
+    steps.close();
+    blocks.close();
+  }
+
   String boardToString() {
     final boardInJson = {};
+    boardInJson['steps'] = steps.value;
     boardInJson['coloumns'] = coloumns;
     boardInJson['rows'] = rows;
     boardInJson['blocks'] = [
       for (final singleBlock in blocks)
         {
-          "lottie_path": singleBlock.lottiePath,
+          if (singleBlock.runtimeType == HeroBlock)
+            "solution": [
+              for (final loc in (singleBlock as HeroBlock).solution)
+                {
+                  "row_index": loc.rowIndex,
+                  "col_index": loc.columnIndex,
+                }
+            ],
+          if (singleBlock.runtimeType == SolidBlock)
+            "lottie_path": ''
+          else
+            "lottie_path": singleBlock.lottiePath,
           "location": [
             for (final loc in singleBlock.location)
               {
@@ -64,29 +86,62 @@ class Board {
         }
     ];
 
-    return boardInJson.toString();
+    return jsonEncode(boardInJson);
   }
 
-  static Board fromString(String data, {required VoidCallback onWin}) {
+  static Board fromString(String data,
+      {required VoidCallback onWin, required void Function(Board) onUpdate}) {
     final jsonData = json.decode(data);
-    return Board(
+    final theBoard = Board(
+      onUpdate: onUpdate,
       onWin: onWin,
       coloumns: jsonData['coloumns'],
       rows: jsonData['rows'],
       blocks: <Block>[
-        for (final blockJson in jsonData['blocks'] as List<Map>)
-          Block(
-            lottiePath: blockJson['lottie_path'],
-            location: [
-              for (final locJson in blockJson['location'] as List<Map>)
-                Location(
-                  rowIndex: locJson['row_index'],
-                  columnIndex: locJson['col_index'],
-                ),
-            ],
-          ),
+        for (final blockJson in List<Map>.from(jsonData['blocks']))
+          if (blockJson.containsKey('solution'))
+            HeroBlock(
+              solution: [
+                for (final locJson in List<Map>.from(blockJson['solution']))
+                  Location(
+                    rowIndex: locJson['row_index'],
+                    columnIndex: locJson['col_index'],
+                  ),
+              ],
+              location: [
+                for (final locJson in List<Map>.from(blockJson['location']))
+                  Location(
+                    rowIndex: locJson['row_index'],
+                    columnIndex: locJson['col_index'],
+                  ),
+              ],
+              lottiePath: blockJson['lottie_path'],
+            )
+          else if ((blockJson['lottie_path'] as String).isEmpty)
+            SolidBlock(
+              location: [
+                for (final locJson in List<Map>.from(blockJson['location']))
+                  Location(
+                    rowIndex: locJson['row_index'],
+                    columnIndex: locJson['col_index'],
+                  ),
+              ],
+            )
+          else
+            Block(
+              lottiePath: blockJson['lottie_path'],
+              location: [
+                for (final locJson in List<Map>.from(blockJson['location']))
+                  Location(
+                    rowIndex: locJson['row_index'],
+                    columnIndex: locJson['col_index'],
+                  ),
+              ],
+            ),
       ].obs,
     );
+    theBoard.steps.value = jsonData['steps'];
+    return theBoard;
   }
 
   bool moveBlock({required Direction direction, required Block block}) {
@@ -268,6 +323,14 @@ class Board {
     } catch (e) {
       return false;
     }
+  }
+
+  void stepIncrement() {
+    steps.value++;
+  }
+
+  void stepsReset() {
+    steps.value = 0;
   }
 }
 

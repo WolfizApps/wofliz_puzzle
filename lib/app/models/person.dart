@@ -1,9 +1,9 @@
 class Person {
-  String? name;
-  String? age;
-  String? gender;
+  String name;
+  String age;
+  String gender;
 
-  Person({this.name, this.age, this.gender});
+  Person({required this.name, required this.age, required this.gender});
 
   factory Person.fromJson(Map<String, dynamic> parsedJson) {
     return Person(
@@ -14,9 +14,9 @@ class Person {
 
   Map<String, dynamic> toJson() {
     return {
-      "name": this.name,
-      "age": this.age,
-      "gender": this.gender,
+      "name": name,
+      "age": age,
+      "gender": gender,
     };
   }
 }

@@ -7,8 +7,12 @@ import '../models/board.dart';
 import '../models/block.dart';
 import '../models/location.dart';
 
-Board levelOneBoard({required VoidCallback onWin}) => Board(
+Board levelOneBoard(
+        {required VoidCallback onWin,
+        required void Function(Board) onUpdate}) =>
+    Board(
       onWin: onWin,
+      onUpdate: onUpdate,
       coloumns: 4,
       rows: 7,
       blocks: <Block>[

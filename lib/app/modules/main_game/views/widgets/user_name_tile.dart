@@ -65,7 +65,7 @@ class UsernameTile extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          controller.steps.value.toString(),
+                          controller.board.value.steps.value.toString(),
                           maxLines: 1,
                           style: TextStyle(
                             color: Colors.white,

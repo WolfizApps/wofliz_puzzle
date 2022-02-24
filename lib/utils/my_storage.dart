@@ -7,7 +7,8 @@ class MyStorage {
   static final String userName = 'user_name';
   static final String totalCount = 'total_count';
   static final String isUserLoggedIn = 'is_user_logged_in';
-  static final String isInstructionShow = 'true';
+  static final String isInstructionShow = 'is_instruction_show';
+  static final String board = 'true';
 
   ////userEmail
   static writeUserEmail(String value) {
@@ -42,13 +43,8 @@ class MyStorage {
     storage.write(userName, value);
   }
 
-  static writeUserNameIfNull(String value) {
-    storage.writeIfNull(userName, value);
-  }
-
   static String readQuserName() {
-    writeUserNameIfNull("userName");
-    return storage.read(userName);
+    return storage.read(userName) ?? '';
   }
 
   ////totalCount
@@ -66,29 +62,46 @@ class MyStorage {
   }
 
   ////isUserLoggedIn
-  static writeIsUserLoggedIn(bool value) {
-    storage.write(isUserLoggedIn, value);
+  static Future<void> writeIsUserLoggedIn(bool value) async {
+    await storage.write(isUserLoggedIn, value);
   }
 
-  static writeIsUserLoggedInIfNull(bool value) {
-    storage.writeIfNull(isUserLoggedIn, value);
+  static Future<void> writeIsUserLoggedInIfNull(bool value) async {
+    await storage.writeIfNull(isUserLoggedIn, value);
   }
 
-  static bool readIsUserLoggedIn() {
-    writeIsUserLoggedInIfNull(false);
+  static Future<bool> readIsUserLoggedIn() async {
+    await writeIsUserLoggedInIfNull(false);
     return storage.read(isUserLoggedIn);
   }
 
-  static writeIsInstructionShow(bool value) {
-    storage.write(isInstructionShow, value);
+  static Future<void> writeIsInstructionShow(bool value) async {
+    await storage.write(isInstructionShow, value);
   }
 
-  static writeIsInstructionShowIfNull(bool value) {
-    storage.writeIfNull(isInstructionShow, value);
+  static Future<void> writeIsInstructionShowIfNull(bool value) async {
+    await storage.writeIfNull(isInstructionShow, value);
   }
 
-  static bool readIsInstructionShow() {
-    writeIsInstructionShowIfNull(true);
+  static Future<bool> readIsInstructionShow() async {
+    await writeIsInstructionShowIfNull(true);
     return storage.read(isInstructionShow);
+  }
+
+  static Future<void> readName() async {
+    await writeIsInstructionShowIfNull(true);
+    return storage.read(isInstructionShow);
+  }
+
+  static Future<void> writeBoard(String gameBoard) async {
+    storage.write(board, gameBoard);
+  }
+
+  static String? readBoard() {
+    try {
+      return storage.read(board);
+    } catch (e) {
+      return null;
+    }
   }
 }

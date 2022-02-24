@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:lottie/lottie.dart';
 import 'package:puzzle_game/app/models/board.dart';
+import 'package:puzzle_game/utils/my_storage.dart';
 import 'package:puzzle_game/widgets/win_dialog.dart';
 import 'package:video_player/video_player.dart';
 
@@ -16,16 +15,15 @@ class MainGameController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    board = Rx<Board>(levelOneBoard(onWin: onWin));
+    getBoard();
     _controller =
         VideoPlayerController.asset('assets/videos/instructions_video.mp4')
-          ..initialize().then((_) {
-            // _controller!.play();
-          });
+          ..initialize();
+
+    playerName.value = MyStorage.readQuserName();
   }
 
-  var playerName = "Zoraiz".obs;
-  var steps = 0.obs;
+  var playerName = "".obs;
 
   Axis? blockMovingAxis;
   double blockHeight = 0.0;
@@ -63,7 +61,23 @@ class MainGameController extends GetxController {
 
     final didMove = board.value.moveBlock(direction: dir, block: block);
     if (didMove) {
-      steps.value++;
+      board.value.stepIncrement();
+    }
+  }
+
+  void onUpdate(Board board) async {
+    final boardString = board.boardToString();
+    MyStorage.writeBoard(boardString);
+  }
+
+  void getBoard() {
+    final boardString = MyStorage.readBoard();
+
+    if (boardString == null) {
+      board = Rx<Board>(levelOneBoard(onWin: onWin, onUpdate: onUpdate));
+    } else {
+      board =
+          Board.fromString(boardString, onWin: onWin, onUpdate: onUpdate).obs;
     }
   }
 
@@ -72,15 +86,19 @@ class MainGameController extends GetxController {
   }
 
   void resetGame() {
-    board.value = levelOneBoard(onWin: onWin);
-    steps.value = 0;
+    board.value = levelOneBoard(onWin: onWin, onUpdate: onUpdate);
+    board.value.stepsReset();
+    onUpdate(board.value);
   }
 
   Future<void> onWin() async {
     await showDialog(
       barrierDismissible: false,
       context: Get.context!,
-      builder: (_) => winDialog(steps: steps.value, userName: playerName.value),
+      builder: (_) => winDialog(
+        steps: board.value.steps.value,
+        userName: playerName.value,
+      ),
     );
 
     resetGame();
@@ -115,6 +133,6 @@ class MainGameController extends GetxController {
   void onClose() {
     board.value.blocks.close();
     board.close();
-    steps.close();
+    playerName.close();
   }
 }

@@ -25,7 +25,7 @@ class BlockWidget extends StatelessWidget {
       duration: Duration(milliseconds: 400),
       top: positionTop,
       left: positionLeft,
-      curve: Curves.fastOutSlowIn,
+      curve: Curves.easeOut,
       child: GestureDetector(
         onVerticalDragEnd: (dragUpdateDetails) {
           controller.dragEnded(block);

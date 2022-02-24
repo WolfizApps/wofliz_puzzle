@@ -7,8 +7,6 @@ import 'package:puzzle_game/utils/my_storage.dart';
 import 'package:puzzle_game/utils/my_utils.dart';
 
 class LoginController extends GetxController {
-  //TODO: Implement LoginController
-
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
@@ -17,34 +15,19 @@ class LoginController extends GetxController {
     super.onInit();
   }
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {}
-
-  login() async {
-    if (emailController.text == "") {
+  Future<void> login() async {
+    if (emailController.text.isEmpty) {
       MyUtils.showToast("Please enter email");
-    } else if (passwordController.text == "") {
+    } else if (passwordController.text.isEmpty) {
       MyUtils.showToast("Please enter password");
     } else {
       try {
-        UserCredential credentials = await FirebaseAuth.instance
-            .signInWithEmailAndPassword(
-                email: emailController.text, password: passwordController.text);
-        // MyUtils.showToast("User loggedIn successfully.");
-        MyStorage.writeIsUserLoggedIn(true);
-        MyStorage.writeUserEmail(emailController.text);
-        MyStorage.writeUserPassword(passwordController.text);
+        await FirebaseAuth.instance.signInWithEmailAndPassword(
+            email: emailController.text, password: passwordController.text);
+        await MyStorage.writeIsUserLoggedIn(true);
+        await MyStorage.writeUserEmail(emailController.text);
+        await MyStorage.writeUserPassword(passwordController.text);
         Get.offNamed(Routes.CHOOSE_CHARACTER);
-        /* if (credentials.credential!.token != null) {
-          MyUtils.showToast("User loggedIn successfully.");
-        } else {
-          MyUtils.showToast("Invalid email or password.");
-        }*/
       } catch (e) {
         print("Login UnSuccessful");
         MyUtils.showToast("There is some error in Login, please try again");
@@ -52,17 +35,18 @@ class LoginController extends GetxController {
     }
   }
 
-  goToRegister() {
+  void goToRegister() {
     Get.offNamed(Routes.FORGOT_PASSWORD);
   }
 
-  playAsaGuest() {
-    print("Play as a guest is clicked");
-    //  Get.offNamed(Routes.CHOOSE_CHARACTER);
+  void playAsaGuest() {
     Get.to(VideoApp());
   }
 
-  goToForgotPassword() {
+  void goToForgotPassword() {
     Get.toNamed(Routes.FORGOT_PASSWORD);
   }
+
+  @override
+  void onClose() {}
 }
