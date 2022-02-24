@@ -34,10 +34,10 @@ class MyUtils {
 
   static myCardShadow() {
     return BoxShadow(
-      color: Colors.black.withOpacity(0.80), //color of shadow
+      color: Colors.black.withOpacity(0.60), //color of shadow
       spreadRadius: 3, //spread radius
       blurRadius: 7, // blur radius
-      offset: Offset(0, 10), // changes position of shadow
+      offset: Offset(0, 7), // changes position of shadow
     );
   }
 

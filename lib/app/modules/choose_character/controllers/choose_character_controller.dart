@@ -24,7 +24,8 @@ class ChooseCharacterController extends GetxController {
       MyUtils.showToast("Please enter Player Name");
     } else {
       await MyStorage.writeUserName(userNameController.text);
-      Get.toNamed(Routes.MAIN_GAME);
+      Get.to(VideoApp());
+      // Get.toNamed(Routes.MAIN_GAME);
     }
   }
 

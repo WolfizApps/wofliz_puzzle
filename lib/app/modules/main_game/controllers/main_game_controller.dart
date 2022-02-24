@@ -17,7 +17,8 @@ class MainGameController extends GetxController {
   void onInit() {
     super.onInit();
     getBoard();
-    loadSound();
+    initAudio();
+    // loadSound();
     _controller =
         VideoPlayerController.asset('assets/videos/instructions_video.mp4')
           ..initialize();
@@ -36,6 +37,8 @@ class MainGameController extends GetxController {
   late Rx<Board> board;
 
   VideoPlayerController? _controller;
+
+  final player = AudioPlayer();
 
   void dragUpdate(
     Block block,
@@ -131,22 +134,59 @@ class MainGameController extends GetxController {
     _controller!.play();
     await Get.dialog(Container(
       alignment: Alignment.center,
-      child: Stack(
-        children: <Widget>[
-          SizedBox.expand(
-            child: FittedBox(
-              fit: BoxFit.fill,
-              child: SizedBox(
-                width: _controller!.value.size.width,
-                height: _controller!.value.size.height,
-                child: VideoPlayer(_controller!),
-              ),
+      child: _controller!.value.isInitialized
+          ? Stack(
+              children: <Widget>[
+                SizedBox.expand(
+                  child: FittedBox(
+                    fit: BoxFit.fill,
+                    child: Stack(
+                      children: [
+                        SizedBox(
+                          width: _controller!.value.size.width,
+                          height: _controller!.value.size.height,
+                          child: VideoPlayer(_controller!),
+                        ),
+                        Container(
+                          // changed by fazal
+                          alignment: Alignment.topCenter,
+                          width: _controller!.value.size.width,
+                          height: 60,
+                          margin: EdgeInsets.only(top: 15),
+                          child: TextButton(
+                            onPressed: goBack,
+                            child: Text(
+                              "Skip",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 36),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            )
+          : Container(
+              height: Get.height,
+              width: Get.width,
+              color: Colors.black,
             ),
-          ),
-        ],
-      ),
     ));
     _controller!.pause();
+  }
+
+  Future<void> goBack() async {
+    _controller!.pause();
+    _controller!.seekTo(Duration(milliseconds: 0));
+    Get.back();
+  }
+
+  initAudio() async {
+    await player.setAsset('assets/music/music2.mp3');
+    player.setLoopMode(LoopMode.all);
+    player.play();
   }
 
   @override
@@ -154,5 +194,8 @@ class MainGameController extends GetxController {
     board.value.blocks.close();
     board.close();
     playerName.close();
+    _controller!.dispose();
+    player.dispose();
+    audioPlayer!.dispose();
   }
 }
