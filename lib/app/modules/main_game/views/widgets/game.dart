@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:puzzle_game/app/modules/main_game/controllers/main_game_controller.dart';
 
@@ -10,7 +11,7 @@ class Game extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (_, BoxConstraints box) {
-      controller.blockHeight = box.maxHeight / controller.board.value.rows;
+      controller.blockHeight = (box.maxHeight / controller.board.value.rows);
       controller.blockWidth = box.maxWidth / controller.board.value.coloumns;
 
       return Obx(

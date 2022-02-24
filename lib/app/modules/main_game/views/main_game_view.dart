@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import 'package:puzzle_game/app/modules/main_game/views/widgets/game.dart';
+import 'package:puzzle_game/app/modules/main_game/views/widgets/help_button.dart';
+import 'package:puzzle_game/app/modules/main_game/views/widgets/leader_board_button.dart';
+import 'package:puzzle_game/app/modules/main_game/views/widgets/maximize_button.dart';
+import 'package:puzzle_game/app/modules/main_game/views/widgets/pause_button.dart';
+import 'package:puzzle_game/app/modules/main_game/views/widgets/reset_game_button.dart';
+import 'package:puzzle_game/app/modules/main_game/views/widgets/setting_button.dart';
+import 'package:puzzle_game/app/modules/main_game/views/widgets/user_name_tile.dart';
 import 'package:puzzle_game/utils/my_utils.dart';
-import 'package:puzzle_game/widgets/spannable_grid.dart';
-import 'package:puzzle_game/widgets/spannable_grid_options.dart';
+import 'package:puzzle_game/widgets/exit_dialog.dart';
 
 import '../controllers/main_game_controller.dart';
 
@@ -17,256 +22,102 @@ class MainGameView extends GetView<MainGameController> {
     return WillPopScope(
       onWillPop: () async {
         bool shouldReturn = false;
-        await Get.dialog(Container(
-          alignment: Alignment.center,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Stack(
-                alignment: Alignment.topCenter,
-                children: [
-                  Image.asset("assets/images/app_close_img.png"),
-                  Container(
-                    margin: EdgeInsets.only(top: 60.h, right: 10),
-                    child: Align(
-                      alignment: Alignment.topRight,
-                      child: Material(
-                        color: Colors.transparent,
-                        child: InkWell(
-                          onTap: () {
-                            shouldReturn = false;
-                            Get.back();
-                          },
-                          child: SizedBox(
-                            height: 44.h,
-                            width: 44.h,
-                          ),
-                        ),
-                      ),
-                    ),
-                  )
-                ],
-              ),
-              Flexible(
-                child: Container(
-                    width: Get.width,
-                    height: 76.h,
-                    child: Image.asset("assets/images/quit_icon.png")),
-              )
-            ],
-          ),
-        ));
+        await Get.dialog(ExitDialog());
         return shouldReturn;
       },
       child: Scaffold(
-        body: Center(
-          child: Container(
-            width: Get.width,
-            height: Get.height,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage(
-                    "assets/images/new_main_bg.png",
-                  ),
-                  fit: BoxFit.cover),
+        body: Container(
+          width: Get.width,
+          height: Get.height,
+          decoration: BoxDecoration(
+            color: Color(0xFF1A1614),
+            image: DecorationImage(
+              image: AssetImage(
+                "assets/images/new_main_bg.png",
+              ),
+              fit: BoxFit.contain,
             ),
-            child: Padding(
-              padding: EdgeInsets.only(left: 16.w, right: 16.w),
-              child: Container(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Visibility(
-                      visible: true,
-                      child: Padding(
-                        padding: EdgeInsets.only(bottom: 20.h),
-                        child: Row(
+          ),
+          child: Container(
+            child: Stack(
+              children: [
+                /// [App Bar]
+                Positioned(
+                  top: 0,
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 21.w),
+                    height: 115.5.h,
+                    width: Get.width,
+                    child: Row(
+                      children: [
+                        UsernameTile(),
+                        Spacer(),
+                        HelpButton(),
+                        SizedBox(width: 5.1.w),
+                        SettingButton(),
+                      ],
+                    ),
+                  ),
+                ),
+
+                /// [Bottom Bar]
+                Positioned(
+                  bottom: 0,
+                  child: Container(
+                    height: 142.h,
+                    width: Get.width,
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 21.w,
+                      vertical: 10.h,
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Container(
-                              height: 95.h,
-                              width: 225.w,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: AssetImage(
-                                      "assets/images/main_board_player_bg.png"),
-                                ),
-                              ),
-                              padding: EdgeInsets.only(top: 15, left: 35),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  Container(
-                                    alignment: Alignment.center,
-                                    margin: EdgeInsets.only(bottom: 15),
-                                    child: Image.asset(
-                                      "assets/images/user_icon.png",
-                                      width: 25.w,
-                                      height: 30.h,
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  Expanded(
-                                    child: Obx(
-                                      () => Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            controller.playerName.value,
-                                            maxLines: 1,
-                                            style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 26,
-                                              overflow: TextOverflow.ellipsis,
-                                              fontFamily: "leiralite",
-                                            ),
-                                          ),
-                                          Container(
-                                            child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              children: [
-                                                Text(
-                                                  "Steps: ",
-                                                  maxLines: 1,
-                                                  style: TextStyle(
-                                                    color: Color(0xFFFFE948),
-                                                    fontSize: 18,
-                                                    fontFamily: "Babybo",
-                                                  ),
-                                                ),
-                                                Text(
-                                                  controller.steps.value
-                                                      .toString(),
-                                                  maxLines: 1,
-                                                  style: TextStyle(
-                                                    color: Colors.white,
-                                                    fontSize: 18,
-                                                    fontFamily: "Babybo",
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Spacer(),
-                            Image.asset(
-                              "assets/images/help_icon.png",
-                              height: 53.w,
-                              width: 53.w,
-                            ),
-                            SizedBox(
-                              width: 5,
-                            ),
-                            Image.asset(
-                              "assets/images/settings_icon.png",
-                              height: 53.w,
-                              width: 53.w,
-                            )
+                            MaximizeButton(),
+                            PauseButton(),
                           ],
                         ),
-                      ),
-                    ),
-                    Expanded(
-                      child: Stack(
-                        children: [
-                          Align(
-                            alignment: Alignment.bottomCenter,
-                            child: Visibility(
-                              visible: true,
-                              child: Row(
-                                children: [
-                                  Container(
-                                    padding:
-                                        EdgeInsets.only(top: 15, bottom: 15),
-                                    height: 140.h,
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        Image.asset(
-                                          "assets/images/full_screen_icon.png",
-                                          height: 53.w,
-                                          width: 53.w,
-                                        ),
-                                        Spacer(),
-                                        Padding(
-                                          padding: EdgeInsets.only(top: 10.h),
-                                          child: Image.asset(
-                                            "assets/images/pause_icon.png",
-                                            height: 53.w,
-                                            width: 53.w,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Spacer(),
-                                  Container(
-                                    height: 130.h,
-                                    child: Lottie.asset(
-                                      "assets/lotties/heli_new1.json",
-                                      height: 190.h,
-                                      width: 170.w,
-                                      fit: BoxFit.fill,
-                                    ),
-                                  ),
-                                  Spacer(),
-                                  Container(
-                                    padding:
-                                        EdgeInsets.only(top: 15, bottom: 15),
-                                    height: 140.h,
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        Image.asset(
-                                          "assets/images/leader_board_icon.png",
-                                          height: 53.w,
-                                          width: 53.w,
-                                        ),
-                                        Spacer(),
-                                        Padding(
-                                          padding: EdgeInsets.only(top: 10.h),
-                                          child: InkWell(
-                                            onTap: controller.resetGame,
-                                            child: Image.asset(
-                                              "assets/images/reset_game_icon.png",
-                                              height: 53.w,
-                                              width: 53.w,
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
+                        Container(
+                          height: 130.h,
+                          child: Lottie.asset(
+                            "assets/lotties/heli_new1.json",
+                            height: 190.h,
+                            width: 170.w,
+                            fit: BoxFit.fill,
                           ),
-                          Game(),
-                        ],
-                      ),
+                        ),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            LeaderboardButton(),
+                            ResetGameButton(),
+                          ],
+                        ),
+                      ],
                     ),
-                  ],
+                  ),
                 ),
-              ),
+
+                /// [Game]
+                Positioned(
+                  bottom: -12.h,
+                  left: 0,
+                  right: 0,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        height: 810.h - 115.5.h,
+                        width: (Get.width * 0.85) - (Get.width * 0.04),
+                        child: Game(),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
           ),
         ),

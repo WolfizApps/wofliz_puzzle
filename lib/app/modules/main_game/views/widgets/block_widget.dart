@@ -16,7 +16,8 @@ class BlockWidget extends StatelessWidget {
 
   double get positionTop => block.startingRowIndex * controller.blockHeight;
 
-  double get positionLeft => block.startingColumnIndex * controller.blockWidth;
+  double get positionLeft =>
+      (block.startingColumnIndex * controller.blockWidth);
 
   @override
   Widget build(BuildContext context) {
