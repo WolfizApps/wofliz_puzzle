@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import 'package:puzzle_game/app/models/board.dart';
 import 'package:puzzle_game/widgets/win_dialog.dart';
+import 'package:video_player/video_player.dart';
 
 import '../../../data/level_one_board.dart';
 import '../../../models/block.dart';
+import '../../../routes/app_pages.dart';
 
 enum Direction { left, top, right, down }
 
@@ -14,6 +17,11 @@ class MainGameController extends GetxController {
   void onInit() {
     super.onInit();
     board = Rx<Board>(levelOneBoard(onWin: onWin));
+    _controller =
+        VideoPlayerController.asset('assets/videos/instructions_video.mp4')
+          ..initialize().then((_) {
+            // _controller!.play();
+          });
   }
 
   var playerName = "Zoraiz".obs;
@@ -24,6 +32,8 @@ class MainGameController extends GetxController {
   double blockWidth = 0.0;
 
   late Rx<Board> board;
+
+  VideoPlayerController? _controller;
 
   void dragUpdate(
     Block block,
@@ -74,6 +84,31 @@ class MainGameController extends GetxController {
     );
 
     resetGame();
+  }
+
+  void showLeaderBoard() {
+    Get.toNamed(Routes.LEADER_BOARD);
+  }
+
+  void showInstructions() {
+    _controller!.play();
+    Get.dialog(Container(
+      alignment: Alignment.center,
+      child: Stack(
+        children: <Widget>[
+          SizedBox.expand(
+            child: FittedBox(
+              fit: BoxFit.fill,
+              child: SizedBox(
+                width: _controller!.value.size.width,
+                height: _controller!.value.size.height,
+                child: VideoPlayer(_controller!),
+              ),
+            ),
+          ),
+        ],
+      ),
+    ));
   }
 
   @override

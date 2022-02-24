@@ -51,7 +51,7 @@ class BlockWidget extends StatelessWidget {
                         margin: EdgeInsets.symmetric(vertical: 2.h),
                         child: Lottie.asset(
                           'assets/lotties/${block.lottiePath}.json',
-                          fit: BoxFit.cover,
+                          fit: BoxFit.fill,
                         ),
                       ),
                     ),
