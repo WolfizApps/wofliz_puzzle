@@ -4,6 +4,8 @@ import 'package:puzzle_game/app/modules/login/views/cut_scene.dart';
 import 'package:puzzle_game/utils/my_storage.dart';
 import 'package:puzzle_game/utils/my_utils.dart';
 
+import '../../../routes/app_pages.dart';
+
 enum SelectedCharacter { no, first, second }
 
 class ChooseCharacterController extends GetxController {
@@ -22,7 +24,7 @@ class ChooseCharacterController extends GetxController {
       MyUtils.showToast("Please enter Player Name");
     } else {
       await MyStorage.writeUserName(userNameController.text);
-      Get.to(VideoApp());
+      Get.toNamed(Routes.MAIN_GAME);
     }
   }
 

@@ -80,8 +80,6 @@ class MainGameController extends GetxController {
   }
 
   void playSlideSound() async {
-    // audioPlayer!.pause();
-    // audioPlayer!.play();
     await audioPlayer?.setAsset('assets/music/rock slide.mp3', preload: true);
     await audioPlayer!.play();
   }

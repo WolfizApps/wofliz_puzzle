@@ -11,6 +11,10 @@ class UsernameTile extends StatelessWidget {
     return Container(
       height: 95.h,
       width: 225.w,
+      constraints: BoxConstraints(
+        maxWidth: 300,
+        maxHeight: 200,
+      ),
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage("assets/images/main_board_player_bg.png"),

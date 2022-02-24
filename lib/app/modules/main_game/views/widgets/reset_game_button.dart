@@ -9,10 +9,11 @@ class ResetGameButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: controller.resetGame,
-      child: Image.asset(
-        "assets/images/reset_game_icon.png",
+      child: Container(
         height: 53.w,
         width: 53.w,
+        constraints: BoxConstraints(maxHeight: 100, maxWidth: 100),
+        child: Image.asset("assets/images/reset_game_icon.png"),
       ),
     );
   }

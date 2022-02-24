@@ -1,0 +1,103 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
+import 'package:puzzle_game/app/modules/main_game/controllers/main_game_controller.dart';
+
+import '../widgets/game.dart';
+import '../widgets/help_button.dart';
+import '../widgets/leader_board_button.dart';
+import '../widgets/maximize_button.dart';
+import '../widgets/pause_button.dart';
+import '../widgets/reset_game_button.dart';
+import '../widgets/setting_button.dart';
+import '../widgets/user_name_tile.dart';
+
+class MobileLayout extends StatelessWidget {
+  final controller = Get.find<MainGameController>();
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Stack(
+        children: [
+          /// [App Bar]
+          Positioned(
+            top: 0,
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 21.w),
+              height: 115.5.h,
+              width: Get.width,
+              child: Row(
+                children: [
+                  UsernameTile(),
+                  Spacer(),
+                  HelpButton(),
+                  SizedBox(width: 5.1.w),
+                  SettingButton(),
+                ],
+              ),
+            ),
+          ),
+
+          /// [Bottom Bar]
+          Positioned(
+            bottom: 0,
+            child: Container(
+              height: 142.h,
+              width: Get.width,
+              padding: EdgeInsets.symmetric(
+                horizontal: 21.w,
+                vertical: 10.h,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      MaximizeButton(),
+                      PauseButton(),
+                    ],
+                  ),
+                  Container(
+                    height: 130.h,
+                    child: Lottie.asset("assets/lotties/heli_new1.json",
+                        height: 190.h, width: 170.w, fit: BoxFit.contain),
+                  ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      LeaderboardButton(),
+                      ResetGameButton(),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+
+          /// [Game]
+          Positioned(
+            bottom: -12.h,
+            left: 0,
+            right: 0,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  constraints: BoxConstraints(
+                    maxHeight: Get.width * 2,
+                    maxWidth: (Get.height * 0.5) - 25.w,
+                  ),
+                  height: 810.h - 115.5.h,
+                  width: (Get.width * 0.85) - (Get.width * 0.04),
+                  child: Game(),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
