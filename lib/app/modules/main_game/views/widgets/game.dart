@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:puzzle_game/app/modules/main_game/controllers/main_game_controller.dart';
 
@@ -7,6 +6,7 @@ import 'block_widget.dart';
 
 class Game extends StatelessWidget {
   final controller = Get.find<MainGameController>();
+  final focusNode = FocusNode();
 
   @override
   Widget build(BuildContext context) {

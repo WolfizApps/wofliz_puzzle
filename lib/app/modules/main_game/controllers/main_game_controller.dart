@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:puzzle_game/app/models/board.dart';
+import 'package:puzzle_game/app/models/hover_block.dart';
 import 'package:puzzle_game/utils/my_storage.dart';
 import 'package:puzzle_game/widgets/win_dialog.dart';
 import 'package:video_player/video_player.dart';
@@ -26,6 +28,7 @@ class MainGameController extends GetxController {
   }
 
   AudioPlayer? audioPlayer;
+  FocusNode focusNode = FocusNode();
 
   var playerName = "".obs;
 
@@ -33,9 +36,14 @@ class MainGameController extends GetxController {
   double blockHeight = 0.0;
   double blockWidth = 0.0;
 
+  HoverBlock? hoverBlock;
   late Rx<Board> board;
 
   VideoPlayerController? _controller;
+  var tileSelected = false.obs;
+  var keyboardActive = false;
+
+  ///[Keyboard for Web & Windows]
 
   void dragUpdate(
     Block block,
@@ -105,8 +113,11 @@ class MainGameController extends GetxController {
 
   void resetGame() {
     board.value = levelOneBoard(onWin: onWin, onUpdate: onUpdate);
-    board.value.stepsReset();
+    if (keyboardActive) {
+      hoverBlock = HoverBlock(onBlock: board.value.blocks.first);
+    }
     onUpdate(board.value);
+    focusNode.requestFocus();
   }
 
   Future<void> onWin() async {
@@ -149,10 +160,74 @@ class MainGameController extends GetxController {
     _controller!.pause();
   }
 
+  /// [Keyboard Handles]
+  void keyboardButtonPressed(RawKeyEvent event) {
+    print("I am pressed");
+    if (!keyboardActive) {
+      keyboardActive = !keyboardActive;
+      board.value.blocks.refresh();
+      hoverBlock = HoverBlock(onBlock: board.value.blocks.first);
+      return;
+    }
+
+    if (keyboardActive && event.isKeyPressed(LogicalKeyboardKey.enter)) {
+      tileSelected.toggle();
+      board.value.blocks.refresh();
+      return;
+    }
+
+    /// [Block Move]
+    if (tileSelected.value) {
+      if (event.isKeyPressed(LogicalKeyboardKey.arrowDown)) {
+        final didMove = board.value
+            .moveBlock(direction: Direction.down, block: hoverBlock!.onBlock);
+        if (didMove) {
+          board.value.stepIncrement();
+        }
+      } else if (event.isKeyPressed(LogicalKeyboardKey.arrowUp)) {
+        final didMove = board.value
+            .moveBlock(direction: Direction.top, block: hoverBlock!.onBlock);
+        if (didMove) {
+          board.value.stepIncrement();
+        }
+      } else if (event.isKeyPressed(LogicalKeyboardKey.arrowRight)) {
+        final didMove = board.value
+            .moveBlock(direction: Direction.right, block: hoverBlock!.onBlock);
+        if (didMove) {
+          board.value.stepIncrement();
+        }
+      } else if (event.isKeyPressed(LogicalKeyboardKey.arrowLeft)) {
+        final didMove = board.value
+            .moveBlock(direction: Direction.left, block: hoverBlock!.onBlock);
+        if (didMove) {
+          board.value.stepIncrement();
+        }
+      }
+
+      board.value.blocks.refresh();
+    }
+
+    /// [Selection Move]
+    else {
+      if (event.isKeyPressed(LogicalKeyboardKey.arrowDown)) {
+        hoverBlock?.moveDown(board.value);
+      } else if (event.isKeyPressed(LogicalKeyboardKey.arrowUp)) {
+        hoverBlock?.moveUp(board.value);
+      } else if (event.isKeyPressed(LogicalKeyboardKey.arrowRight)) {
+        hoverBlock?.moveRight(board.value);
+      } else if (event.isKeyPressed(LogicalKeyboardKey.arrowLeft)) {
+        hoverBlock?.moveLeft(board.value);
+      }
+
+      board.value.blocks.refresh();
+    }
+  }
+
   @override
   void onClose() {
     board.value.blocks.close();
     board.close();
     playerName.close();
+    tileSelected.close();
   }
 }

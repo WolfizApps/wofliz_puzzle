@@ -60,7 +60,12 @@ class WebLayout extends StatelessWidget {
                             fit: BoxFit.cover,
                           ),
                         ),
-                        child: Game(),
+                        child: RawKeyboardListener(
+                          focusNode: controller.focusNode,
+                          autofocus: true,
+                          onKey: controller.keyboardButtonPressed,
+                          child: Game(),
+                        ),
                       ),
                       Align(
                         alignment: Alignment.bottomCenter,

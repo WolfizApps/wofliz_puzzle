@@ -195,7 +195,7 @@ class Board {
   }
 
   bool _moveBlockRight(Block block) {
-    final canMove = _canMoveRight(block);
+    final canMove = canMoveRight(block);
     if (canMove) {
       for (final loc in block.location) {
         loc.columnIndex++;
@@ -204,7 +204,7 @@ class Board {
     return canMove;
   }
 
-  bool _canMoveRight(Block block) {
+  bool canMoveRight(Block block) {
     bool spaceAvailable = true;
     var blockLastColumnIndex = block.endingColumnIndex;
 
@@ -226,7 +226,7 @@ class Board {
   }
 
   bool _moveBlockLeft(Block block) {
-    final canMove = _canMoveLeft(block);
+    final canMove = canMoveLeft(block);
     if (canMove) {
       for (final loc in block.location) {
         loc.columnIndex--;
@@ -235,7 +235,7 @@ class Board {
     return canMove;
   }
 
-  bool _canMoveLeft(Block block) {
+  bool canMoveLeft(Block block) {
     bool spaceAvailable = true;
     var blockFirstColumnIndex = block.startingColumnIndex;
 
@@ -329,8 +329,23 @@ class Board {
     steps.value++;
   }
 
-  void stepsReset() {
-    steps.value = 0;
+  Block blockAt(List<Location> checkLocation) {
+    return blocks.firstWhere((element) {
+      final sameLengthOfLocation =
+          element.location.length == checkLocation.length;
+      bool sameLocations = true;
+
+      for (final loc in checkLocation) {
+        sameLocations = element.location.any((el) =>
+            el.rowIndex == loc.rowIndex && el.columnIndex == loc.columnIndex);
+
+        if (!sameLocations) {
+          return false;
+        }
+      }
+
+      return sameLocations && sameLengthOfLocation;
+    });
   }
 }
 

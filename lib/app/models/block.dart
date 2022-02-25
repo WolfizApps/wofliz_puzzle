@@ -1,8 +1,12 @@
 import 'location.dart';
 
+int _id = 0;
+int get _getid => _id++;
+
 class Block {
   List<Location> location;
   String lottiePath;
+  String id = _getid.toString();
 
   Block({
     required this.location,
