@@ -15,13 +15,15 @@ class Game extends StatelessWidget {
       controller.blockWidth = box.maxWidth / controller.board.value.coloumns;
 
       return Obx(
-        () => Stack(
-          children: controller.board.value.blocks
-              .map(
-                (block) => BlockWidget(block),
-              )
-              .toList(),
-        ),
+        () => controller.isLoading.value
+            ? SizedBox()
+            : Stack(
+                children: controller.board.value.blocks
+                    .map(
+                      (block) => BlockWidget(block),
+                    )
+                    .toList(),
+              ),
       );
     });
   }

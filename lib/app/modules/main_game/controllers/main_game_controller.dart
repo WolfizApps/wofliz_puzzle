@@ -1,11 +1,15 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:puzzle_game/app/models/board.dart';
+import 'package:puzzle_game/app/models/hero_block.dart';
 import 'package:puzzle_game/app/models/hover_block.dart';
 import 'package:puzzle_game/utils/my_storage.dart';
 import 'package:puzzle_game/widgets/win_dialog.dart';
+import 'package:rive/rive.dart';
 import 'package:video_player/video_player.dart';
 
 import '../../../data/level_one_board.dart';
@@ -15,11 +19,13 @@ import '../../../routes/app_pages.dart';
 enum Direction { left, top, right, down }
 
 class MainGameController extends GetxController {
+  final isLoading = true.obs;
   @override
   void onInit() {
     super.onInit();
     getBoard();
     loadSound();
+    loadRive();
     _controller =
         VideoPlayerController.asset('assets/videos/instructions_video.mp4')
           ..initialize();
@@ -35,6 +41,7 @@ class MainGameController extends GetxController {
   Axis? blockMovingAxis;
   double blockHeight = 0.0;
   double blockWidth = 0.0;
+  SMINumber? levelTrigger;
 
   HoverBlock? hoverBlock;
   late Rx<Board> board;
@@ -42,8 +49,22 @@ class MainGameController extends GetxController {
   VideoPlayerController? _controller;
   var tileSelected = false.obs;
   var keyboardActive = false;
+  Artboard? artboard;
 
-  ///[Keyboard for Web & Windows]
+  Future<void> loadRive() async {
+    final rivLoaded = await rootBundle.load('assets/lotties/character.riv');
+    final file = RiveFile.import(rivLoaded);
+    artboard = file.mainArtboard;
+    var controller =
+        StateMachineController.fromArtboard(artboard!, 'State Machine 1');
+    if (controller != null) {
+      artboard!.addController(controller);
+      levelTrigger = controller.findSMI('level') as SMINumber;
+      log("HERRR: $levelTrigger");
+    }
+
+    isLoading.value = false;
+  }
 
   void dragUpdate(
     Block block,
@@ -75,6 +96,22 @@ class MainGameController extends GetxController {
     if (didMove) {
       board.value.stepIncrement();
       playSlideSound();
+      ifHeroBlockMoved(block);
+    }
+  }
+
+  void ifHeroBlockMoved(Block block) {
+    if (block.runtimeType == HeroBlock) {
+      final rowIndex = block.startingRowIndex;
+      if (rowIndex == 0) {
+        levelTrigger?.change(4);
+      } else if (rowIndex == 1 || rowIndex == 2) {
+        levelTrigger?.change(3);
+      } else if (rowIndex == 3) {
+        levelTrigger?.change(2);
+      } else if (rowIndex == 4 || rowIndex == 5) {
+        levelTrigger?.change(1);
+      }
     }
   }
 
@@ -162,7 +199,6 @@ class MainGameController extends GetxController {
 
   /// [Keyboard Handles]
   void keyboardButtonPressed(RawKeyEvent event) {
-    print("I am pressed");
     if (!keyboardActive) {
       keyboardActive = !keyboardActive;
       board.value.blocks.refresh();
@@ -201,6 +237,7 @@ class MainGameController extends GetxController {
             .moveBlock(direction: Direction.left, block: hoverBlock!.onBlock);
         if (didMove) {
           board.value.stepIncrement();
+          ifHeroBlockMoved(hoverBlock!.onBlock);
         }
       }
 
@@ -229,5 +266,6 @@ class MainGameController extends GetxController {
     board.close();
     playerName.close();
     tileSelected.close();
+    isLoading.close();
   }
 }

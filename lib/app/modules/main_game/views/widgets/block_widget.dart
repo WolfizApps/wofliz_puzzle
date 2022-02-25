@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
+import 'package:puzzle_game/app/models/hero_block.dart';
 import 'package:puzzle_game/app/models/solid_block.dart';
 import 'package:puzzle_game/app/modules/main_game/controllers/main_game_controller.dart';
+import 'package:rive/rive.dart';
 
+import '../../../../../utils/my_utils.dart';
 import '../../../../models/block.dart';
 
 class BlockWidget extends StatelessWidget {
@@ -41,25 +44,33 @@ class BlockWidget extends StatelessWidget {
             onHorizontalDragUpdate: (dragUpdateDetails) {
               controller.dragUpdate(block, dragUpdateDetails, Axis.horizontal);
             },
-            child: block.runtimeType == SolidBlock
-                ? SizedBox()
-                : Container(
+            child: block.runtimeType == HeroBlock
+                ? Container(
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage("assets/images/img_11.png"),
+                      ),
+                    ),
                     height: block.height * controller.blockHeight,
                     width: block.width * controller.blockWidth,
-                    child: Column(
-                      children: [
-                        Expanded(
-                          child: Container(
-                            margin: EdgeInsets.symmetric(vertical: 2.h),
-                            child: Lottie.asset(
-                              'assets/lotties/${block.lottiePath}.json',
-                              fit: BoxFit.fill,
-                            ),
+                    child: Rive(artboard: controller.artboard!),
+                  )
+                : block.runtimeType == SolidBlock
+                    ? SizedBox()
+                    : Container(
+                        height: block.height * controller.blockHeight,
+                        width: block.width * controller.blockWidth,
+                        child: Container(
+                          // decoration: MyUtils.carBoxDecoration(
+                          //     cardImage: "cardImage", isShowCardImage: false),
+                          margin: EdgeInsets.all(2.r),
+                          // padding: EdgeInsets.all(vertical: 2.h, horizontal: 5.w).,
+                          child: Lottie.asset(
+                            'assets/lotties/${block.lottiePath}.json',
+                            fit: BoxFit.fill,
                           ),
                         ),
-                      ],
-                    ),
-                  ),
+                      ),
           ),
           if (controller.keyboardActive &&
               (controller.hoverBlock?.isHere(block) ?? false))
