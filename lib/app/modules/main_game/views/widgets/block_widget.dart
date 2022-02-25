@@ -46,7 +46,8 @@ class BlockWidget extends StatelessWidget {
                 height: block.height * controller.blockHeight,
                 width: block.width * controller.blockWidth,
                 child: Container(
-                  decoration: MyUtils.carBoxDecoration(cardImage: "cardImage", isShowCardImage: false),
+                  decoration: MyUtils.carBoxDecoration(
+                      cardImage: "cardImage", isShowCardImage: false),
                   margin: EdgeInsets.all(2.r),
                   // padding: EdgeInsets.all(vertical: 2.h, horizontal: 5.w).,
                   child: Lottie.asset(

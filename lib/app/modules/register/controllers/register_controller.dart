@@ -24,6 +24,8 @@ class RegisterController extends GetxController {
       MyUtils.showToast("Please enter email");
     } else if (passwordController.text.isEmpty) {
       MyUtils.showToast("Please enter password");
+    } else if (passwordController.text.length < 6) {
+      MyUtils.showToast("Password must be greater than 5 characters");
     } else if (passwordController.text != confirmPasswordController.text) {
       MyUtils.showToast("Both passwords are not matched");
     } else {

@@ -7,11 +7,11 @@ class MyUtils {
     return Fluttertoast.showToast(
       msg: message,
       toastLength: Toast.LENGTH_SHORT,
-      gravity: ToastGravity.TOP,
+      // gravity: ToastGravity.CENTER,
       timeInSecForIosWeb: 1,
-      backgroundColor: Color(0XFF6D54B5),
+      // backgroundColor: Color(0XFF6D54B5),
       textColor: Colors.white,
-      fontSize: 24.0,
+      // fontSize: 24.0,
     );
   }
 
