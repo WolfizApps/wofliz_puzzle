@@ -476,6 +476,8 @@ class MainGameController extends SuperController {
     isLoading.close();
     _controller!.dispose();
     player.dispose();
+    isPlayMusic.close();
+    isPlaySound.close();
     audioPlayer!.dispose();
   }
 

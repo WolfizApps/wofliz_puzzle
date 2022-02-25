@@ -5,8 +5,8 @@ import 'package:lottie/lottie.dart';
 import 'package:puzzle_game/app/models/hero_block.dart';
 import 'package:puzzle_game/app/models/solid_block.dart';
 import 'package:puzzle_game/app/modules/main_game/controllers/main_game_controller.dart';
-import 'package:rive/rive.dart';
 import 'package:puzzle_game/utils/my_utils.dart';
+import 'package:rive/rive.dart';
 
 import '../../../../../utils/my_utils.dart';
 import '../../../../models/block.dart';
@@ -59,6 +59,8 @@ class BlockWidget extends StatelessWidget {
                 : block.runtimeType == SolidBlock
                     ? SizedBox()
                     : Container(
+              height: block.height * controller.blockHeight,
+              width: block.width * controller.blockWidth,
                         decoration: MyUtils.carBoxDecoration(
                             cardImage: "cardImage", isShowCardImage: false),
                         margin: EdgeInsets.all(2.r),
