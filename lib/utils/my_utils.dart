@@ -7,11 +7,11 @@ class MyUtils {
     return Fluttertoast.showToast(
       msg: message,
       toastLength: Toast.LENGTH_SHORT,
-      gravity: ToastGravity.TOP,
+      // gravity: ToastGravity.CENTER,
       timeInSecForIosWeb: 1,
-      backgroundColor: Color(0XFF6D54B5),
+      // backgroundColor: Color(0XFF6D54B5),
       textColor: Colors.white,
-      fontSize: 24.0,
+      // fontSize: 24.0,
     );
   }
 
@@ -34,10 +34,10 @@ class MyUtils {
 
   static myCardShadow() {
     return BoxShadow(
-      color: Colors.black.withOpacity(0.80), //color of shadow
+      color: Colors.black.withOpacity(0.60), //color of shadow
       spreadRadius: 3, //spread radius
       blurRadius: 7, // blur radius
-      offset: Offset(0, 10), // changes position of shadow
+      offset: Offset(0, 7), // changes position of shadow
     );
   }
 

@@ -51,7 +51,7 @@ class UsernameTile extends StatelessWidget {
                     maxLines: 1,
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 26,
+                      fontSize: 20,
                       overflow: TextOverflow.ellipsis,
                       fontFamily: "leiralite",
                     ),

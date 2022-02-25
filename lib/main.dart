@@ -4,16 +4,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:puzzle_game/app/routes/app_pages.dart';
-import 'package:puzzle_game/utils/my_storage.dart';
 import 'dart:io' show Platform;
 import 'package:flutter/foundation.dart' show kIsWeb;
-import 'package:firebase_core/firebase_core.dart';
 
 main() async {
-  /*SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-    statusBarColor: Colors.transparent,
-  ));
-  SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge,overlays: []);*/
   WidgetsFlutterBinding.ensureInitialized();
 
   if (kIsWeb || Platform.isAndroid || Platform.isIOS) {
@@ -58,8 +52,6 @@ class MyApp extends StatelessWidget {
             ),
             getPages: AppPages.routes,
             initialRoute: Routes.SPLASH
-
-            // home: AppPages.INITIAL,
-            ));
+            ),);
   }
 }

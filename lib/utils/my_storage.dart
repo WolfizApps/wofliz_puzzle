@@ -10,6 +10,9 @@ class MyStorage {
   static final String isInstructionShow = 'is_instruction_show';
   static final String board = 'true';
 
+  static final String isPlayMusic = 'isPlayMusic';
+  static final String isPlaySound = 'isPlaySound';
+
   ////userEmail
   static writeUserEmail(String value) {
     storage.write(userEmail, value);
@@ -103,5 +106,25 @@ class MyStorage {
     } catch (e) {
       return null;
     }
+  }
+
+  ////isPlayMusic
+  static writeIsPlayMusic(bool value) {
+    storage.write(isPlayMusic, value);
+  }
+
+  static bool readIsPlayMusic() {
+    storage.writeIfNull(isPlayMusic, true);
+    return storage.read(isPlayMusic);
+  }
+
+  ////isPlaySound
+  static writeIsPlaySound(bool value) {
+    storage.write(isPlaySound, value);
+  }
+
+  static bool readIsPlaySound() {
+    storage.writeIfNull(isPlaySound, true);
+    return storage.read(isPlaySound);
   }
 }

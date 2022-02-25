@@ -39,43 +39,6 @@ class MobileLayout extends StatelessWidget {
             ),
           ),
 
-          /// [Bottom Bar]
-          Positioned(
-            bottom: 0,
-            child: Container(
-              height: 142.h,
-              width: Get.width,
-              padding: EdgeInsets.symmetric(
-                horizontal: 21.w,
-                vertical: 10.h,
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      MaximizeButton(),
-                      PauseButton(),
-                    ],
-                  ),
-                  Container(
-                    height: 130.h,
-                    child: Lottie.asset("assets/lotties/heli_new1.json",
-                        height: 190.h, width: 170.w, fit: BoxFit.contain),
-                  ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      LeaderboardButton(),
-                      ResetGameButton(),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          ),
-
           /// [Game]
           Positioned(
             bottom: -12.h,
@@ -102,6 +65,50 @@ class MobileLayout extends StatelessWidget {
                   child: Game(),
                 ),
               ],
+            ),
+          ),
+
+          /// [Bottom Bar]
+          Positioned(
+            bottom: 0,
+            child: Container(
+              height: 142.h,
+              width: Get.width,
+              padding: EdgeInsets.symmetric(
+                horizontal: 21.w,
+                vertical: 10.h,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  /*Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      MaximizeButton(),
+                      PauseButton(),
+                    ],
+                  ),
+                  Container(
+                    height: 130.h,
+                    child: Lottie.asset("assets/lotties/heli_new1.json",
+                        height: 190.h, width: 170.w, fit: BoxFit.contain),
+                  ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      LeaderboardButton(),
+                      ResetGameButton(),
+                    ],
+                  ),*/
+                  ResetGameButton(),
+                  Container(
+                    height: 130.h,
+                    child: Lottie.asset("assets/lotties/heli_new1.json",
+                        height: 190.h, width: 170.w, fit: BoxFit.contain),
+                  ),
+                  LeaderboardButton(),
+                ],
+              ),
             ),
           ),
         ],

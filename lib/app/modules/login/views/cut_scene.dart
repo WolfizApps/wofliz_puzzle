@@ -28,7 +28,8 @@ class _VideoAppState extends State<VideoApp> {
         },
       )
       ..addListener(() async {
-        if ((await _controller?.position)?.inSeconds == videoLengthInSecods) {
+        if ((await _controller?.position)?.inSeconds == videoLengthInSecods &&
+            !_controller!.value.isPlaying) {
           checkInstructionsPresence();
         }
       });
@@ -51,10 +52,41 @@ class _VideoAppState extends State<VideoApp> {
                 SizedBox.expand(
                   child: FittedBox(
                     fit: BoxFit.fill,
-                    child: SizedBox(
-                      width: _controller!.value.size.width,
-                      height: _controller!.value.size.height,
-                      child: VideoPlayer(_controller!),
+                    child: Stack(
+                      children: [
+                        SizedBox(
+                          width: _controller!.value.size.width,
+                          height: _controller!.value.size.height,
+                          child: VideoPlayer(_controller!),
+                        ),
+                        Container(
+                          // changed by fazal
+                          alignment: Alignment.topRight,
+                          width: _controller!.value.size.width,
+                          // height: 60,
+
+                          margin: EdgeInsets.only(top: 25),
+                          padding: EdgeInsets.only(right: 35),
+                          child: InkWell(
+                            onTap: checkInstructionsPresence,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(15)),
+                                border:
+                                    Border.all(color: Colors.white, width: 3),
+                              ),
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 20, vertical: 5),
+                              child: Text(
+                                "Skip",
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 36),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
