@@ -61,90 +61,19 @@ class ChooseCharacterView extends GetView<ChooseCharacterController> {
                   ),
                   child: Stack(
                     children: [
-                      Visibility(
-                        visible: controller.selectedCharacter.value ==
-                            SelectedCharacter.first,
-                        child: Container(
-                          height: 340.h,
-                          width: 160.w,
-                          decoration: BoxDecoration(
-                            // color: Colors.red,
-                            image: DecorationImage(
-                                image: AssetImage(
-                                  "assets/images/selectboy.png",
-                                ),
-                                //  fit: BoxFit.fill,
-                                invertColors: false),
-                          ),
-                          alignment: Alignment.topRight,
-                        ),
-                      ),
-                      Visibility(
-                        visible: controller.selectedCharacter.value ==
-                            SelectedCharacter.second,
-                        child: Align(
-                          alignment: Alignment.topRight,
-                          child: Container(
-                            height: 340.h,
-                            width: 160.w,
-                            margin: EdgeInsets.only(right: 10),
-                            decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image: AssetImage(
-                                      "assets/images/selectgirl.png",
-                                    ),
-                                    //fit: BoxFit.fill,
-                                    invertColors: false)),
-                            alignment: Alignment.topRight,
-                          ),
-                        ),
-                      ),
                       Column(
                         children: [
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Flexible(
-                                flex: 6,
-                                child: InkWell(
-                                  onTap: () {
-                                    controller.selectedCharacter.value =
-                                        SelectedCharacter.first;
-                                  },
-                                  child: Container(
-                                    height: 330.h,
-                                    width: 125.w,
-                                    child: Image.asset(
-                                      "assets/images/first_character.png",
-                                      fit: kIsWeb || Platform.isWindows
-                                          ? BoxFit.fill
-                                          : BoxFit.cover,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Flexible(
-                                flex: 6,
-                                child: InkWell(
-                                  onTap: () {
-                                    controller.selectedCharacter.value =
-                                        SelectedCharacter.second;
-                                  },
-                                  child: Container(
-                                    height: 330.h,
-                                    width: 125.w,
-                                    child: Image.asset(
-                                      "assets/images/second_character.png",
-                                      fit: kIsWeb || Platform.isWindows
-                                          ? BoxFit.fill
-                                          : BoxFit.cover,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
+                          Container(
+                            height: 220.h,
+                            // width: 125.w,
+                            child: Image.asset(
+                              "assets/images/first_character.png",
+                              fit: kIsWeb || Platform.isWindows
+                                  ? BoxFit.fill
+                                  : BoxFit.cover,
+                            ),
                           ),
+
                           Flexible(
                             child: Container(
                               alignment: Alignment.center,
