@@ -164,6 +164,7 @@ class MainGameController extends SuperController {
   }
 
   void resetGame() {
+    print("I am called");
     board.value = levelOneBoard(onWin: onWin, onUpdate: onUpdate);
     if (keyboardActive) {
       hoverBlock = HoverBlock(onBlock: board.value.blocks.first);
@@ -210,6 +211,14 @@ class MainGameController extends SuperController {
   }
 
   Future<void> showSettings() async {
+    /*await showDialog(
+      barrierDismissible: false,
+      context: Get.context!,
+      builder: (_) => winDialog(
+        steps: board.value.steps.value,
+        userName: playerName.value,
+      ),
+    );*/
     await showDialog(
       barrierDismissible: false,
       context: Get.context!,

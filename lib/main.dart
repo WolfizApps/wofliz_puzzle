@@ -21,15 +21,6 @@ main() async {
             messagingSenderId: '293222509278',
             projectId: "puzzle-game-1dc21"));
   }
-  // await Firebase.initializeApp(
-  //     name: 'puzzle_game',
-  //     options: const FirebaseOptions(
-  //       apiKey: "AIzaSyBWZYXXC87DHcP6jBfX-op2Q2-vWG4Mdfc",
-  //       appId: "1:293222509278:web:f6587a04ce2c3e8891704f",
-  //       messagingSenderId: "293222509278",
-  //       projectId:"puzzle-game-1dc21",
-  //     )
-  // );
 
   await GetStorage.init();
   runApp(const MyApp());

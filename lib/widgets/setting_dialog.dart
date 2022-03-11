@@ -35,8 +35,9 @@ class SettingDialog extends StatelessWidget {
                           onTap: () {
                             Get.back();
                           },
+                          // TODO: Fazal handle close button
                           child: Container(
-                            color: Colors.red,
+                            // color: Colors.red,
                             height: 44.h,
                             width: 44.h,
                           ),

@@ -1,10 +1,11 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
+import 'package:puzzle_game/app/routes/app_pages.dart';
 
 AlertDialog winDialog({required int steps, required String userName}) {
+
   return AlertDialog(
     backgroundColor: Colors.transparent,
     insetPadding: EdgeInsets.zero,
@@ -21,7 +22,7 @@ AlertDialog winDialog({required int steps, required String userName}) {
                     Positioned(
                       left: 0,
                       right: 0,
-                      bottom: 95,
+                      bottom: 115,
                       child: Column(
                         children: [
 
@@ -60,7 +61,7 @@ AlertDialog winDialog({required int steps, required String userName}) {
             ),
           )
         : Container(
-            constraints: BoxConstraints(maxWidth: 280, maxHeight: 500),
+            constraints: BoxConstraints(maxWidth: 320, maxHeight: 540),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -71,21 +72,21 @@ AlertDialog winDialog({required int steps, required String userName}) {
                       Positioned(
                         left: 0,
                         right: 0,
-                        bottom: 95.h,
+                        bottom: 95,
                         child: Column(
                           children: [
 
-                            SizedBox(height: 14.h),
+                            SizedBox(height: 14),
                             Text(
                               "CONGRATS!",
                               style: TextStyle(
                                 color: Color(0xFF707070),
                                 fontFamily: "leiralite",
-                                fontSize: 33.sp,
+                                fontSize: 33,
                               ),
                             ),
                             Container(
-                              margin: EdgeInsets.only(left: 60.w, right: 60.w),
+                              margin: EdgeInsets.only(left: 60, right: 60),
                               alignment: Alignment.center,
                               child: Text(
                                 "You escaped from jungle in  $steps steps",
@@ -93,7 +94,7 @@ AlertDialog winDialog({required int steps, required String userName}) {
                                 style: TextStyle(
                                   color: Color(0xFF707070),
                                   fontFamily: "Babybo",
-                                  fontSize: 18.sp,
+                                  fontSize: 18,
                                 ),
                               ),
                             ),
@@ -102,20 +103,43 @@ AlertDialog winDialog({required int steps, required String userName}) {
                       )
                     ],
                   ),
-                  GestureDetector(
-                    onTap: Get.back,
-                    child: Container(
-                      width: 238.w,
-                      height: 76.h,
-                      child: Image.asset(
-                        'assets/images/play_again_icon.png',
-                        fit: BoxFit.fill,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      GestureDetector(
+                        onTap: Get.back,
+                        child: Container(
+                          width: 125,
+                          height: 56,
+                          child: Image.asset(
+                            'assets/images/play_again_icon.png',
+                            fit: BoxFit.fill,
+                          ),
+                        ),
                       ),
-                    ),
+                      SizedBox(width: 5,),
+                      GestureDetector(
+                        onTap: openLeaderBoard,
+                        child: Container(
+                          width: 125,
+                          height: 56,
+                          child: Image.asset(
+                            'assets/images/leader_board_icon_new.png',
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
             ),
           ),
   );
+}
+
+void openLeaderBoard() {
+  Get.back();
+  Get.toNamed(Routes.LEADER_BOARD);
 }
