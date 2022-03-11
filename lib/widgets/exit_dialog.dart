@@ -56,7 +56,7 @@ class ExitDialog extends StatelessWidget {
                       },
                       child: Image.asset("assets/images/quit_icon.png"))),
             ),
-          )
+          ),
         ],
       ),
     );

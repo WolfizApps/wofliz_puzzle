@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:puzzle_game/utils/my_utils.dart';
 import 'package:video_player/video_player.dart';
@@ -31,6 +33,7 @@ class _VideoAppState extends State<VideoApp> {
       ..addListener(() async {
         if ((await _controller?.position)?.inSeconds == videoLengthInSecods &&
             !_controller!.value.isPlaying) {
+        _controller!.pause();
           checkInstructionsPresence();
         }
       });
@@ -46,7 +49,15 @@ class _VideoAppState extends State<VideoApp> {
 
   @override
   Widget build(BuildContext context) {
-    MyUtils.makeScreenResponsive(context);
+    SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeLeft,DeviceOrientation.landscapeRight]);
+    ScreenUtil.init(
+        BoxConstraints(
+            maxWidth: MediaQuery.of(context).size.width,
+            maxHeight: MediaQuery.of(context).size.height),
+        designSize: Size(457, 812),
+        context: context,
+        minTextAdapt: true,
+        orientation: Orientation.landscape);
     return Scaffold(
       body: _controller!.value.isInitialized
           ? Stack(

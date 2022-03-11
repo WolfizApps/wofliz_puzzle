@@ -10,8 +10,6 @@ import 'package:puzzle_game/app/models/hero_block.dart';
 import 'package:puzzle_game/app/models/hover_block.dart';
 import 'package:puzzle_game/app/modules/login/views/instructions.dart';
 import 'package:puzzle_game/utils/my_storage.dart';
-import 'package:puzzle_game/widgets/exit_dialog.dart';
-import 'package:puzzle_game/widgets/help_dialog.dart';
 import 'package:puzzle_game/widgets/setting_dialog.dart';
 import 'package:puzzle_game/widgets/win_dialog.dart';
 import 'package:rive/rive.dart';
@@ -34,9 +32,6 @@ class MainGameController extends SuperController {
     isPlayMusic.value = MyStorage.readIsPlayMusic();
     isPlaySound.value = MyStorage.readIsPlaySound();
     initAudio();
-    controller =
-        VideoPlayerController.asset('assets/videos/cutscene.mp4')
-          ..initialize();
 
     playerName.value = MyStorage.readQuserName();
   }
@@ -56,8 +51,6 @@ class MainGameController extends SuperController {
   final isPlaySound = true.obs;
 
   late Rx<Board> board;
-
-  VideoPlayerController? controller;
   var tileSelected = false.obs;
   var keyboardActive = false;
   Artboard? artboard;
@@ -207,20 +200,6 @@ class MainGameController extends SuperController {
 
   Future<void> showInstructions() async {
     Get.to(Instruction(isFromMainScreen: true,));
-  /*  controller =
-    VideoPlayerController.asset('assets/videos/cutscene.mp4')
-      ..initialize();
-    controller!.play();
-    await Get.dialog(
-      HelpDialog(),
-    );
-    controller!.pause();*/
-  }
-
-  Future<void> goBack() async {
-    controller!.pause();
-    controller!.seekTo(Duration(milliseconds: 0));
-    Get.back();
   }
 
   Future<void> showSettings() async {
@@ -232,6 +211,9 @@ class MainGameController extends SuperController {
   }
 
   Future<void> goToInstructionsScreen() async {
+    if (isPlayMusic.value) {
+      player.pause();
+    }
     Get.to(Instruction(isFromMainScreen: true));
   }
 
@@ -313,7 +295,6 @@ class MainGameController extends SuperController {
     playerName.close();
     tileSelected.close();
     isLoading.close();
-    controller!.dispose();
     player.dispose();
     isPlayMusic.close();
     isPlaySound.close();
@@ -336,13 +317,18 @@ class MainGameController extends SuperController {
   }
 
   @override
-  void onDetached() {}
+  void onDetached() {
+    print("On in detach");
+  }
 
   @override
-  void onInactive() {}
+  void onInactive() {
+    print("On in activate");
+  }
 
   @override
   void onPaused() {
+    print("On in pause");
     if (player.playing) {
       player.pause();
     }
@@ -350,6 +336,7 @@ class MainGameController extends SuperController {
 
   @override
   void onResumed() {
+    print("On in resume");
     // TODO: implement onResumed
     if (isPlayMusic.value) {
       player.play();

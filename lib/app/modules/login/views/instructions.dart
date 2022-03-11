@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:puzzle_game/app/modules/main_game/controllers/main_game_controller.dart';
 import 'package:puzzle_game/utils/my_storage.dart';
 import 'package:puzzle_game/utils/my_utils.dart';
 import 'package:video_player/video_player.dart';
@@ -19,6 +20,7 @@ class Instruction extends StatefulWidget {
 class _InstructionState extends State<Instruction> {
   VideoPlayerController? _controller;
   late int videoLengthInSecods;
+  final controller = Get.find<MainGameController>();
 
   @override
   void initState() {

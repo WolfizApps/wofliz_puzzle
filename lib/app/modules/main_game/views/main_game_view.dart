@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:puzzle_game/app/modules/main_game/views/layouts/mobile.dart';
 import 'package:puzzle_game/utils/my_utils.dart';
@@ -11,6 +12,7 @@ class MainGameView extends GetView<MainGameController> {
   @override
   Widget build(BuildContext context) {
     MyUtils.makeScreenResponsive(context);
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
     return WillPopScope(
       onWillPop: () async {
         bool shouldReturn = false;

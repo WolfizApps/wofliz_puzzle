@@ -17,7 +17,9 @@ class ChooseCharacterView extends GetView<ChooseCharacterController> {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
         overlays: [SystemUiOverlay.bottom]);
     MyUtils.makeScreenResponsive(context);
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       body: WillPopScope(
         onWillPop: () async {
           bool shouldReturn = false;

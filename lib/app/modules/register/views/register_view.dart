@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:puzzle_game/utils/my_utils.dart';
 import 'package:puzzle_game/widgets/exit_dialog.dart';
 
 import '../controllers/register_controller.dart';
@@ -10,7 +9,6 @@ import '../controllers/register_controller.dart';
 class RegisterView extends GetView<RegisterController> {
   @override
   Widget build(BuildContext context) {
-    MyUtils.makeScreenResponsive(context);
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
         overlays: [SystemUiOverlay.bottom]);
     ScreenUtil.init(
@@ -28,6 +26,7 @@ class RegisterView extends GetView<RegisterController> {
         return shouldReturn;
       },
       child: Scaffold(
+        resizeToAvoidBottomInset: true,
         body: SingleChildScrollView(
           child: Container(
             height: Get.height,
@@ -40,239 +39,234 @@ class RegisterView extends GetView<RegisterController> {
             ),
             child: Stack(
               children: [
-                Container(
-                  child: Container(
-                    child: Stack(
-                      children: [
-                        Column(
-                          children: [
-                            Flexible(
-                              child: SizedBox(
-                                child: Container(
-                                  width: Get.width,
-                                  height: 560.h,
-                                  margin: EdgeInsets.only(top: 105.h),
-                                  child: Image.asset(
-                                    "assets/images/register_sub_bg.png",
-                                    fit: BoxFit.fill,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
+                Column(
+                  children: [
+                    Flexible(
+                      child: SizedBox(
+                        child: Container(
+                          width: Get.width,
+                          height: 560.h,
+                          margin: EdgeInsets.only(top: 105.h),
+                          child: Image.asset(
+                            "assets/images/register_sub_bg.png",
+                            fit: BoxFit.fill,
+                          ),
                         ),
-                        Container(
+                      ),
+                    ),
+                  ],
+                ),
+                Container(
+                  alignment: Alignment.center,
+                  margin: EdgeInsets.only(top: 280.h),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Flexible(
+                        child: Container(
                           alignment: Alignment.center,
-                          margin: EdgeInsets.only(top: 280.h),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
+                          margin:
+                              EdgeInsets.only(left: 65.w, right: 65.w),
+                          width: ScreenUtil().screenWidth,
+                          padding: EdgeInsets.only(left: 8.w),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10.r),
+                            gradient: LinearGradient(
+                              colors: [
+                                Color(0xFF606060),
+                                Color(0xFF2F2F2F)
+                              ],
+                            ),
+                          ),
+                          child: TextFormField(
+                            keyboardType: TextInputType.emailAddress,
+                            controller: controller.emailController,
+                            cursorColor: Colors.white,
+                            textInputAction: TextInputAction.next,
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 22,
+                                fontFamily: "Babybo"),
+                            decoration: InputDecoration(
+                                border: InputBorder.none,
+                                contentPadding:
+                                    EdgeInsets.only(top: 2, left: 3),
+                                hintText: "Email",
+                                hintStyle: TextStyle(
+                                    color: Color(0xFFA2A2A2),
+                                    fontSize: 22,
+                                    fontFamily: "Babybo")),
+                          ),
+                        ),
+                      ),
+                      Flexible(
+                        child: SizedBox(
+                          height: 16.h,
+                        ),
+                      ),
+                      Flexible(
+                        child: Container(
+                          alignment: Alignment.center,
+                          margin:
+                              EdgeInsets.only(left: 65.w, right: 65.w),
+                          width: ScreenUtil().screenWidth,
+                          padding: EdgeInsets.only(left: 8.w),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            gradient: LinearGradient(
+                              colors: [
+                                Color(0xFF606060),
+                                Color(0xFF2F2F2F)
+                              ],
+                            ),
+                          ),
+                          child: TextFormField(
+                            keyboardType: TextInputType.text,
+                            obscureText: true,
+                            cursorColor: Colors.white,
+                            controller: controller.passwordController,
+                            textInputAction: TextInputAction.next,
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 22,
+                                fontFamily: "Babybo"),
+                            decoration: InputDecoration(
+                                border: InputBorder.none,
+                                contentPadding:
+                                    EdgeInsets.only(top: 2, left: 3),
+                                hintText: "Password",
+                                hintStyle: TextStyle(
+                                    color: Color(0xFFA2A2A2),
+                                    fontSize: 22,
+                                    fontFamily: "Babybo")),
+                          ),
+                        ),
+                      ),
+                      Flexible(
+                        child: SizedBox(
+                          height: 16.h,
+                        ),
+                      ),
+                      Flexible(
+                        child: Container(
+                          alignment: Alignment.center,
+                          margin:
+                              EdgeInsets.only(left: 65.w, right: 65.w),
+                          width: ScreenUtil().screenWidth,
+                          padding: EdgeInsets.only(left: 8.w),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            gradient: LinearGradient(
+                              colors: [
+                                Color(0xFF606060),
+                                Color(0xFF2F2F2F)
+                              ],
+                            ),
+                          ),
+                          child: TextFormField(
+                            keyboardType: TextInputType.text,
+                            obscureText: true,
+                            cursorColor: Colors.white,
+                            controller:
+                                controller.confirmPasswordController,
+                            textInputAction: TextInputAction.done,
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 22,
+                                fontFamily: "Babybo"),
+                            decoration: InputDecoration(
+                                border: InputBorder.none,
+                                contentPadding:
+                                    EdgeInsets.only(top: 2.h, left: 3.w),
+                                hintText: "Confirm Password",
+                                hintStyle: TextStyle(
+                                    color: Color(0xFFA2A2A2),
+                                    fontSize: 22,
+                                    fontFamily: "Babybo")),
+                          ),
+                        ),
+                      ),
+                      Flexible(
+                        child: SizedBox(
+                          height: 85,
+                        ),
+                      ),
+                      Flexible(
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                            left: 65.w,
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Flexible(
-                                child: Container(
-                                  alignment: Alignment.center,
-                                  margin:
-                                      EdgeInsets.only(left: 65.w, right: 65.w),
-                                  width: ScreenUtil().screenWidth,
-                                  padding: EdgeInsets.only(left: 8.w),
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10.r),
-                                    gradient: LinearGradient(
-                                      colors: [
-                                        Color(0xFF606060),
-                                        Color(0xFF2F2F2F)
-                                      ],
-                                    ),
-                                  ),
-                                  child: TextFormField(
-                                    keyboardType: TextInputType.emailAddress,
-                                    controller: controller.emailController,
-                                    cursorColor: Colors.white,
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 22,
-                                        fontFamily: "Babybo"),
-                                    decoration: InputDecoration(
-                                        border: InputBorder.none,
-                                        contentPadding:
-                                            EdgeInsets.only(top: 2, left: 3),
-                                        hintText: "Email",
-                                        hintStyle: TextStyle(
-                                            color: Color(0xFFA2A2A2),
-                                            fontSize: 22,
-                                            fontFamily: "Babybo")),
-                                  ),
-                                ),
-                              ),
-                              Flexible(
-                                child: SizedBox(
-                                  height: 16.h,
-                                ),
-                              ),
-                              Flexible(
-                                child: Container(
-                                  alignment: Alignment.center,
-                                  margin:
-                                      EdgeInsets.only(left: 65.w, right: 65.w),
-                                  width: ScreenUtil().screenWidth,
-                                  padding: EdgeInsets.only(left: 8.w),
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10),
-                                    gradient: LinearGradient(
-                                      colors: [
-                                        Color(0xFF606060),
-                                        Color(0xFF2F2F2F)
-                                      ],
-                                    ),
-                                  ),
-                                  child: TextFormField(
-                                    keyboardType: TextInputType.text,
-                                    obscureText: true,
-                                    cursorColor: Colors.white,
-                                    controller: controller.passwordController,
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 22,
-                                        fontFamily: "Babybo"),
-                                    decoration: InputDecoration(
-                                        border: InputBorder.none,
-                                        contentPadding:
-                                            EdgeInsets.only(top: 2, left: 3),
-                                        hintText: "Password",
-                                        hintStyle: TextStyle(
-                                            color: Color(0xFFA2A2A2),
-                                            fontSize: 22,
-                                            fontFamily: "Babybo")),
-                                  ),
-                                ),
-                              ),
-                              Flexible(
-                                child: SizedBox(
-                                  height: 16.h,
-                                ),
-                              ),
-                              Flexible(
-                                child: Container(
-                                  alignment: Alignment.center,
-                                  margin:
-                                      EdgeInsets.only(left: 65.w, right: 65.w),
-                                  width: ScreenUtil().screenWidth,
-                                  padding: EdgeInsets.only(left: 8.w),
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10),
-                                    gradient: LinearGradient(
-                                      colors: [
-                                        Color(0xFF606060),
-                                        Color(0xFF2F2F2F)
-                                      ],
-                                    ),
-                                  ),
-                                  child: TextFormField(
-                                    keyboardType: TextInputType.text,
-                                    obscureText: true,
-                                    cursorColor: Colors.white,
-                                    controller:
-                                        controller.confirmPasswordController,
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 22,
-                                        fontFamily: "Babybo"),
-                                    decoration: InputDecoration(
-                                        border: InputBorder.none,
-                                        contentPadding:
-                                            EdgeInsets.only(top: 2.h, left: 3.w),
-                                        hintText: "Confirm Password",
-                                        hintStyle: TextStyle(
-                                            color: Color(0xFFA2A2A2),
-                                            fontSize: 22,
-                                            fontFamily: "Babybo")),
-                                  ),
-                                ),
-                              ),
-                              Flexible(
-                                child: SizedBox(
-                                  height: 85,
-                                ),
-                              ),
-                              Flexible(
-                                child: Padding(
-                                  padding: EdgeInsets.only(
-                                    left: 65.w,
-                                  ),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      Flexible(
-                                        child: Text(
-                                          "Already have account?",
-                                          style: TextStyle(
-                                              fontFamily: "Babybo",
-                                              fontSize: 16,
-                                              color: Color(0xFFA2A2A2)),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        width: 7,
-                                      ),
-                                      Flexible(
-                                        child: InkWell(
-                                          onTap: controller.goToLogin,
-                                          child: Text(
-                                            "Login here",
-                                            style: TextStyle(
-                                                fontSize: 16,
-                                                color: Color(0xFFFFE948),
-                                                fontFamily: "Babybo"),
-                                          ),
-                                        ),
-                                      )
-                                    ],
-                                  ),
+                                child: Text(
+                                  "Already have account?",
+                                  style: TextStyle(
+                                      fontFamily: "Babybo",
+                                      fontSize: 16,
+                                      color: Color(0xFFA2A2A2)),
                                 ),
                               ),
                               SizedBox(
-                                height: 20,
-                              ),
-                              InkWell(
-                                onTap: controller.register,
-                                child: Container(
-                                  width: 238,
-                                  height: 66,
-                                  margin:
-                                      EdgeInsets.only(left: 110.w, right: 110.w),
-                                  child: Image.asset(
-                                    "assets/images/register_btn.png",
-                                    fit: BoxFit.fill,
-                                    width: 238,
-                                    height: 106.h,
-                                  ),
-                                ),
+                                width: 7,
                               ),
                               Flexible(
-                                child: SizedBox(
-                                  height: 20,
+                                child: InkWell(
+                                  onTap: controller.goToLogin,
+                                  child: Text(
+                                    "Login here",
+                                    style: TextStyle(
+                                        fontSize: 16,
+                                        color: Color(0xFFFFE948),
+                                        fontFamily: "Babybo"),
+                                  ),
                                 ),
-                              ),
+                              )
                             ],
                           ),
                         ),
-                        Align(
-                          alignment: Alignment.bottomCenter,
-                          child: Padding(
-                            padding: EdgeInsets.only(bottom: 36.0),
-                            child: InkWell(
-                              onTap: controller.playAsaGuest,
-                              child: Image.asset(
-                                "assets/images/paly_as_guest_btn.png",
-                                height: 86.h,
-                                width: 268.w,
-                              ),
-                            ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      InkWell(
+                        onTap: controller.register,
+                        child: Container(
+                          width: 238,
+                          height: 66,
+                          margin:
+                              EdgeInsets.only(left: 110.w, right: 110.w),
+                          child: Image.asset(
+                            "assets/images/register_btn.png",
+                            fit: BoxFit.fill,
+                            width: 238,
+                            height: 106.h,
                           ),
-                        )
-                      ],
-                    ),
+                        ),
+                      ),
+                      Flexible(
+                        child: SizedBox(
+                          height: 20,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Padding(
+                    padding: EdgeInsets.only(bottom: 36.0),
+                    child: InkWell(
+                      onTap: controller.playAsaGuest,
+                      child: Image.asset(
+                        "assets/images/paly_as_guest_btn.png",
+                        height: 86.h,
+                        width: 268.w,
+                      ),
+                    ),
+                  ),
+                )
               ],
             ),
           ),
