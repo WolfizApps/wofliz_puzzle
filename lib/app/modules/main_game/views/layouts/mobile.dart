@@ -8,14 +8,13 @@ import 'package:puzzle_game/utils/my_utils.dart';
 import '../widgets/game.dart';
 import '../widgets/help_button.dart';
 import '../widgets/leader_board_button.dart';
-import '../widgets/maximize_button.dart';
-import '../widgets/pause_button.dart';
 import '../widgets/reset_game_button.dart';
 import '../widgets/setting_button.dart';
 import '../widgets/user_name_tile.dart';
 
 class MobileLayout extends StatelessWidget {
   final controller = Get.find<MainGameController>();
+
   @override
   Widget build(BuildContext context) {
     MyUtils.makeScreenResponsive(context);
@@ -64,7 +63,11 @@ class MobileLayout extends StatelessWidget {
                   ),
                   height: 810.h - 115.5.h,
                   width: (Get.width * 0.85) - (Get.width * 0.04),
-                  child: Game(),
+                  child: RawKeyboardListener(
+                      focusNode: controller.focusNode,
+                      autofocus: true,
+                      onKey: controller.keyboardButtonPressed,
+                      child: Game()),
                 ),
               ],
             ),
@@ -106,7 +109,7 @@ class MobileLayout extends StatelessWidget {
                   Container(
                     // height: 180.h,
                     child: Lottie.asset("assets/lotties/heli_new1.json",
-                          /*height: 220.h, width: 190.w,*/ fit: BoxFit.contain),
+                        /*height: 220.h, width: 190.w,*/ fit: BoxFit.contain),
                   ),
                   LeaderboardButton(),
                 ],

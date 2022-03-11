@@ -77,6 +77,13 @@ class MainGameController extends SuperController {
     DragUpdateDetails dragUpdateDetails,
     Axis initialAxis,
   ) {
+    if (keyboardActive) {
+      keyboardActive = !keyboardActive;
+      board.value.blocks.refresh();
+      tileSelected.value = false;
+      hoverBlock = HoverBlock(onBlock: board.value.blocks.first);
+      return;
+    }
     if (blockMovingAxis != null) {
       return;
     }
@@ -199,7 +206,7 @@ class MainGameController extends SuperController {
   }
 
   Future<void> showInstructions() async {
-    Get.to(Instruction(isFromMainScreen: true,));
+    Get.to(InstructionVideo(isFromMainScreen: true,));
   }
 
   Future<void> showSettings() async {
@@ -214,7 +221,7 @@ class MainGameController extends SuperController {
     if (isPlayMusic.value) {
       player.pause();
     }
-    Get.to(Instruction(isFromMainScreen: true));
+    Get.to(InstructionVideo(isFromMainScreen: true));
   }
 
   initAudio() async {

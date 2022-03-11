@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:puzzle_game/app/modules/main_game/controllers/main_game_controller.dart';
@@ -8,23 +9,30 @@ import 'package:video_player/video_player.dart';
 
 import '../../../routes/app_pages.dart';
 
-class Instruction extends StatefulWidget {
+class InstructionVideo extends StatefulWidget {
   bool? isFromMainScreen;
 
-  Instruction({this.isFromMainScreen = false});
+  InstructionVideo({this.isFromMainScreen = false});
 
   @override
-  _InstructionState createState() => _InstructionState();
+  _InstructionVideoState createState() => _InstructionVideoState();
 }
 
-class _InstructionState extends State<Instruction> {
+class _InstructionVideoState extends State<InstructionVideo> {
   VideoPlayerController? _controller;
   late int videoLengthInSecods;
-  final controller = Get.find<MainGameController>();
+  MainGameController? controller;
 
   @override
   void initState() {
     super.initState();
+    if(widget.isFromMainScreen!){
+      controller = Get.find<MainGameController>();
+      if(controller!.isPlayMusic.value){
+        controller!.player.pause();
+      }
+    }
+
     _controller = VideoPlayerController.asset(
         'assets/videos/instructions_video.mp4')
       ..initialize().then(
@@ -40,16 +48,15 @@ class _InstructionState extends State<Instruction> {
           goToGameMainScreen();
         }
       });
+
     MyStorage.writeIsInstructionShow(false);
   }
 
   @override
   Widget build(BuildContext context) {
     MyUtils.makeScreenResponsive(context);
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
     return Scaffold(
-      // onPressed: widget.isFromMainScreen!
-      //     ? goBack
-      //     : goToGameMainScreen,
       body: _controller!.value.isInitialized
           ? Stack(
               children: <Widget>[
@@ -119,5 +126,10 @@ class _InstructionState extends State<Instruction> {
   void dispose() {
     super.dispose();
     _controller!.dispose();
+    if(widget.isFromMainScreen!){
+      if(controller!.isPlayMusic.value){
+        controller!.player.play();
+      }
+    }
   }
 }

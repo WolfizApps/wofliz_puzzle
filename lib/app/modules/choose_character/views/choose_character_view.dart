@@ -14,8 +14,8 @@ class ChooseCharacterView extends GetView<ChooseCharacterController> {
   @override
   Widget build(BuildContext context) {
     // ChooseCharacterController controller=Get.put(ChooseCharacterController());
-    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
-        overlays: [SystemUiOverlay.bottom]);
+  /*  SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+        overlays: [SystemUiOverlay.bottom]);*/
     MyUtils.makeScreenResponsive(context);
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
     return Scaffold(

@@ -23,19 +23,23 @@ class SettingDialog extends StatelessWidget {
               alignment: Alignment.center,
               children: [
                 Image.asset("assets/images/setting_background.png"),
-                Container(
-                  margin: EdgeInsets.only(top: 60.h, right: 10),
-                  child: Align(
-                    alignment: Alignment.topRight,
-                    child: Material(
-                      color: Colors.transparent,
-                      child: InkWell(
-                        onTap: () {
-                          Get.back();
-                        },
-                        child: SizedBox(
-                          height: 44.h,
-                          width: 44.h,
+                Align(
+                  alignment: Alignment.topCenter,
+                  child: Container(
+                    margin: EdgeInsets.only(top: 60.h, right: 10),
+                    child: Align(
+                      alignment: Alignment.topRight,
+                      child: Material(
+                        color: Colors.transparent,
+                        child: InkWell(
+                          onTap: () {
+                            Get.back();
+                          },
+                          child: Container(
+                            color: Colors.red,
+                            height: 44.h,
+                            width: 44.h,
+                          ),
                         ),
                       ),
                     ),
@@ -76,7 +80,7 @@ class SettingDialog extends StatelessWidget {
                                 ),
                               ),
                             ),
-                          )
+                          ),
                         ],
                       ),
                       SizedBox(
@@ -144,10 +148,3 @@ class SettingDialog extends StatelessWidget {
     );
   }
 }
-
-/* Container(
-              width: Get.width,
-              height: 76.h,
-              margin: EdgeInsets.only(left: 70.w, right: 70.w),
-              child: Image.asset("assets/images/log_out_icon.png"),
-            )*/

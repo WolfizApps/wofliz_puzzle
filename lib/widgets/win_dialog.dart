@@ -17,20 +17,14 @@ AlertDialog winDialog({required int steps, required String userName}) {
               children: [
                 Stack(
                   children: [
-                    Lottie.asset('assets/lotties/victory.json'),
+                    Lottie.asset('assets/lotties/new_victory.json'),
                     Positioned(
                       left: 0,
                       right: 0,
-                      bottom: 80,
+                      bottom: 95,
                       child: Column(
                         children: [
-                          Text(
-                            "Congrats!",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18.sp,
-                            ),
-                          ),
+
                           SizedBox(height: 14),
                           Text(
                             userName,
@@ -73,33 +67,34 @@ AlertDialog winDialog({required int steps, required String userName}) {
                 children: [
                   Stack(
                     children: [
-                      Lottie.asset('assets/lotties/victory.json'),
+                      Lottie.asset('assets/lotties/new_victory.json'),
                       Positioned(
                         left: 0,
                         right: 0,
-                        bottom: 80.h,
+                        bottom: 95.h,
                         child: Column(
                           children: [
-                            Text(
-                              "Congrats!",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 18.sp,
-                              ),
-                            ),
+
                             SizedBox(height: 14.h),
                             Text(
-                              userName,
+                              "CONGRATS!",
                               style: TextStyle(
-                                color: Colors.white,
+                                color: Color(0xFF707070),
+                                fontFamily: "leiralite",
                                 fontSize: 33.sp,
                               ),
                             ),
-                            Text(
-                              "You escaped from jungle in $steps steps",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 18.sp,
+                            Container(
+                              margin: EdgeInsets.only(left: 60.w, right: 60.w),
+                              alignment: Alignment.center,
+                              child: Text(
+                                "You escaped from jungle in  $steps steps",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Color(0xFF707070),
+                                  fontFamily: "Babybo",
+                                  fontSize: 18.sp,
+                                ),
                               ),
                             ),
                           ],
