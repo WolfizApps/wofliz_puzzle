@@ -59,8 +59,8 @@ class BlockWidget extends StatelessWidget {
                 : block.runtimeType == SolidBlock
                     ? SizedBox()
                     : Container(
-              height: block.height * controller.blockHeight,
-              width: block.width * controller.blockWidth,
+                        height: block.height * controller.blockHeight,
+                        width: block.width * controller.blockWidth,
                         decoration: MyUtils.carBoxDecoration(
                             cardImage: "cardImage", isShowCardImage: false),
                         margin: EdgeInsets.all(2.r),

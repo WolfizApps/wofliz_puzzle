@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 import 'package:puzzle_game/app/modules/choose_character/bindings/choose_character_binding.dart';

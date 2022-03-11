@@ -69,4 +69,8 @@ class MyUtils {
         minTextAdapt: true,
         orientation: Orientation.portrait);
   }
+
+  static getFormattedString(value){
+    return value.toString().split("[")[1].split("]")[1];
+  }
 }

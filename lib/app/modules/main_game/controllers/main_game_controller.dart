@@ -15,6 +15,7 @@ import 'package:just_audio/just_audio.dart';
 import 'package:puzzle_game/app/models/board.dart';
 import 'package:puzzle_game/app/modules/login/views/instructions.dart';
 import 'package:puzzle_game/utils/my_storage.dart';
+import 'package:puzzle_game/widgets/setting_dialog.dart';
 import 'package:puzzle_game/widgets/win_dialog.dart';
 import 'package:rive/rive.dart';
 import 'package:video_player/video_player.dart';
@@ -270,126 +271,14 @@ class MainGameController extends SuperController {
   }
 
   Future<void> showSettings() async {
-    await Get.dialog(
-      Material(
-        color: Colors.transparent,
-        child: Container(
-          alignment: Alignment.center,
-          color: Colors.transparent,
-          margin: EdgeInsets.only(left: 10.w, right: 10.w, top: 120.h),
-          child: Stack(
-            children: [
-              Stack(
-                alignment: Alignment.topRight,
-                children: [
-                  Container(
-                    child: Image.asset("assets/images/setting_background.png"),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(top: 60.h, right: 25),
-                    child: Align(
-                      alignment: Alignment.topRight,
-                      child: Material(
-                        color: Colors.transparent,
-                        child: InkWell(
-                          onTap: () {
-                            Get.back();
-                          },
-                          child: Container(
-                            height: 44.h,
-                            width: 44.h,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              Container(
-                // changed by fazal
-                alignment: Alignment.center,
-                width: _controller!.value.size.width,
-                margin: EdgeInsets.only(bottom: 120.h),
-                // padding: EdgeInsets.only(right: 35),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.only(left: 70.w),
-                          child: Text(
-                            "Music",
-                            style: TextStyle(
-                                color: Color(0xFF272B3C),
-                                fontSize: 25,
-                                fontFamily: "leiralite"),
-                          ),
-                        ),
-                        Spacer(),
-                        Container(
-                          margin: EdgeInsets.only(right: 80.w),
-                          child: InkWell(
-                            onTap: changeMusic,
-                            child: Obx(
-                              () => Image.asset(
-                                isPlayMusic.value
-                                    ? "assets/images/switch_on_icon.png"
-                                    : "assets/images/switch_off_icon.png",
-                                height: 25.h,
-                                width: 42.w,
-                              ),
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.only(left: 70.w),
-                          child: Text(
-                            "Sound",
-                            style: TextStyle(
-                                color: Color(0xFF272B3C),
-                                fontSize: 25,
-                                fontFamily: "leiralite"),
-                          ),
-                        ),
-                        Spacer(),
-                        Container(
-                          margin: EdgeInsets.only(right: 80.w),
-                          child: InkWell(
-                            onTap: changeSound,
-                            child: Obx(
-                              () => Image.asset(
-                                isPlaySound.value
-                                    ? "assets/images/switch_on_icon.png"
-                                    : "assets/images/switch_off_icon.png",
-                                height: 25.h,
-                                width: 42.w,
-                              ),
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
+    await showDialog(
+      barrierDismissible: false,
+      context: Get.context!,
+      builder: (_) => SettingDialog(),
     );
+   /* await Get.dialog(
+      SettingDialog(),
+    );*/
   }
 
   Future<void> goToInstructionsScreen() async {

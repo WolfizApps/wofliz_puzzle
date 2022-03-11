@@ -28,6 +28,8 @@ class RegisterController extends GetxController {
       MyUtils.showToast("Password must be greater than 5 characters");
     } else if (passwordController.text != confirmPasswordController.text) {
       MyUtils.showToast("Both passwords are not matched");
+    } else if(!isValidEmail(emailController.text)){
+      MyUtils.showToast("Emil is not correct");
     } else {
       try {
         var credenitals = await FirebaseAuth.instance
@@ -43,13 +45,19 @@ class RegisterController extends GetxController {
           MyUtils.showToast("User not registered.");
         }
       } catch (exp) {
-        MyUtils.showToast(exp.toString());
+        MyUtils.showToast(MyUtils.getFormattedString(exp));
       }
     }
   }
 
   playAsaGuest() {
     Get.toNamed(Routes.CHOOSE_CHARACTER);
+  }
+
+  isValidEmail(email) {
+    return RegExp(
+        r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+        .hasMatch(email);
   }
 
   @override

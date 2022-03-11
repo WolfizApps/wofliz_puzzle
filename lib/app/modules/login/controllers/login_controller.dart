@@ -20,6 +20,8 @@ class LoginController extends GetxController {
       MyUtils.showToast("Please enter email");
     } else if (passwordController.text.isEmpty) {
       MyUtils.showToast("Please enter password");
+    } else if(!isValidEmail(emailController.text)){
+      MyUtils.showToast("Emil is not correct");
     } else {
       try {
         await FirebaseAuth.instance.signInWithEmailAndPassword(
@@ -29,8 +31,9 @@ class LoginController extends GetxController {
         await MyStorage.writeUserPassword(passwordController.text);
         Get.offNamed(Routes.CHOOSE_CHARACTER);
       } catch (e) {
-        print("Login UnSuccessful");
-        MyUtils.showToast("There is some error in Login, please try again");
+        // print("Login UnSuccessful");
+        MyUtils.showToast(MyUtils.getFormattedString(e));
+        // MyUtils.showToast("There is some error in Login, please try again");
       }
     }
   }
@@ -45,6 +48,12 @@ class LoginController extends GetxController {
 
   void goToForgotPassword() {
     Get.toNamed(Routes.FORGOT_PASSWORD);
+  }
+
+  isValidEmail(email) {
+    return RegExp(
+            r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+        .hasMatch(email);
   }
 
   @override

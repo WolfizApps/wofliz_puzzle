@@ -24,6 +24,8 @@ class ForgotPasswordController extends GetxController {
   resetPassword() async {
     if (emailController.text == "") {
       MyUtils.showToast("Please enter email");
+    } else if(!isValidEmail(emailController.text)){
+      MyUtils.showToast("Emil is not correct");
     } else {
       try {
         var user = await FirebaseAuth.instance
@@ -32,8 +34,15 @@ class ForgotPasswordController extends GetxController {
         MyUtils.showToast("Please reset your password from your email");
         // Get.snackbar("","Login Successful");
       } catch (e) {
-        MyUtils.showToast("No email fount. Please register and try again.");
+        MyUtils.showToast(MyUtils.getFormattedString(e));
+        // MyUtils.showToast("Email not found. Please register and try again.");
       }
     }
+  }
+
+  isValidEmail(email) {
+    return RegExp(
+        r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+        .hasMatch(email);
   }
 }
