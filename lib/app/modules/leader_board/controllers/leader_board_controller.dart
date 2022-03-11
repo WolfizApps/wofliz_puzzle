@@ -11,38 +11,26 @@ class LeaderBoardController extends GetxController {
 
   final count = 0.obs;
   List<LeaderBoard> list=[];
-  Map<String, dynamic> listOfDuas = {
-    "duas": [
-      {
-        "name": "Rozzee",
-        "steps": "75",
-      },
-      {"name": "Khan", "steps": "112"},
-      {"name": "Alena", "steps": "123"},
-      {"name": "Alex", "steps": "128"},
-      {"name": "John", "steps": "135"},
-      {"name": "Moonix", "steps": "148"},
-      {"name": "Ali", "steps": "158"},
-      {"name": "Smith", "steps": "168"},
-      {"name": "Afridi", "steps": "173"},
-      {"name": "Watson", "steps": "203"},
-    ]
-  };
 
 
   Future<List<LeaderBoard>> get_board() async {
+    list.clear();
+    try{
+      var querySnapshot = await FirebaseFirestore.instance.collection("leaderboard").get();
+      for (int i = querySnapshot.docs.length-1; i >=0 ; i--) {
+        var a = querySnapshot.docs[i];
+        //print("Player Name:"+a.get("name"));
+        list.add(
+            LeaderBoard(name: a.get("name"), email: a.get("email"), stage: a.get("stage"))
+        );
 
-    var querySnapshot = await FirebaseFirestore.instance.collection("leaderboard").get();
-    for (int i = querySnapshot.docs.length-1; i >=0 ; i--) {
-      var a = querySnapshot.docs[i];
-      //print("Player Name:"+a.get("name"));
-      list.add(
-          LeaderBoard(name: a.get("name"), email: a.get("email"), stage: a.get("stage"))
-      );
-
+      }
+      list.sort((a, b) => a.stage.compareTo(b.stage));
+      print(list);
+    } catch(exp){
+      print("Firebase error:    $exp");
     }
-    list.sort((a, b) => a.stage.compareTo(b.stage));
-    print(list);
+
     return list;
 
   }

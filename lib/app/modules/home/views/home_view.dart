@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:puzzle_game/utils/my_utils.dart';
 import 'package:transparent_image/transparent_image.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
@@ -24,6 +25,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    MyUtils.makeScreenResponsive(context);
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white24,

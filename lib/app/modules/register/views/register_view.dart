@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:puzzle_game/utils/my_utils.dart';
 import 'package:puzzle_game/widgets/exit_dialog.dart';
 
 import '../controllers/register_controller.dart';
@@ -9,6 +10,7 @@ import '../controllers/register_controller.dart';
 class RegisterView extends GetView<RegisterController> {
   @override
   Widget build(BuildContext context) {
+    MyUtils.makeScreenResponsive(context);
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
         overlays: [SystemUiOverlay.bottom]);
     ScreenUtil.init(

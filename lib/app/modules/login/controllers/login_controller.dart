@@ -43,7 +43,7 @@ class LoginController extends GetxController {
   }
 
   void playAsaGuest() {
-    Get.to(VideoApp());
+    Get.toNamed(Routes.CHOOSE_CHARACTER);
   }
 
   void goToForgotPassword() {

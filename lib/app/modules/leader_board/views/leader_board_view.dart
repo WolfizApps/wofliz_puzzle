@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:get/get.dart';
+import 'package:puzzle_game/utils/my_utils.dart';
 
 import '../controllers/leader_board_controller.dart';
 import '../models/leaderboard.dart';
@@ -15,6 +16,7 @@ class LeaderBoardView extends GetView<LeaderBoardController> {
 
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
         overlays: [SystemUiOverlay.bottom]);
+    MyUtils.makeScreenResponsive(context);
     return WillPopScope(
       onWillPop: ()=>willpop(),
       child: Scaffold(

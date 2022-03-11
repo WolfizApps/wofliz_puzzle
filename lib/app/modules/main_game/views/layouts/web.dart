@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import 'package:puzzle_game/app/modules/main_game/controllers/main_game_controller.dart';
+import 'package:puzzle_game/utils/my_utils.dart';
 
 import '../widgets/game.dart';
 import '../widgets/help_button.dart';
@@ -15,6 +16,7 @@ class WebLayout extends StatelessWidget {
   final controller = Get.find<MainGameController>();
   @override
   Widget build(BuildContext context) {
+    MyUtils.makeScreenResponsive(context);
     return Row(
       children: [
         Expanded(

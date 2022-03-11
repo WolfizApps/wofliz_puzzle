@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:puzzle_game/utils/my_utils.dart';
 
 class TestLottie extends StatelessWidget {
   String? imgName;
@@ -9,6 +10,7 @@ class TestLottie extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    MyUtils.makeScreenResponsive(context);
     return Lottie.asset(
       imgName!,
       key: key!,

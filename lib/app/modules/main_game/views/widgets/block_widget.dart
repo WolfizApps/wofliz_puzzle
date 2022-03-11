@@ -25,6 +25,7 @@ class BlockWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    MyUtils.makeScreenResponsive(context);
     return AnimatedPositioned(
       duration: Duration(milliseconds: 400),
       top: positionTop,

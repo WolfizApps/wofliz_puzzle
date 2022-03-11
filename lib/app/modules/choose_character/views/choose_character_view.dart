@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:puzzle_game/utils/my_utils.dart';
 import 'package:puzzle_game/widgets/exit_dialog.dart';
 
 import '../controllers/choose_character_controller.dart';
@@ -15,14 +16,7 @@ class ChooseCharacterView extends GetView<ChooseCharacterController> {
     // ChooseCharacterController controller=Get.put(ChooseCharacterController());
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
         overlays: [SystemUiOverlay.bottom]);
-    ScreenUtil.init(
-        BoxConstraints(
-            maxWidth: MediaQuery.of(context).size.width,
-            maxHeight: MediaQuery.of(context).size.height),
-        designSize: Size(457, 812),
-        context: context,
-        minTextAdapt: true,
-        orientation: Orientation.portrait);
+    MyUtils.makeScreenResponsive(context);
     return Scaffold(
       body: WillPopScope(
         onWillPop: () async {

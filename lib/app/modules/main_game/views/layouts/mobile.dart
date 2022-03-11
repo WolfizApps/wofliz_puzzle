@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import 'package:puzzle_game/app/modules/main_game/controllers/main_game_controller.dart';
+import 'package:puzzle_game/utils/my_utils.dart';
 
 import '../widgets/game.dart';
 import '../widgets/help_button.dart';
@@ -17,6 +18,7 @@ class MobileLayout extends StatelessWidget {
   final controller = Get.find<MainGameController>();
   @override
   Widget build(BuildContext context) {
+    MyUtils.makeScreenResponsive(context);
     return Container(
       child: Stack(
         children: [
@@ -102,9 +104,9 @@ class MobileLayout extends StatelessWidget {
                   ),*/
                   ResetGameButton(),
                   Container(
-                    height: 130.h,
+                    // height: 180.h,
                     child: Lottie.asset("assets/lotties/heli_new1.json",
-                        height: 190.h, width: 170.w, fit: BoxFit.contain),
+                          /*height: 220.h, width: 190.w,*/ fit: BoxFit.contain),
                   ),
                   LeaderboardButton(),
                 ],

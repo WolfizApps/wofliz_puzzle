@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:puzzle_game/utils/my_storage.dart';
+import 'package:puzzle_game/utils/my_utils.dart';
 import 'package:video_player/video_player.dart';
 
 import '../../../routes/app_pages.dart';
@@ -42,6 +43,7 @@ class _InstructionState extends State<Instruction> {
 
   @override
   Widget build(BuildContext context) {
+    MyUtils.makeScreenResponsive(context);
     return Scaffold(
       // onPressed: widget.isFromMainScreen!
       //     ? goBack
@@ -80,7 +82,7 @@ class _InstructionState extends State<Instruction> {
                               padding: EdgeInsets.symmetric(
                                   horizontal: 20, vertical: 5),
                               child: Text(
-                                "Skip",
+                                widget.isFromMainScreen! ? "Close" : "Skip",
                                 style: TextStyle(
                                     color: Colors.white, fontSize: 36),
                               ),
@@ -102,6 +104,8 @@ class _InstructionState extends State<Instruction> {
   }
 
   Future<void> goToGameMainScreen() async {
+    _controller!.pause();
+    _controller!.seekTo(Duration(milliseconds: 0));
     Get.offNamed(Routes.MAIN_GAME);
   }
 

@@ -4,10 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:puzzle_game/utils/my_utils.dart';
 
 class ExitDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    MyUtils.makeScreenResponsive(context);
     return Container(
       alignment: Alignment.center,
       child: Column(
@@ -43,6 +45,7 @@ class ExitDialog extends StatelessWidget {
               child: Container(
                   width: Get.width,
                   height: 76.h,
+                  margin: EdgeInsets.only(left: 70.w, right: 70.w),
                   child: InkWell(
                       onTap: () {
                         if (Platform.isAndroid) {

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:puzzle_game/utils/my_utils.dart';
 import 'package:video_player/video_player.dart';
 
 import '../../../../utils/my_storage.dart';
@@ -45,6 +46,7 @@ class _VideoAppState extends State<VideoApp> {
 
   @override
   Widget build(BuildContext context) {
+    MyUtils.makeScreenResponsive(context);
     return Scaffold(
       body: _controller!.value.isInitialized
           ? Stack(

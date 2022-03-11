@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -7,14 +8,10 @@ import 'package:just_audio/just_audio.dart';
 import 'package:puzzle_game/app/models/board.dart';
 import 'package:puzzle_game/app/models/hero_block.dart';
 import 'package:puzzle_game/app/models/hover_block.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
-import 'package:just_audio/just_audio.dart';
-import 'package:puzzle_game/app/models/board.dart';
 import 'package:puzzle_game/app/modules/login/views/instructions.dart';
 import 'package:puzzle_game/utils/my_storage.dart';
+import 'package:puzzle_game/widgets/exit_dialog.dart';
+import 'package:puzzle_game/widgets/help_dialog.dart';
 import 'package:puzzle_game/widgets/setting_dialog.dart';
 import 'package:puzzle_game/widgets/win_dialog.dart';
 import 'package:rive/rive.dart';
@@ -37,8 +34,8 @@ class MainGameController extends SuperController {
     isPlayMusic.value = MyStorage.readIsPlayMusic();
     isPlaySound.value = MyStorage.readIsPlaySound();
     initAudio();
-    _controller =
-        VideoPlayerController.asset('assets/videos/instructions_video.mp4')
+    controller =
+        VideoPlayerController.asset('assets/videos/cutscene.mp4')
           ..initialize();
 
     playerName.value = MyStorage.readQuserName();
@@ -60,7 +57,7 @@ class MainGameController extends SuperController {
 
   late Rx<Board> board;
 
-  VideoPlayerController? _controller;
+  VideoPlayerController? controller;
   var tileSelected = false.obs;
   var keyboardActive = false;
   Artboard? artboard;
@@ -176,10 +173,11 @@ class MainGameController extends SuperController {
   }
 
   addDataToFirebase() {
+    print("Adding data to the firbase");
     try {
       FirebaseFirestore.instance.collection('leaderboard').add({
-        'name': playerName.value,
-        'stage': board.value.steps,
+        'name': playerName.value.toString(),
+        'stage': board.value.steps.value.toString(),
         'email': MyStorage.readQuserEmail()
       });
       print("data added to Firebase!");
@@ -208,65 +206,20 @@ class MainGameController extends SuperController {
   }
 
   Future<void> showInstructions() async {
-    _controller!.play();
-    await Get.dialog(Container(
-      alignment: Alignment.center,
-      child: _controller!.value.isInitialized
-          ? Stack(
-              children: <Widget>[
-                SizedBox.expand(
-                  child: FittedBox(
-                    fit: BoxFit.fill,
-                    child: Stack(
-                      children: [
-                        SizedBox(
-                          width: _controller!.value.size.width,
-                          height: _controller!.value.size.height,
-                          child: VideoPlayer(_controller!),
-                        ),
-                        Container(
-                          // changed by fazal
-                          alignment: Alignment.topRight,
-                          width: _controller!.value.size.width,
-                          margin: EdgeInsets.only(top: 25),
-                          padding: EdgeInsets.only(right: 35),
-                          child: TextButton(
-                            onPressed: goBack,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(15)),
-                                border:
-                                    Border.all(color: Colors.white, width: 3),
-                              ),
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 20, vertical: 5),
-                              child: Text(
-                                "Close",
-                                style: TextStyle(
-                                    color: Colors.white, fontSize: 36),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            )
-          : Container(
-              height: Get.height,
-              width: Get.width,
-              color: Colors.black,
-            ),
-    ));
-    _controller!.pause();
+    Get.to(Instruction(isFromMainScreen: true,));
+  /*  controller =
+    VideoPlayerController.asset('assets/videos/cutscene.mp4')
+      ..initialize();
+    controller!.play();
+    await Get.dialog(
+      HelpDialog(),
+    );
+    controller!.pause();*/
   }
 
   Future<void> goBack() async {
-    _controller!.pause();
-    _controller!.seekTo(Duration(milliseconds: 0));
+    controller!.pause();
+    controller!.seekTo(Duration(milliseconds: 0));
     Get.back();
   }
 
@@ -276,9 +229,6 @@ class MainGameController extends SuperController {
       context: Get.context!,
       builder: (_) => SettingDialog(),
     );
-   /* await Get.dialog(
-      SettingDialog(),
-    );*/
   }
 
   Future<void> goToInstructionsScreen() async {
@@ -363,7 +313,7 @@ class MainGameController extends SuperController {
     playerName.close();
     tileSelected.close();
     isLoading.close();
-    _controller!.dispose();
+    controller!.dispose();
     player.dispose();
     isPlayMusic.close();
     isPlaySound.close();

@@ -6,6 +6,7 @@ import 'package:get_storage/get_storage.dart';
 import 'package:puzzle_game/app/routes/app_pages.dart';
 import 'dart:io' show Platform;
 import 'package:flutter/foundation.dart' show kIsWeb;
+import 'package:puzzle_game/utils/my_utils.dart';
 
 main() async {
   WidgetsFlutterBinding.ensureInitialized();
