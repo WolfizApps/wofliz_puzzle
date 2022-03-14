@@ -1,3 +1,7 @@
+import 'dart:io';
+
+import 'package:firedart/firedart.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:puzzle_game/utils/my_utils.dart';
@@ -10,34 +14,45 @@ class LeaderBoardController extends GetxController {
   //TODO: Implement LeaderBoardController
 
   final count = 0.obs;
-  List<LeaderBoard> list=[];
-
+  List<LeaderBoard> list = [];
 
   Future<List<LeaderBoard>> get_board() async {
     list.clear();
-    try{
-      var querySnapshot = await FirebaseFirestore.instance.collection("leaderboard").get();
-      for (int i = querySnapshot.docs.length-1; i >=0 ; i--) {
-        var a = querySnapshot.docs[i];
-        //print("Player Name:"+a.get("name"));
-        list.add(
-            LeaderBoard(name: a.get("name"), email: a.get("email"), stage: a.get("stage"))
-        );
+    try {
+      if (kIsWeb || Platform.isAndroid || Platform.isIOS) {
+        var querySnapshot =
+            await FirebaseFirestore.instance.collection("leaderboard").get();
+        for (int i = querySnapshot.docs.length - 1; i >= 0; i--) {
+          var a = querySnapshot.docs[i];
+          //print("Player Name:"+a.get("name"));
+          list.add(LeaderBoard(
+              name: a.get("name"),
+              email: a.get("email"),
+              stage: a.get("stage")));
+        }
+      } else {
+        var querySnapshot =
+            await Firestore.instance.collection("leaderboard").get();
 
+        for (int i = querySnapshot.length - 1; i >= 0; i--) {
+          var name = querySnapshot[i]['name'];
+          var email = querySnapshot[i]['email'];
+          var stage = querySnapshot[i]['stage'];
+
+          list.add(LeaderBoard(name: name, email: email, stage: stage));
+        }
       }
       list.sort((a, b) => a.stage.compareTo(b.stage));
       print(list);
-    } catch(exp){
+    } catch (exp) {
       print("Firebase error:    $exp");
     }
 
     return list;
-
   }
 
   @override
   void onInit() {
-
     super.onInit();
   }
 

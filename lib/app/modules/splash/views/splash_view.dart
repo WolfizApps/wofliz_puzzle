@@ -1,39 +1,38 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:puzzle_game/utils/my_utils.dart';
 import 'package:video_player/video_player.dart';
 
-import '../controllers/splash_controller.dart';
+import '../../../../utils/my_storage.dart';
+import '../../../routes/app_pages.dart';
 
-class SplashView extends GetView<SplashController> {
+class SplashView extends StatefulWidget {
+  @override
+  State<SplashView> createState() => _SplashViewState();
+}
+
+class _SplashViewState extends State<SplashView> {
+  @override
+  void initState() {
+    super.initState();
+
+    checkPresence();
+  }
+
+  Future<void> checkPresence() async {
+    await Future.delayed(Duration(milliseconds: 4000));
+    if (!(await MyStorage.readIsUserLoggedIn())) {
+      Get.offNamed(Routes.REGISTER);
+    } else {
+      Get.offNamed(Routes.CHOOSE_CHARACTER);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    MyUtils.makeScreenResponsive(context);
-
     return Scaffold(
-      // onPressed: widget.isFromMainScreen!
-      //     ? goBack
-      //     : goToGameMainScreen,
-      body: controller.videoController!.value.isInitialized
-          ? Stack(
-              children: <Widget>[
-                SizedBox.expand(
-                  child: FittedBox(
-                    fit: BoxFit.fill,
-                    child: SizedBox(
-                      width: controller.videoController!.value.size.width,
-                      height: controller.videoController!.value.size.height,
-                      child: VideoPlayer(controller.videoController!),
-                    ),
-                  ),
-                ),
-              ],
-            )
-          : Container(
-              height: MediaQuery.of(context).size.height,
-              width: MediaQuery.of(context).size.width,
-              color: Colors.black,
-            ),
+      body: Image.asset('assets/gif/splash.gif'),
     );
   }
 }
