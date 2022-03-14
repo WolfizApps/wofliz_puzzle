@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:puzzle_game/widgets/exit_dialog.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 
 import '../controllers/register_controller.dart';
 
@@ -11,14 +12,6 @@ class RegisterView extends GetView<RegisterController> {
   Widget build(BuildContext context) {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
         overlays: [SystemUiOverlay.bottom]);
-    ScreenUtil.init(
-        BoxConstraints(
-            maxWidth: MediaQuery.of(context).size.width,
-            maxHeight: MediaQuery.of(context).size.height),
-        designSize: Size(457, 812),
-        context: context,
-        minTextAdapt: true,
-        orientation: Orientation.portrait);
     return WillPopScope(
       onWillPop: () async {
         bool shouldReturn = false;
@@ -33,43 +26,40 @@ class RegisterView extends GetView<RegisterController> {
             width: Get.width,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("assets/images/register_main_bg.png"),
-                fit: BoxFit.cover,
+                image: AssetImage(kIsWeb ? "assets/images/web_bg_img.jpg": "assets/images/register_main_bg.png"),
+                fit: BoxFit.fill,
               ),
             ),
             child: Stack(
               children: [
-                Column(
-                  children: [
-                    Flexible(
-                      child: SizedBox(
-                        child: Container(
-                          width: Get.width,
-                          height: 560.h,
-                          margin: EdgeInsets.only(top: 105.h),
-                          constraints: BoxConstraints(
-                            maxWidth: 250,
-                            maxHeight: 560,
-                          ),
-                          child: Image.asset(
-                            "assets/images/register_sub_bg.png",
-                            fit: BoxFit.fill,
-                          ),
-                        ),
-                      ),
+                Center(
+                  child: Container(
+                    height: 520.h,
+                    constraints: BoxConstraints(
+                      maxWidth: 450,
+                      maxHeight: 520,
                     ),
-                  ],
+                    child: Image.asset(
+                      "assets/images/register_sub_bg.png",
+                      fit: BoxFit.fill,
+                    ),
+                  ),
                 ),
-                Container(
-                  alignment: Alignment.center,
-                  margin: EdgeInsets.only(top: 280.h),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Flexible(
-                        child: Container(
+                Center(
+                  child: Container(
+                    alignment: Alignment.center,
+                    width: Get.width,
+                    constraints: BoxConstraints(
+                      maxWidth: 380,
+                    ),
+                    margin: EdgeInsets.only(top: 250.h),
+                    padding: EdgeInsets.only(left: 70, right: 70),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Container(
                           alignment: Alignment.center,
-                          margin: EdgeInsets.only(left: 65.w, right: 65.w),
+                          // margin: EdgeInsets.only(left: 45.w, right: 45.w),
                           width: ScreenUtil().screenWidth,
                           padding: EdgeInsets.only(left: 8.w),
                           decoration: BoxDecoration(
@@ -98,16 +88,13 @@ class RegisterView extends GetView<RegisterController> {
                                     fontFamily: "Babybo")),
                           ),
                         ),
-                      ),
-                      Flexible(
-                        child: SizedBox(
-                          height: 16.h,
+                        Flexible(
+                          child: SizedBox(
+                            height: 16.h,
+                          ),
                         ),
-                      ),
-                      Flexible(
-                        child: Container(
+                        Container(
                           alignment: Alignment.center,
-                          margin: EdgeInsets.only(left: 65.w, right: 65.w),
                           width: ScreenUtil().screenWidth,
                           padding: EdgeInsets.only(left: 8.w),
                           decoration: BoxDecoration(
@@ -137,16 +124,13 @@ class RegisterView extends GetView<RegisterController> {
                                     fontFamily: "Babybo")),
                           ),
                         ),
-                      ),
-                      Flexible(
-                        child: SizedBox(
-                          height: 16.h,
+                        Flexible(
+                          child: SizedBox(
+                            height: 16.h,
+                          ),
                         ),
-                      ),
-                      Flexible(
-                        child: Container(
+                        Container(
                           alignment: Alignment.center,
-                          margin: EdgeInsets.only(left: 65.w, right: 65.w),
                           width: ScreenUtil().screenWidth,
                           padding: EdgeInsets.only(left: 8.w),
                           decoration: BoxDecoration(
@@ -176,85 +160,86 @@ class RegisterView extends GetView<RegisterController> {
                                     fontFamily: "Babybo")),
                           ),
                         ),
-                      ),
-                      Flexible(
-                        child: SizedBox(
-                          height: 85,
+                        Flexible(
+                          child: SizedBox(
+                            height: 65,
+                          ),
                         ),
-                      ),
-                      Flexible(
-                        child: Padding(
+                        Padding(
                           padding: EdgeInsets.only(
-                            left: 65.w,
+                            left: 0.w,
                           ),
                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Flexible(
-                                child: Text(
-                                  "Already have account?",
-                                  style: TextStyle(
-                                      fontFamily: "Babybo",
-                                      fontSize: 16,
-                                      color: Color(0xFFA2A2A2)),
-                                ),
+                              Text(
+                                "Already have account?",
+                                style: TextStyle(
+                                    fontFamily: "Babybo",
+                                    fontSize: 16,
+                                    color: Color(0xFFA2A2A2)),
                               ),
                               SizedBox(
                                 width: 7,
                               ),
-                              Flexible(
-                                child: InkWell(
-                                  onTap: controller.goToLogin,
-                                  child: Text(
-                                    "Login here",
-                                    style: TextStyle(
-                                        fontSize: 16,
-                                        color: Color(0xFFFFE948),
-                                        fontFamily: "Babybo"),
-                                  ),
+                              InkWell(
+                                onTap: controller.goToLogin,
+                                child: Text(
+                                  "Login here",
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      color: Color(0xFFFFE948),
+                                      fontFamily: "Babybo"),
                                 ),
                               )
                             ],
                           ),
                         ),
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      InkWell(
-                        onTap: controller.register,
-                        child: Container(
-                          width: 238,
-                          height: 66,
-                          margin: EdgeInsets.only(left: 110.w, right: 110.w),
-                          child: Image.asset(
-                            "assets/images/register_btn.png",
-                            fit: BoxFit.fill,
+                        SizedBox(
+                          height: 25.h,
+                        ),
+                        InkWell(
+                          onTap: controller.register,
+                          child: Container(
                             width: 238,
-                            height: 106.h,
+                            height: 66,
+                            // margin: EdgeInsets.only(left: 80.w, right: 80.w),
+                            child: Image.asset(
+                              "assets/images/register_btn.png",
+                              fit: BoxFit.fill,
+                              width: 238,
+                              height: 106.h,
+                            ),
                           ),
                         ),
+                        Flexible(
+                          child: SizedBox(
+                            height: 20.h,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Positioned(
+                  left: 0,
+                  right: 0,
+                  bottom: Get.width > Get.height ? 20 : 48.h,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      SizedBox(
+                        height: 5.h,
                       ),
-                      Flexible(
-                        child: SizedBox(
-                          height: 20,
+                      InkWell(
+                        onTap: controller.playAsaGuest,
+                        child: Image.asset(
+                          "assets/images/paly_as_guest_btn.png",
+                          height: 86.h,
+                          width: 268.w,
                         ),
                       ),
                     ],
-                  ),
-                ),
-                Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Padding(
-                    padding: EdgeInsets.only(bottom: 36.0),
-                    child: InkWell(
-                      onTap: controller.playAsaGuest,
-                      child: Image.asset(
-                        "assets/images/paly_as_guest_btn.png",
-                        height: 86.h,
-                        width: 268.w,
-                      ),
-                    ),
                   ),
                 )
               ],

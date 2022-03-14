@@ -50,7 +50,7 @@ class _InitialVideoState extends State<InitialVideo> {
   Future<void> checkInstructionsPresence() async {
     if (await MyStorage.readIsInstructionShow()) {
       // TODO: uncommented
-    /*  Get.off(() => InstructionVideo(
+   /*     Get.off(() => InstructionVideo(
         isFromMainScreen: false,
       ));*/
       Get.offNamed(Routes.MAIN_GAME);
@@ -71,9 +71,40 @@ class _InitialVideoState extends State<InitialVideo> {
       child: Obx(
         () => Scaffold(
           body: isPlaying.value
-              ? AspectRatio(
-                  aspectRatio: _controller!.value.aspectRatio,
-                  child: VideoPlayer(_controller!),
+              ? Stack(
+                  children: [
+                    SizedBox(
+                      width: _controller!.value.size.width,
+                      height: _controller!.value.size.height,
+                      child: VideoPlayer(_controller!),
+                    ),
+                    Container(
+                      // changed by fazal
+                      alignment: Alignment.topRight,
+                      width: _controller!.value.size.width,
+                      // height: 60,
+                      margin: EdgeInsets.only(top: 25),
+                      padding: EdgeInsets.only(right: 35),
+                      child: InkWell(
+                        onTap: checkInstructionsPresence,
+                        child: Container(
+                          // width: ,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(15)),
+                            border: Border.all(color: Colors.white, width: 3),
+                          ),
+                          padding:
+                              EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                          child: Text(
+                            "Skip",
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 )
               : Container(
                   height: MediaQuery.of(context).size.height,
@@ -88,8 +119,8 @@ class _InitialVideoState extends State<InitialVideo> {
   @override
   void dispose() {
     super.dispose();
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
     _controller!.dispose();
     isPlaying.close();
-    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   }
 }

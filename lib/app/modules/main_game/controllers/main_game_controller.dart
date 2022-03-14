@@ -9,11 +9,10 @@ import 'package:puzzle_game/app/models/board.dart';
 import 'package:puzzle_game/app/models/hero_block.dart';
 import 'package:puzzle_game/app/models/hover_block.dart';
 import 'package:puzzle_game/app/modules/login/views/instructions.dart';
+import 'package:puzzle_game/app/modules/main_game/views/setting_view.dart';
 import 'package:puzzle_game/utils/my_storage.dart';
-import 'package:puzzle_game/widgets/setting_dialog.dart';
 import 'package:puzzle_game/widgets/win_dialog.dart';
 import 'package:rive/rive.dart';
-import 'package:video_player/video_player.dart';
 
 import '../../../data/level_one_board.dart';
 import '../../../models/block.dart';
@@ -23,6 +22,7 @@ enum Direction { left, top, right, down }
 
 class MainGameController extends SuperController {
   final isLoading = true.obs;
+
   @override
   void onInit() {
     super.onInit();
@@ -207,23 +207,13 @@ class MainGameController extends SuperController {
   }
 
   Future<void> showInstructions() async {
-    Get.to(InstructionVideo(isFromMainScreen: true,));
+    Get.to(InstructionVideo(
+      isFromMainScreen: true,
+    ));
   }
 
   Future<void> showSettings() async {
-    /*await showDialog(
-      barrierDismissible: false,
-      context: Get.context!,
-      builder: (_) => winDialog(
-        steps: board.value.steps.value,
-        userName: playerName.value,
-      ),
-    );*/
-    await showDialog(
-      barrierDismissible: false,
-      context: Get.context!,
-      builder: (_) => SettingDialog(),
-    );
+    Get.to(() => SettingView());
   }
 
   Future<void> goToInstructionsScreen() async {

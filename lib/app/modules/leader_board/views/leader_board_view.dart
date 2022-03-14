@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
@@ -8,17 +9,15 @@ import '../controllers/leader_board_controller.dart';
 import '../models/leaderboard.dart';
 
 class LeaderBoardView extends GetView<LeaderBoardController> {
-
-
   @override
   Widget build(BuildContext context) {
-   // LeaderBoardController controller=Get.put(LeaderBoardController());
+    // LeaderBoardController controller=Get.put(LeaderBoardController());
 
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
         overlays: [SystemUiOverlay.bottom]);
     MyUtils.makeScreenResponsive(context);
     return WillPopScope(
-      onWillPop: ()=>willpop(),
+      onWillPop: () => willpop(),
       child: Scaffold(
         body: SingleChildScrollView(
           child: Container(
@@ -26,7 +25,9 @@ class LeaderBoardView extends GetView<LeaderBoardController> {
             width: Get.width,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("assets/images/forgot_password_bg.png"),
+                image: AssetImage(kIsWeb
+                    ? "assets/images/web_bg_img.jpg"
+                    : "assets/images/register_main_bg.png"),
                 fit: BoxFit.cover,
               ),
             ),
@@ -36,7 +37,7 @@ class LeaderBoardView extends GetView<LeaderBoardController> {
                 alignment: Alignment.topCenter,
                 children: [
                   GestureDetector(
-                    onTap: (){
+                    onTap: () {
                       Get.back();
                       controller.list.clear();
                     },
@@ -56,48 +57,46 @@ class LeaderBoardView extends GetView<LeaderBoardController> {
                   ),
                   Container(
                     margin: EdgeInsets.only(top: 100),
-
-                    child:FutureBuilder<List<LeaderBoard>>(
+                    child: FutureBuilder<List<LeaderBoard>>(
                       future: controller.get_board(),
-                      builder: ( context,snapshot){
-                        if(snapshot.hasData) {
+                      builder: (context, snapshot) {
+                        if (snapshot.hasData) {
                           return AnimationLimiter(
-                            child:
-                            ListView.builder(
-                              // physics: const NeverScrollableScrollPhysics(),
-                                padding: const EdgeInsets.only(left: 8, right: 8),
-                                // shrinkWrap: true,
-
+                            child: ListView.builder(
                                 itemCount: snapshot.data?.length,
-                                /* gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 3,
-                            mainAxisSpacing: 6,
-                            crossAxisSpacing: 6,
-                          ),*/
                                 itemBuilder: (context, index) {
                                   var item = snapshot.data;
-
-                                  return AnimationConfiguration.staggeredGrid(
-                                      position: index,
-                                      duration: const Duration(milliseconds: 200),
-                                      columnCount: 3,
-                                      child: ScaleAnimation(
-                                        child: FadeInAnimation(
-                                          child: controller.buildCard(
-                                            index + 1, item![index].name,
-                                            item[index].stage,
+                                  return Container(
+                                    width: Get.width,
+                                    margin:
+                                        EdgeInsets.only(left: 30, right: 30),
+                                    constraints: BoxConstraints(
+                                      maxWidth: 500,
+                                    ),
+                                    child: AnimationConfiguration.staggeredGrid(
+                                        position: index,
+                                        duration:
+                                            const Duration(milliseconds: 200),
+                                        columnCount: 3,
+                                        child: ScaleAnimation(
+                                          child: FadeInAnimation(
+                                            child: controller.buildCard(
+                                              index + 1,
+                                              item![index].name,
+                                              item[index].stage,
+                                            ),
                                           ),
-                                        ),
-                                      ));
+                                        )),
+                                  );
                                 }),
                           );
+                        } else {
+                          return Center(
+                            child: CircularProgressIndicator(),
+                          );
                         }
-                        else{
-                          return Center(child: CircularProgressIndicator(),);
-                        }
-                    },
+                      },
                     ),
-
                   ),
                 ],
               ),

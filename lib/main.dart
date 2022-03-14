@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget {
               return __!;
             },
             getPages: AppPages.routes,
-            initialRoute: Routes.MAIN_GAME
+            initialRoute: Routes.SPLASH
             ),);
   }
 }

@@ -12,32 +12,43 @@ class ExitDialog extends StatelessWidget {
     MyUtils.makeScreenResponsive(context);
     return Container(
       alignment: Alignment.center,
+      constraints:
+      BoxConstraints(maxHeight: Get.height / 2, maxWidth: Get.width / 2),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Stack(
-            alignment: Alignment.topCenter,
-            children: [
-              Image.asset("assets/images/app_close_img.png"),
-              Container(
-                margin: EdgeInsets.only(top: 60.h, right: 10),
-                child: Align(
-                  alignment: Alignment.topRight,
-                  child: Material(
-                    color: Colors.transparent,
-                    child: InkWell(
-                      onTap: () {
-                        Get.back();
-                      },
-                      child: SizedBox(
-                        height: 44.h,
-                        width: 44.h,
+          Flexible(
+            child: Stack(
+              alignment: Alignment.topCenter,
+              children: [
+                Image.asset("assets/images/app_close_img.png"),
+                Align(
+                  alignment: Alignment.topCenter,
+                  child: Container(
+                    margin: EdgeInsets.only(top: 30.h, left: 220),
+                    height: 50,
+                    width: 50,
+                    constraints: BoxConstraints(maxHeight: 50, maxWidth: 50),
+                    child: Align(
+                      alignment: Alignment.topRight,
+                      child: Material(
+                        color: Colors.transparent,
+                        child: InkWell(
+                          onTap: () {
+                            Get.back();
+                          },
+                          // TODO: Fazal handle close button
+                          child: Container(
+                            height: 44.h,
+                            width: 44.h,
+                          ),
+                        ),
                       ),
                     ),
                   ),
                 ),
-              )
-            ],
+              ],
+            ),
           ),
           Flexible(
             child: Material(

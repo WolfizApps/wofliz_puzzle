@@ -12,6 +12,7 @@ class MainGameView extends GetView<MainGameController> {
   @override
   Widget build(BuildContext context) {
     MyUtils.makeScreenResponsive(context);
+    // SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
     return WillPopScope(
       onWillPop: () async {

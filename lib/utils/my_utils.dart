@@ -60,14 +60,14 @@ class MyUtils {
   }
 
   static makeScreenResponsive(BuildContext context){
-  /*  ScreenUtil.init(
+    ScreenUtil.init(
         BoxConstraints(
             maxWidth: MediaQuery.of(context).size.width,
             maxHeight: MediaQuery.of(context).size.height),
         designSize: Size(457, 812),
         context: context,
         minTextAdapt: true,
-        orientation: Orientation.portrait);*/
+        orientation: Orientation.portrait);
   }
 
   static getFormattedString(value){

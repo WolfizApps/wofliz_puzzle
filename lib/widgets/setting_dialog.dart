@@ -17,10 +17,8 @@ class SettingDialog extends StatelessWidget {
         alignment: Alignment.center,
         width: Get.width,
         height: Get.height,
-        constraints: BoxConstraints(
-          maxHeight: Get.height/2,
-          maxWidth: Get.width/2
-        ),
+        constraints:
+            BoxConstraints(maxHeight: Get.height / 2, maxWidth: Get.width / 2),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -28,11 +26,20 @@ class SettingDialog extends StatelessWidget {
               child: Stack(
                 alignment: Alignment.center,
                 children: [
-                  Image.asset("assets/images/setting_background.png"),
+                  Container(
+                    constraints: BoxConstraints(
+                        maxHeight: Get.height / 2, maxWidth: Get.width / 2),
+                    child: Image.asset(
+                      "assets/images/setting_background.png",
+                    ),
+                  ),
                   Align(
                     alignment: Alignment.topCenter,
                     child: Container(
-                      margin: EdgeInsets.only(top: 60.h, right: 10),
+                      margin: EdgeInsets.only(top: 30.h, left: 200),
+                      height: 50,
+                      width: 50,
+                      constraints: BoxConstraints(maxHeight: 50, maxWidth: 50),
                       child: Align(
                         alignment: Alignment.topRight,
                         child: Material(
@@ -43,9 +50,9 @@ class SettingDialog extends StatelessWidget {
                             },
                             // TODO: Fazal handle close button
                             child: Container(
-                              // color: Colors.red,
                               height: 44.h,
                               width: 44.h,
+                              // color: Colors.blue,
                             ),
                           ),
                         ),
@@ -53,21 +60,20 @@ class SettingDialog extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    alignment: Alignment.center,
                     constraints: BoxConstraints(
-                        maxHeight: Get.height/2,
-                        maxWidth: Get.width/2
-                    ),
+                        maxHeight: Get.height / 2.8, maxWidth: Get.width / 2.8),
+                    alignment: Alignment.centerLeft,
+                    // color: Colors.blue,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Padding(
-                              padding: EdgeInsets.only(left: 70.w),
+                              padding: EdgeInsets.only(left: 10.w),
                               child: Text(
                                 "Music",
                                 style: TextStyle(
@@ -78,7 +84,7 @@ class SettingDialog extends StatelessWidget {
                             ),
                             Spacer(),
                             Container(
-                              // margin: EdgeInsets.only(right: 80.w),
+                              margin: EdgeInsets.only(right: 10.w),
                               child: InkWell(
                                 onTap: _controller.changeMusic,
                                 child: Obx(
@@ -102,7 +108,7 @@ class SettingDialog extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Padding(
-                              padding: EdgeInsets.only(left: 70.w),
+                              padding: EdgeInsets.only(left: 10.w),
                               child: Text(
                                 "Sound",
                                 style: TextStyle(
@@ -113,7 +119,7 @@ class SettingDialog extends StatelessWidget {
                             ),
                             Spacer(),
                             Container(
-                              // margin: EdgeInsets.only(right: 80.w),
+                              margin: EdgeInsets.only(right: 10.w),
                               child: InkWell(
                                 onTap: _controller.changeSound,
                                 child: Obx(
