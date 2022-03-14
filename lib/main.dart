@@ -42,8 +42,12 @@ class MyApp extends StatelessWidget {
             theme: ThemeData(
               primarySwatch: Colors.blue,
             ),
+            builder: (_,__){
+              ScreenUtil.setContext(_);
+              return __!;
+            },
             getPages: AppPages.routes,
-            initialRoute: Routes.SPLASH
+            initialRoute: Routes.MAIN_GAME
             ),);
   }
 }

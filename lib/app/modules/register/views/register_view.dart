@@ -47,6 +47,10 @@ class RegisterView extends GetView<RegisterController> {
                           width: Get.width,
                           height: 560.h,
                           margin: EdgeInsets.only(top: 105.h),
+                          constraints: BoxConstraints(
+                            maxWidth: 250,
+                            maxHeight: 560,
+                          ),
                           child: Image.asset(
                             "assets/images/register_sub_bg.png",
                             fit: BoxFit.fill,
@@ -65,17 +69,13 @@ class RegisterView extends GetView<RegisterController> {
                       Flexible(
                         child: Container(
                           alignment: Alignment.center,
-                          margin:
-                              EdgeInsets.only(left: 65.w, right: 65.w),
+                          margin: EdgeInsets.only(left: 65.w, right: 65.w),
                           width: ScreenUtil().screenWidth,
                           padding: EdgeInsets.only(left: 8.w),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10.r),
                             gradient: LinearGradient(
-                              colors: [
-                                Color(0xFF606060),
-                                Color(0xFF2F2F2F)
-                              ],
+                              colors: [Color(0xFF606060), Color(0xFF2F2F2F)],
                             ),
                           ),
                           child: TextFormField(
@@ -107,17 +107,13 @@ class RegisterView extends GetView<RegisterController> {
                       Flexible(
                         child: Container(
                           alignment: Alignment.center,
-                          margin:
-                              EdgeInsets.only(left: 65.w, right: 65.w),
+                          margin: EdgeInsets.only(left: 65.w, right: 65.w),
                           width: ScreenUtil().screenWidth,
                           padding: EdgeInsets.only(left: 8.w),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             gradient: LinearGradient(
-                              colors: [
-                                Color(0xFF606060),
-                                Color(0xFF2F2F2F)
-                              ],
+                              colors: [Color(0xFF606060), Color(0xFF2F2F2F)],
                             ),
                           ),
                           child: TextFormField(
@@ -150,25 +146,20 @@ class RegisterView extends GetView<RegisterController> {
                       Flexible(
                         child: Container(
                           alignment: Alignment.center,
-                          margin:
-                              EdgeInsets.only(left: 65.w, right: 65.w),
+                          margin: EdgeInsets.only(left: 65.w, right: 65.w),
                           width: ScreenUtil().screenWidth,
                           padding: EdgeInsets.only(left: 8.w),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             gradient: LinearGradient(
-                              colors: [
-                                Color(0xFF606060),
-                                Color(0xFF2F2F2F)
-                              ],
+                              colors: [Color(0xFF606060), Color(0xFF2F2F2F)],
                             ),
                           ),
                           child: TextFormField(
                             keyboardType: TextInputType.text,
                             obscureText: true,
                             cursorColor: Colors.white,
-                            controller:
-                                controller.confirmPasswordController,
+                            controller: controller.confirmPasswordController,
                             textInputAction: TextInputAction.done,
                             style: TextStyle(
                                 color: Colors.white,
@@ -235,8 +226,7 @@ class RegisterView extends GetView<RegisterController> {
                         child: Container(
                           width: 238,
                           height: 66,
-                          margin:
-                              EdgeInsets.only(left: 110.w, right: 110.w),
+                          margin: EdgeInsets.only(left: 110.w, right: 110.w),
                           child: Image.asset(
                             "assets/images/register_btn.png",
                             fit: BoxFit.fill,

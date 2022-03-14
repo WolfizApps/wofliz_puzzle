@@ -1,5 +1,6 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:puzzle_game/app/modules/main_game/controllers/main_game_controller.dart';
@@ -26,38 +27,44 @@ class _InstructionVideoState extends State<InstructionVideo> {
   @override
   void initState() {
     super.initState();
-    if(widget.isFromMainScreen!){
+    if (widget.isFromMainScreen!) {
       controller = Get.find<MainGameController>();
-      if(controller!.isPlayMusic.value){
+      if (controller!.isPlayMusic.value) {
         controller!.player.pause();
       }
     }
 
-    _controller = VideoPlayerController.asset(
-        'assets/videos/instructions_video.mp4')
-      ..initialize().then(
-        (_) {
-          setState(() {
-            videoLengthInSecods = _controller?.value.duration.inSeconds ?? 0;
-            _controller!.play();
-          });
-        },
-      )
-      ..addListener(() async {
-        if ((await _controller?.position)?.inSeconds == videoLengthInSecods) {
+    MyStorage.writeIsInstructionShow(false);
+  }
+
+  Future<void> videoInit() async {
+    _controller =
+        VideoPlayerController.asset('assets/videos/instructions_video.mp4');
+    await _controller?.initialize();
+
+    isPlaying.value = true;
+    await _controller!.play();
+    log("NOW");
+    videoLengthInSecods = _controller?.value.duration.inSeconds ?? 0;
+    _controller!.addListener(() async {
+      setState(() {
+        if (!_controller!.value.isPlaying &&
+            (_controller!.value.duration == _controller!.value.position)) {
+          // _controller!.pause();
+          print("if, Video ended");
           goToGameMainScreen();
         }
       });
-
-    MyStorage.writeIsInstructionShow(false);
+    });
   }
+
+  final isPlaying = false.obs;
 
   @override
   Widget build(BuildContext context) {
     MyUtils.makeScreenResponsive(context);
-    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
     return Scaffold(
-      body: _controller!.value.isInitialized
+      body: isPlaying.value
           ? Stack(
               children: <Widget>[
                 SizedBox.expand(
@@ -65,9 +72,8 @@ class _InstructionVideoState extends State<InstructionVideo> {
                     fit: BoxFit.fill,
                     child: Stack(
                       children: [
-                        SizedBox(
-                          width: _controller!.value.size.width,
-                          height: _controller!.value.size.height,
+                        AspectRatio(
+                          aspectRatio: _controller!.value.aspectRatio,
                           child: VideoPlayer(_controller!),
                         ),
                         Container(
@@ -126,8 +132,9 @@ class _InstructionVideoState extends State<InstructionVideo> {
   void dispose() {
     super.dispose();
     _controller!.dispose();
-    if(widget.isFromMainScreen!){
-      if(controller!.isPlayMusic.value){
+    isPlaying.close();
+    if (widget.isFromMainScreen!) {
+      if (controller!.isPlayMusic.value) {
         controller!.player.play();
       }
     }

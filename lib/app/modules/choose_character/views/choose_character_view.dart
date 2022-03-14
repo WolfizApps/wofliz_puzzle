@@ -133,7 +133,7 @@ class ChooseCharacterView extends GetView<ChooseCharacterController> {
                   child: Padding(
                     padding: EdgeInsets.only(bottom: Get.height / 40.h),
                     child: InkWell(
-                      onTap: controller.playGame,
+                      onTap: () => controller.playGame(context),
                       child: Image.asset(
                         "assets/images/play_button.png",
                         height: 76.h,
