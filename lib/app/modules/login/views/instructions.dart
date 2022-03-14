@@ -35,6 +35,7 @@ class _InstructionVideoState extends State<InstructionVideo> {
     }
 
     MyStorage.writeIsInstructionShow(false);
+    videoInit();
   }
 
   Future<void> videoInit() async {
@@ -52,7 +53,7 @@ class _InstructionVideoState extends State<InstructionVideo> {
             (_controller!.value.duration == _controller!.value.position)) {
           // _controller!.pause();
           print("if, Video ended");
-          goToGameMainScreen();
+          // goToGameMainScreen();
         }
       });
     });
@@ -63,58 +64,64 @@ class _InstructionVideoState extends State<InstructionVideo> {
   @override
   Widget build(BuildContext context) {
     MyUtils.makeScreenResponsive(context);
-    return Scaffold(
-      body: isPlaying.value
-          ? Stack(
-              children: <Widget>[
-                SizedBox.expand(
-                  child: FittedBox(
-                    fit: BoxFit.fill,
-                    child: Stack(
-                      children: [
-                        AspectRatio(
-                          aspectRatio: _controller!.value.aspectRatio,
-                          child: VideoPlayer(_controller!),
-                        ),
-                        Container(
-                          alignment: Alignment.topRight,
-                          width: _controller!.value.size.width,
-                          // height: 60,
+    return Obx(
+      () => Scaffold(
+        body: isPlaying.value
+            ? Stack(
+                children: <Widget>[
+                  SizedBox.expand(
+                    child: FittedBox(
+                      fit: BoxFit.fill,
+                      child: Stack(
+                        children: [
+                          Container(
+                            width: Get.width,
+                            height: Get.width,
+                            child: AspectRatio(
+                              aspectRatio: _controller!.value.aspectRatio,
+                              child: VideoPlayer(_controller!),
+                            ),
+                          ),
+                          Container(
+                            alignment: Alignment.topRight,
+                            width: _controller!.value.size.width,
+                            // height: 60,
 
-                          margin: EdgeInsets.only(top: 25),
-                          padding: EdgeInsets.only(right: 35),
-                          child: InkWell(
-                            onTap: widget.isFromMainScreen!
-                                ? goBack
-                                : goToGameMainScreen,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(15)),
-                                border:
-                                    Border.all(color: Colors.white, width: 3),
-                              ),
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 20, vertical: 5),
-                              child: Text(
-                                widget.isFromMainScreen! ? "Close" : "Skip",
-                                style: TextStyle(
-                                    color: Colors.white, fontSize: 36),
+                            margin: EdgeInsets.only(top: 25),
+                            padding: EdgeInsets.only(right: 35),
+                            child: InkWell(
+                              onTap: widget.isFromMainScreen!
+                                  ? goBack
+                                  : goToGameMainScreen,
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(15)),
+                                  border:
+                                      Border.all(color: Colors.white, width: 3),
+                                ),
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 20, vertical: 5),
+                                child: Text(
+                                  widget.isFromMainScreen! ? "Close" : "Skip",
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 36),
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
-                ),
-              ],
-            )
-          : Container(
-              height: MediaQuery.of(context).size.height,
-              width: MediaQuery.of(context).size.width,
-              color: Colors.black,
-            ),
+                ],
+              )
+            : Container(
+                height: MediaQuery.of(context).size.height,
+                width: MediaQuery.of(context).size.width,
+                color: Colors.black,
+              ),
+      ),
     );
   }
 

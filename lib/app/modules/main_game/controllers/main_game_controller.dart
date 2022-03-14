@@ -207,9 +207,14 @@ class MainGameController extends SuperController {
   }
 
   Future<void> showInstructions() async {
-    Get.to(InstructionVideo(
-      isFromMainScreen: true,
-    ));
+    Navigator.push(
+      Get.context!,
+      MaterialPageRoute(
+        builder: (_) => InstructionVideo(
+          isFromMainScreen: true,
+        ),
+      ),
+    );
   }
 
   Future<void> showSettings() async {
