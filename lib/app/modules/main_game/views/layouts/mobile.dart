@@ -53,7 +53,7 @@ class MobileLayout extends StatelessWidget {
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage(
-                        "assets/images/game_area.png",
+                        "${controller.assetForLevel("assets/images/game_area")}.png",
                       ),
                       fit: BoxFit.cover,
                     ),
@@ -93,7 +93,8 @@ class MobileLayout extends StatelessWidget {
                   ),
                   Container(
                     // height: 180.h,
-                    child: Lottie.asset("assets/lotties/heli_new1.json", /*height: 220.h, width: 190.w,*/ fit: BoxFit.contain),
+                    child: Lottie.asset("${controller.assetForLevel("assets/lotties/heli_new1")}.json",
+                        /*height: 220.h, width: 190.w,*/ fit: BoxFit.contain),
                   ),
                   LeaderboardButton(),
                 ],

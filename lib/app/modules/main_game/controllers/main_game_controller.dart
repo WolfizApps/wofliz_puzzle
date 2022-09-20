@@ -1,6 +1,5 @@
 import 'dart:developer';
 
-// import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -47,7 +46,9 @@ class MainGameController extends SuperController {
   Axis? blockMovingAxis;
   double blockHeight = 0.0;
   double blockWidth = 0.0;
-  SMINumber? levelTrigger;
+  SMINumber? forestLevelTrigger;
+  SMINumber? spaceTrigger;
+  SMINumber? oceanTrigger;
 
   HoverBlock? hoverBlock;
   final isPlayMusic = true.obs;
@@ -56,19 +57,57 @@ class MainGameController extends SuperController {
   late Rx<Board> board;
   var tileSelected = false.obs;
   var keyboardActive = false;
-  Artboard? artboard;
+  Artboard? _forestArtboard;
+  Artboard? _oceanArtboard;
+  Artboard? _spaceAboard;
 
-  Future<void> loadRive() async {
+  Artboard? get artBoard {
+    if (level.value == 'forest') {
+      return _forestArtboard;
+    } else if (level.value == 'ocean') {
+      return _oceanArtboard;
+    } else {
+      return _spaceAboard;
+    }
+  }
+
+  Future<void> loadRiveForest() async {
     final rivLoaded = await rootBundle.load('assets/lotties/character.riv');
     final file = RiveFile.import(rivLoaded);
-    artboard = file.mainArtboard;
-    var controller = StateMachineController.fromArtboard(artboard!, 'State Machine 1');
+    _forestArtboard = file.mainArtboard;
+    var controller = StateMachineController.fromArtboard(_forestArtboard!, 'State Machine 1');
     if (controller != null) {
-      artboard!.addController(controller);
-      levelTrigger = controller.findSMI('level') as SMINumber;
-      log("HERRR: $levelTrigger");
+      _forestArtboard!.addController(controller);
+      forestLevelTrigger = controller.findSMI('level') as SMINumber;
     }
+  }
 
+  Future<void> loadRiveOcean() async {
+    final rivLoaded = await rootBundle.load('assets/lotties/character.riv');
+    final file = RiveFile.import(rivLoaded);
+    _oceanArtboard = file.mainArtboard;
+    var controller = StateMachineController.fromArtboard(_oceanArtboard!, 'State Machine 1');
+    if (controller != null) {
+      _oceanArtboard!.addController(controller);
+      oceanTrigger = controller.findSMI('level') as SMINumber;
+    }
+  }
+
+  Future<void> loadRiveSpace() async {
+    final rivLoaded = await rootBundle.load('assets/lotties/character.riv');
+    final file = RiveFile.import(rivLoaded);
+    _spaceAboard = file.mainArtboard;
+    var controller = StateMachineController.fromArtboard(_spaceAboard!, 'State Machine 1');
+    if (controller != null) {
+      _spaceAboard!.addController(controller);
+      spaceTrigger = controller.findSMI('level') as SMINumber;
+    }
+  }
+
+  Future<void> loadRive() async {
+    await loadRiveForest();
+    await loadRiveOcean();
+    await loadRiveSpace();
     isLoading.value = false;
   }
 
@@ -86,6 +125,7 @@ class MainGameController extends SuperController {
     if (level.value == lvl) {
       return;
     }
+    MyStorage.writeLevel(lvl);
 
     level.value = lvl;
     resetGame();
@@ -147,6 +187,16 @@ class MainGameController extends SuperController {
     }
   }
 
+  SMINumber? get levelTrigger {
+    if (level.value == 'forest') {
+      return forestLevelTrigger;
+    } else if (level.value == 'space') {
+      return spaceTrigger;
+    } else {
+      return oceanTrigger;
+    }
+  }
+
   void ifHeroBlockMoved(Block block) {
     if (block.runtimeType == HeroBlock) {
       final rowIndex = block.startingRowIndex;
@@ -182,7 +232,7 @@ class MainGameController extends SuperController {
 
   void getBoard() {
     final boardString = MyStorage.readBoard();
-
+    level.value = MyStorage.readLevel() ?? 'forest';
     if (boardString == null) {
       board = Rx<Board>(getFreshBoard);
     } else {

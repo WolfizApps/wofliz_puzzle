@@ -108,6 +108,18 @@ class MyStorage {
     }
   }
 
+  static Future<void> writeLevel(String level) async {
+    storage.write('level', level);
+  }
+
+  static String? readLevel() {
+    try {
+      return storage.read('level');
+    } catch (e) {
+      return null;
+    }
+  }
+
   ////isPlayMusic
   static writeIsPlayMusic(bool value) {
     storage.write(isPlayMusic, value);

@@ -20,8 +20,7 @@ class BlockWidget extends StatelessWidget {
 
   double get positionTop => block.startingRowIndex * controller.blockHeight;
 
-  double get positionLeft =>
-      (block.startingColumnIndex * controller.blockWidth);
+  double get positionLeft => (block.startingColumnIndex * controller.blockWidth);
 
   @override
   Widget build(BuildContext context) {
@@ -63,37 +62,34 @@ class BlockWidget extends StatelessWidget {
                   ? Container(
                       decoration: BoxDecoration(
                         image: DecorationImage(
-                          image: AssetImage("assets/images/img_11.png"),
+                          image: AssetImage("${controller.assetForLevel("assets/images/img_11")}.png"),
                         ),
                       ),
                       height: block.height * controller.blockHeight,
                       width: block.width * controller.blockWidth,
-                      child: Rive(artboard: controller.artboard!),
+                      child: Rive(artboard: controller.artBoard!),
                     )
                   : block.runtimeType == SolidBlock
                       ? SizedBox()
                       : Container(
                           height: block.height * controller.blockHeight,
                           width: block.width * controller.blockWidth,
-                          decoration: MyUtils.carBoxDecoration(
-                              cardImage: "cardImage", isShowCardImage: false),
+                          decoration: MyUtils.carBoxDecoration(cardImage: "cardImage", isShowCardImage: false),
                           margin: EdgeInsets.all(2.r),
                           // padding: EdgeInsets.all(vertical: 2.h, horizontal: 5.w).,
                           child: Lottie.asset(
-                            'assets/lotties/${block.lottiePath}.json',
+                            '${controller.assetForLevel("assets/lotties/${block.lottiePath}")}.json',
                             fit: BoxFit.fill,
                           ),
                         ),
             ),
-            if (controller.keyboardActive &&
-                (controller.hoverBlock?.isHere(block) ?? false))
+            if (controller.keyboardActive && (controller.hoverBlock?.isHere(block) ?? false))
               Obx(
                 () => Container(
                   height: block.height * controller.blockHeight,
                   width: block.width * controller.blockWidth,
                   decoration: BoxDecoration(
-                    color: Colors.green
-                        .withOpacity(controller.tileSelected.value ? 0.6 : 0.2),
+                    color: Colors.green.withOpacity(controller.tileSelected.value ? 0.6 : 0.2),
                     border: Border.all(color: Colors.green),
                     borderRadius: BorderRadius.circular(5.r),
                   ),

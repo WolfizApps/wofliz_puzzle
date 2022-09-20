@@ -15,7 +15,7 @@ class ResetGameButton extends StatelessWidget {
         height: 53.w,
         width: 53.w,
         constraints: BoxConstraints(maxHeight: 100, maxWidth: 100),
-        child: Image.asset("assets/images/reset_game_icon.png"),
+        child: Image.asset("${controller.assetForLevel("assets/images/reset_game_icon")}.png"),
       ),
     );
   }
