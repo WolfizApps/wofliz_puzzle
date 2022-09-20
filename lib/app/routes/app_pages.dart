@@ -1,7 +1,4 @@
-import 'package:flutter/cupertino.dart';
-
 import 'package:get/get.dart';
-
 import '../modules/choose_character/bindings/choose_character_binding.dart';
 import '../modules/choose_character/views/choose_character_view.dart';
 import '../modules/forgot_password/bindings/forgot_password_binding.dart';
@@ -10,6 +7,8 @@ import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/leader_board/bindings/leader_board_binding.dart';
 import '../modules/leader_board/views/leader_board_view.dart';
+import '../modules/levels/bindings/levels_binding.dart';
+import '../modules/levels/views/levels_view.dart';
 import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
 import '../modules/main_game/bindings/main_game_binding.dart';
@@ -17,8 +16,6 @@ import '../modules/main_game/views/main_game_view.dart';
 import '../modules/register/bindings/register_binding.dart';
 import '../modules/register/views/register_view.dart';
 import '../modules/splash/bindings/splash_binding.dart';
-import '../modules/splash/bindings/splash_binding.dart';
-import '../modules/splash/views/splash_view.dart';
 import '../modules/splash/views/splash_view.dart';
 import '../modules/update_password/bindings/update_password_binding.dart';
 import '../modules/update_password/views/update_password_view.dart';
@@ -72,6 +69,7 @@ class AppPages {
       name: _Paths.MAIN_GAME,
       page: () => MainGameView(),
       binding: MainGameBinding(),
+      transition: Transition.downToUp,
     ),
     GetPage(
       name: _Paths.LEADER_BOARD,
@@ -82,6 +80,12 @@ class AppPages {
       name: _Paths.SPLASH,
       page: () => SplashView(),
       binding: SplashBinding(),
+    ),
+    GetPage(
+      name: _Paths.LEVELS,
+      page: () => const LevelsView(),
+      binding: LevelsBinding(),
+      transition: Transition.downToUp,
     ),
   ];
 }

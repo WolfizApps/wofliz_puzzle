@@ -19,7 +19,7 @@ class UsernameTile extends StatelessWidget {
       ),
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage("assets/images/main_board_player_bg.png"),
+          image: AssetImage("${controller.assetForLevel('assets/images/main_board_player_bg')}.png"),
           fit: BoxFit.cover,
         ),
       ),

@@ -21,19 +21,21 @@ class MainGameView extends GetView<MainGameController> {
         return shouldReturn;
       },
       child: Scaffold(
-        body: Container(
-          width: Get.width,
-          height: Get.height,
-          decoration: BoxDecoration(
-            color: Color(0xFF1A1614),
-            image: DecorationImage(
-              image: AssetImage(
-                "assets/images/bg.png",
+        body: Obx(
+          () => Container(
+            width: Get.width,
+            height: Get.height,
+            decoration: BoxDecoration(
+              color: Color(0xFF1A1614),
+              image: DecorationImage(
+                image: AssetImage(
+                  "${controller.assetForLevel('assets/images/bg')}.png",
+                ),
+                fit: BoxFit.cover,
               ),
-              fit: BoxFit.cover,
             ),
+            child: Get.width > Get.height ? WebLayout() : MobileLayout(),
           ),
-          child: Get.width > Get.height ? WebLayout() : MobileLayout(),
         ),
       ),
     );

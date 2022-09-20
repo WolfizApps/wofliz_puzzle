@@ -1,12 +1,12 @@
 import 'dart:io';
 
-import 'package:firedart/firedart.dart';
+// import 'package:firedart/firedart.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:puzzle_game/utils/my_utils.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
+// import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../models/leaderboard.dart';
 
@@ -17,36 +17,31 @@ class LeaderBoardController extends GetxController {
   List<LeaderBoard> list = [];
 
   Future<List<LeaderBoard>> get_board() async {
-    list.clear();
-    try {
-      if (kIsWeb || Platform.isAndroid || Platform.isIOS) {
-        var querySnapshot =
-            await FirebaseFirestore.instance.collection("leaderboard").get();
-        for (int i = querySnapshot.docs.length - 1; i >= 0; i--) {
-          var a = querySnapshot.docs[i];
-          //print("Player Name:"+a.get("name"));
-          list.add(LeaderBoard(
-              name: a.get("name"),
-              email: a.get("email"),
-              stage: a.get("stage")));
-        }
-      } else {
-        var querySnapshot =
-            await Firestore.instance.collection("leaderboard").get();
+    // list.clear();
+    // try {
+    //   if (kIsWeb || Platform.isAndroid || Platform.isIOS) {
+    //     var querySnapshot = await FirebaseFirestore.instance.collection("leaderboard").get();
+    //     for (int i = querySnapshot.docs.length - 1; i >= 0; i--) {
+    //       var a = querySnapshot.docs[i];
+    //       //print("Player Name:"+a.get("name"));
+    //       list.add(LeaderBoard(name: a.get("name"), email: a.get("email"), stage: a.get("stage")));
+    //     }
+    //   } else {
+    //     var querySnapshot = await Firestore.instance.collection("leaderboard").get();
 
-        for (int i = querySnapshot.length - 1; i >= 0; i--) {
-          var name = querySnapshot[i]['name'];
-          var email = querySnapshot[i]['email'];
-          var stage = querySnapshot[i]['stage'];
+    //     for (int i = querySnapshot.length - 1; i >= 0; i--) {
+    //       var name = querySnapshot[i]['name'];
+    //       var email = querySnapshot[i]['email'];
+    //       var stage = querySnapshot[i]['stage'];
 
-          list.add(LeaderBoard(name: name, email: email, stage: stage));
-        }
-      }
-      list.sort((a, b) => a.stage.compareTo(b.stage));
-      print(list);
-    } catch (exp) {
-      print("Firebase error:    $exp");
-    }
+    //       list.add(LeaderBoard(name: name, email: email, stage: stage));
+    //     }
+    //   }
+    //   list.sort((a, b) => a.stage.compareTo(b.stage));
+    //   print(list);
+    // } catch (exp) {
+    //   print("Firebase error:    $exp");
+    // }
 
     return list;
   }
@@ -91,10 +86,7 @@ class LeaderBoardController extends GetxController {
                 ),
                 Text(
                   MyUtils.getFormattedNumber(index),
-                  style: TextStyle(
-                      fontSize: 28,
-                      fontFamily: "leiralite",
-                      color: Color(0xFF272B3C)),
+                  style: TextStyle(fontSize: 28, fontFamily: "leiralite", color: Color(0xFF272B3C)),
                   textAlign: TextAlign.center,
                   // style: const TextStyle(fontWeight: FontWeight.w500),
                 ),
@@ -102,17 +94,13 @@ class LeaderBoardController extends GetxController {
             ),
             title: Text(
               name,
-              style: TextStyle(
-                  fontSize: 27,
-                  fontFamily: "leiralite",
-                  color: Color(0xFFFFFFFF)),
+              style: TextStyle(fontSize: 27, fontFamily: "leiralite", color: Color(0xFFFFFFFF)),
               textAlign: TextAlign.left,
               // style: const TextStyle(fontWeight: FontWeight.w500),
             ),
             subtitle: Text(
               "Steps: $steps",
-              style: TextStyle(
-                  fontSize: 18, fontFamily: "Babybo", color: Color(0xFFFFFFFF)),
+              style: TextStyle(fontSize: 18, fontFamily: "Babybo", color: Color(0xFFFFFFFF)),
               textAlign: TextAlign.left,
               // style: const TextStyle(fontWeight: FontWeight.w500),
             ),

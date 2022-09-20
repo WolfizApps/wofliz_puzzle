@@ -14,6 +14,7 @@ abstract class Routes {
   static const MAIN_GAME = _Paths.MAIN_GAME;
   static const LEADER_BOARD = _Paths.LEADER_BOARD;
   static const SPLASH = _Paths.SPLASH;
+  static const LEVELS = _Paths.LEVELS;
 }
 
 abstract class _Paths {
@@ -27,4 +28,5 @@ abstract class _Paths {
   static const MAIN_GAME = '/main-game';
   static const LEADER_BOARD = '/leader-board';
   static const SPLASH = '/splash';
+  static const LEVELS = '/levels';
 }

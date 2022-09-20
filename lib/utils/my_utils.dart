@@ -41,8 +41,7 @@ class MyUtils {
     );
   }
 
-  static carBoxDecoration(
-      {required String cardImage, bool isShowCardImage = true}) {
+  static carBoxDecoration({required String cardImage, bool isShowCardImage = true}) {
     return isShowCardImage
         ? BoxDecoration(
             color: Colors.transparent,
@@ -59,18 +58,15 @@ class MyUtils {
           );
   }
 
-  static makeScreenResponsive(BuildContext context){
+  static makeScreenResponsive(BuildContext context) {
     ScreenUtil.init(
-        BoxConstraints(
-            maxWidth: MediaQuery.of(context).size.width,
-            maxHeight: MediaQuery.of(context).size.height),
-        designSize: Size(457, 812),
-        context: context,
-        minTextAdapt: true,
-        orientation: Orientation.portrait);
+      context,
+      designSize: Size(457, 812),
+      minTextAdapt: true,
+    );
   }
 
-  static getFormattedString(value){
+  static getFormattedString(value) {
     return value.toString().split("[")[1].split("]")[1];
   }
 }

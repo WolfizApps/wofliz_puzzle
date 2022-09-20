@@ -1,10 +1,13 @@
 import 'dart:developer';
 
-import 'package:cloud_firestore/cloud_firestore.dart';
+// import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:just_audio/just_audio.dart';
+import 'package:puzzle_game/app/data/level_one_board.dart';
+import 'package:puzzle_game/app/data/level_three_board.dart';
+import 'package:puzzle_game/app/data/level_two_board.dart';
 import 'package:puzzle_game/app/models/board.dart';
 import 'package:puzzle_game/app/models/hero_block.dart';
 import 'package:puzzle_game/app/models/hover_block.dart';
@@ -14,7 +17,6 @@ import 'package:puzzle_game/utils/my_storage.dart';
 import 'package:puzzle_game/widgets/win_dialog.dart';
 import 'package:rive/rive.dart';
 
-import '../../../data/level_one_board.dart';
 import '../../../models/block.dart';
 import '../../../routes/app_pages.dart';
 
@@ -22,6 +24,7 @@ enum Direction { left, top, right, down }
 
 class MainGameController extends SuperController {
   final isLoading = true.obs;
+  final level = 'forest'.obs;
 
   @override
   void onInit() {
@@ -59,8 +62,7 @@ class MainGameController extends SuperController {
     final rivLoaded = await rootBundle.load('assets/lotties/character.riv');
     final file = RiveFile.import(rivLoaded);
     artboard = file.mainArtboard;
-    var controller =
-        StateMachineController.fromArtboard(artboard!, 'State Machine 1');
+    var controller = StateMachineController.fromArtboard(artboard!, 'State Machine 1');
     if (controller != null) {
       artboard!.addController(controller);
       levelTrigger = controller.findSMI('level') as SMINumber;
@@ -68,6 +70,36 @@ class MainGameController extends SuperController {
     }
 
     isLoading.value = false;
+  }
+
+  Board get getFreshBoard {
+    if (level.value == 'forest') {
+      return levelOneBoard(onWin: onWin, onUpdate: onUpdate);
+    } else if (level.value == 'space') {
+      return levelTwoBoard(onWin: onWin, onUpdate: onUpdate);
+    } else {
+      return levelThreeBoard(onWin: onWin, onUpdate: onUpdate);
+    }
+  }
+
+  void changeLevel(String lvl) {
+    if (level.value == lvl) {
+      return;
+    }
+
+    level.value = lvl;
+    resetGame();
+    getBoard();
+  }
+
+  String assetForLevel(String assetName) {
+    if (level.value == 'forest') {
+      return assetName;
+    } else if (level.value == 'space') {
+      return "${assetName}_space";
+    } else {
+      return "${assetName}_ocean";
+    }
   }
 
   final player = AudioPlayer();
@@ -152,10 +184,9 @@ class MainGameController extends SuperController {
     final boardString = MyStorage.readBoard();
 
     if (boardString == null) {
-      board = Rx<Board>(levelOneBoard(onWin: onWin, onUpdate: onUpdate));
+      board = Rx<Board>(getFreshBoard);
     } else {
-      board =
-          Board.fromString(boardString, onWin: onWin, onUpdate: onUpdate).obs;
+      board = Board.fromString(boardString, onWin: onWin, onUpdate: onUpdate).obs;
     }
   }
 
@@ -163,9 +194,13 @@ class MainGameController extends SuperController {
     blockMovingAxis = null;
   }
 
+  void showLevels() {
+    Get.toNamed(Routes.LEVELS);
+  }
+
   void resetGame() {
     print("I am called");
-    board.value = levelOneBoard(onWin: onWin, onUpdate: onUpdate);
+    board.value = getFreshBoard;
     if (keyboardActive) {
       hoverBlock = HoverBlock(onBlock: board.value.blocks.first);
     }
@@ -174,17 +209,15 @@ class MainGameController extends SuperController {
   }
 
   addDataToFirebase() {
-    print("Adding data to the firbase");
-    try {
-      FirebaseFirestore.instance.collection('leaderboard').add({
-        'name': playerName.value.toString(),
-        'stage': board.value.steps.value.toString(),
-        'email': MyStorage.readQuserEmail()
-      });
-      print("data added to Firebase!");
-    } catch (e) {
-      print("Failed to Add Data to Firebase!");
-    }
+    // print("Adding data to the firbase");
+    // try {
+    //   FirebaseFirestore.instance
+    //       .collection('leaderboard')
+    //       .add({'name': playerName.value.toString(), 'stage': board.value.steps.value.toString(), 'email': MyStorage.readQuserEmail()});
+    //   print("data added to Firebase!");
+    // } catch (e) {
+    //   print("Failed to Add Data to Firebase!");
+    // }
   }
 
   Future<void> onWin() async {
@@ -254,26 +287,22 @@ class MainGameController extends SuperController {
     /// [Block Move]
     if (tileSelected.value) {
       if (event.isKeyPressed(LogicalKeyboardKey.arrowDown)) {
-        final didMove = board.value
-            .moveBlock(direction: Direction.down, block: hoverBlock!.onBlock);
+        final didMove = board.value.moveBlock(direction: Direction.down, block: hoverBlock!.onBlock);
         if (didMove) {
           board.value.stepIncrement();
         }
       } else if (event.isKeyPressed(LogicalKeyboardKey.arrowUp)) {
-        final didMove = board.value
-            .moveBlock(direction: Direction.top, block: hoverBlock!.onBlock);
+        final didMove = board.value.moveBlock(direction: Direction.top, block: hoverBlock!.onBlock);
         if (didMove) {
           board.value.stepIncrement();
         }
       } else if (event.isKeyPressed(LogicalKeyboardKey.arrowRight)) {
-        final didMove = board.value
-            .moveBlock(direction: Direction.right, block: hoverBlock!.onBlock);
+        final didMove = board.value.moveBlock(direction: Direction.right, block: hoverBlock!.onBlock);
         if (didMove) {
           board.value.stepIncrement();
         }
       } else if (event.isKeyPressed(LogicalKeyboardKey.arrowLeft)) {
-        final didMove = board.value
-            .moveBlock(direction: Direction.left, block: hoverBlock!.onBlock);
+        final didMove = board.value.moveBlock(direction: Direction.left, block: hoverBlock!.onBlock);
         if (didMove) {
           board.value.stepIncrement();
           ifHeroBlockMoved(hoverBlock!.onBlock);

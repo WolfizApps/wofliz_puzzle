@@ -7,7 +7,7 @@ import '../models/board.dart';
 import '../models/block.dart';
 import '../models/location.dart';
 
-Board levelOneBoard({required VoidCallback onWin, required void Function(Board) onUpdate}) => Board(
+Board levelThreeBoard({required VoidCallback onWin, required void Function(Board) onUpdate}) => Board(
       onWin: onWin,
       onUpdate: onUpdate,
       coloumns: 4,
@@ -42,39 +42,39 @@ Board levelOneBoard({required VoidCallback onWin, required void Function(Board) 
             Location(rowIndex: 1, columnIndex: 3),
           ],
         ),
-        Block(
-          lottiePath: 'stone1',
-          location: [
-            Location(rowIndex: 2, columnIndex: 1),
-            Location(rowIndex: 2, columnIndex: 2),
-          ],
-        ),
-        Block(
-          lottiePath: 'spider1',
-          location: [
-            Location(rowIndex: 3, columnIndex: 0),
-            Location(rowIndex: 4, columnIndex: 0),
-          ],
-        ),
-        Block(
-          lottiePath: 'wolf6',
-          location: [
-            Location(rowIndex: 3, columnIndex: 3),
-            Location(rowIndex: 4, columnIndex: 3),
-          ],
-        ),
-        Block(
-          lottiePath: 'bat1',
-          location: [
-            Location(rowIndex: 3, columnIndex: 1),
-          ],
-        ),
-        Block(
-          lottiePath: 'hand',
-          location: [
-            Location(rowIndex: 3, columnIndex: 2),
-          ],
-        ),
+        // Block(
+        //   lottiePath: 'stone1',
+        //   location: [
+        //     Location(rowIndex: 2, columnIndex: 1),
+        //     Location(rowIndex: 2, columnIndex: 2),
+        //   ],
+        // ),
+        // Block(
+        //   lottiePath: 'spider1',
+        //   location: [
+        //     Location(rowIndex: 3, columnIndex: 0),
+        //     Location(rowIndex: 4, columnIndex: 0),
+        //   ],
+        // ),
+        // Block(
+        //   lottiePath: 'wolf6',
+        //   location: [
+        //     Location(rowIndex: 3, columnIndex: 3),
+        //     Location(rowIndex: 4, columnIndex: 3),
+        //   ],
+        // ),
+        // Block(
+        //   lottiePath: 'bat1',
+        //   location: [
+        //     Location(rowIndex: 3, columnIndex: 1),
+        //   ],
+        // ),
+        // Block(
+        //   lottiePath: 'hand',
+        //   location: [
+        //     Location(rowIndex: 3, columnIndex: 2),
+        //   ],
+        // ),
         Block(
           lottiePath: 'wolf_new3',
           location: [

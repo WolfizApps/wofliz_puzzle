@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import 'package:puzzle_game/app/modules/main_game/controllers/main_game_controller.dart';
+import 'package:puzzle_game/app/modules/main_game/views/widgets/level_button.dart';
 import 'package:puzzle_game/utils/my_utils.dart';
 
 import '../widgets/game.dart';
@@ -32,7 +33,7 @@ class MobileLayout extends StatelessWidget {
                 children: [
                   UsernameTile(),
                   Spacer(),
-                  HelpButton(),
+                  LevelButton(),
                   SizedBox(width: 5.1.w),
                   SettingButton(),
                 ],
@@ -63,11 +64,8 @@ class MobileLayout extends StatelessWidget {
                   ),
                   height: 810.h - 115.5.h,
                   width: (Get.width * 0.85) - (Get.width * 0.04),
-                  child: RawKeyboardListener(
-                      focusNode: controller.focusNode,
-                      autofocus: true,
-                      onKey: controller.keyboardButtonPressed,
-                      child: Game()),
+                  child:
+                      RawKeyboardListener(focusNode: controller.focusNode, autofocus: true, onKey: controller.keyboardButtonPressed, child: Game()),
                 ),
               ],
             ),
@@ -86,30 +84,16 @@ class MobileLayout extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  /*Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      MaximizeButton(),
-                      PauseButton(),
-                    ],
-                  ),
-                  Container(
-                    height: 130.h,
-                    child: Lottie.asset("assets/lotties/heli_new1.json",
-                        height: 190.h, width: 170.w, fit: BoxFit.contain),
-                  ),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      LeaderboardButton(),
+                      HelpButton(),
                       ResetGameButton(),
                     ],
-                  ),*/
-                  ResetGameButton(),
+                  ),
                   Container(
                     // height: 180.h,
-                    child: Lottie.asset("assets/lotties/heli_new1.json",
-                        /*height: 220.h, width: 190.w,*/ fit: BoxFit.contain),
+                    child: Lottie.asset("assets/lotties/heli_new1.json", /*height: 220.h, width: 190.w,*/ fit: BoxFit.contain),
                   ),
                   LeaderboardButton(),
                 ],
